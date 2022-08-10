@@ -1,0 +1,15 @@
+{
+  "name": "etpir",
+  "version": "1.0.0",
+  "description": "This set of tools helps in managing results and process of https://etpir.hermescenter.org",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vecna/ETPIR.git"
+  },
+  "author": "Hermes Center - https://hermescenter.org",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/vecna/ETPIR/issues"
+  },
+  "homepage": "https://github.com/vecna/ETPIR#readme"
+}
