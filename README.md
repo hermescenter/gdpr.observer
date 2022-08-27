@@ -8,6 +8,7 @@ This project uses the European Data Protection Supervisor tool: website-evidence
 * `site`: it contains the structure of a site in [HUGO](https://gohugo.io) and the content are automatically published in [etpir.hermescenter.org](https://etpir.hermescenter.org).
 * `assets`: everything binary that might be used, reused, ans worthy of the shared. Presentation, articles, whatever
 * `.gitignore`: it would let you understand why this repository has not code to crawl website
+* `bin`: scripts to be executed
 
 ## Getting started
 
