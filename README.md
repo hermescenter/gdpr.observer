@@ -28,3 +28,11 @@ Then if you want to try WEC:
 cd website-evidence-collector
 bin/website-evidence-collector.js https://eportugal.gov.pt
 ```
+
+---
+
+### Contacts
+
+* This project is coordinated by [Claudio Agosti](https://twitter.com/@_vecna), for the [Hermes Center](https://hermescenter.org).  Mail to <projects at hermescenter dot org>.
+* A new discussion place for communities and organized should be defined
+

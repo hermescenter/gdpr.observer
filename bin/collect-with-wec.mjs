@@ -11,6 +11,8 @@ void (async function () {
   const list = await fs.readJSON('input/portugual-partial.json');
 
   for (const site of list) {
+    /* TODO manage output in the output/ folder
+     *      define a script that read output and write into db */
     await question(`press Enter and test ${site} would start`);
     const output = await $`${wec} ${site}`;
     console.log(output);
