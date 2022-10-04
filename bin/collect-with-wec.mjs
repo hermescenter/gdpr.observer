@@ -7,7 +7,13 @@ import { fetch as fogp } from 'fetch-opengraph';
 
 
 /* hardcoded for the alpha version */
-const country = "portougal";
+const country = "portugal";
+
+/* this script execute in sequence:
+ * 1) wec
+ * 2) produce a unique ID so every website can have only one entry per day in the DB
+ * 3) acquire the produced output of wec into mongodb
+ */
 
 const wec = `./website-evidence-collector/bin/website-evidence-collector.js`;
 const acquirer = `./bin/acquire.mjs`;
@@ -26,16 +32,22 @@ for (const site of list) {
   const ogdir = path.join('output', 'og', day, hostname);
   await fs.ensureDir(ogdir);
 
-  const output = await $`${wec} ${site} --output ${banner0dir} --overwrite`;
+  try {
+    const output = await $`${wec} ${site} --output ${banner0dir}`;
+  } catch(error) {
+    console.log(`Impossible to connect: ${error.message}`);
+  }
 
-  const inspection = path.join(output, 'inspection.json');
-  console.log(inspection);
-  console.log(banner0dir);
+  const inspection = path.join(banner0dir, 'inspection.json');
   /* the ID is unique every day, timedate is part of the path, 
     * this ensure predictable and daily ID, to avoid dups */
   const id = await $`${dailyIdGenerator} --country ${country} --path ${banner0dir}`;
   console.log(`Site ${hostname} in ${day} has unique ID ${id}`);
-  await $`${acquirer} --id ${id} --country ${country} --source ${inspection}`
+  try {
+    await $`${acquirer} --id ${id} --country ${country} --source ${inspection}`
+  } catch(error) {
+    console.log(`Impossible to acquire: ${error.message}`);
+  }
 
   /*
     -- not yet developed

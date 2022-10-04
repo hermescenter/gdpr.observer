@@ -40,13 +40,22 @@ const mongoqs = _.compact(_.map(content, function(value, key) {
     console.log(`Empty value in ${key} ${JSON.stringify(value)}`);
     return null;
   }
+  if(key === 'uri_refs') {
+    /* this helps a lot to sort see hostname and pick the appropriate ID */
+    console.log(`${JSON.stringify(value)} becoming a string`);
+    value = _.first(value);
+  }
+  if(key === 'browser') {
+    return null;
+  }
 
   const retval = {
     collection: key,
     content: {
       id: argv.id,
+      evidence: argv.source,
       country: argv.country,
-      when: new Date(),
+      when: new Date().toISOString(),
     }
   }
   retval.content[key] = value;
@@ -55,7 +64,6 @@ const mongoqs = _.compact(_.map(content, function(value, key) {
 
 const client = await connect();
 for(const block of mongoqs) {
-  console.log(client.db());
   await client.db().collection(block.collection).insertOne(block.content);
 }
 await client.close();
