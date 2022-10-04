@@ -27,6 +27,7 @@
     "metascraper-publisher": "^5.30.4",
     "metascraper-title": "^5.30.4",
     "metascraper-url": "^5.30.4",
-    "zx": "^7.0.8"
+    "mongodb": "^4.10.0",
+    "zx": "^7.0.7"
   }
 }

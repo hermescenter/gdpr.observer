@@ -5,7 +5,7 @@ This project uses the European Data Protection Supervisor tool: website-evidence
 
 ## Repository Map
 
-* `site`: it contains the structure of a site in [HUGO](https://gohugo.io) and the content are automatically published in [etpir.hermescenter.org](https://etpir.hermescenter.org).
+* `site`: it contains the structure of a site in [HUGO](https://gohugo.io) and the content are automatically published in [WEBSITE-TO-BE-DEFINED.org](https://xxx.org).
 * `assets`: everything binary that might be used, reused, ans worthy of the shared. Presentation, articles, whatever
 * `.gitignore`: it would let you understand why this repository has not code to crawl website
 * `bin`: scripts to be executed
@@ -20,14 +20,26 @@ git clone https://github.com/EU-EDPS/website-evidence-collector.git
 cd website-evidence-collector
 npm install
 cd ..
+npm test
 ```
 
-Then if you want to try WEC:
+the last command would tell you if the system is ready to run. remind you need mongodb running in the server.
+
+### Special: do you want to try WebEvidenceCollector?
 
 ```
 cd website-evidence-collector
 bin/website-evidence-collector.js https://eportugal.gov.pt
 ```
+
+## Small example
+
+```
+npm install
+bin/collect-with-wec.mjs
+```
+
+Then read the debug messages. You should find result into mongodb.
 
 ---
 
