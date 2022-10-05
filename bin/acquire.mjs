@@ -45,7 +45,8 @@ const mongoqs = _.compact(_.map(content, function(value, key) {
     console.log(`${JSON.stringify(value)} becoming a string`);
     value = _.first(value);
   }
-  if(key === 'browser') {
+  if(key === 'browser' || key === 'script') {
+    /* these variables contains info from WEC, are not meaningful for us */
     return null;
   }
 
