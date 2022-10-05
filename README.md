@@ -23,7 +23,7 @@ cd ..
 npm test
 ```
 
-the last command would tell you if the system is ready to run. remind you need mongodb running in the server.
+The last command would tell you if the system is ready to run. remind you need mongodb running in the server.
 
 ### Special: do you want to try WebEvidenceCollector?
 
@@ -32,19 +32,27 @@ cd website-evidence-collector
 bin/website-evidence-collector.js https://eportugal.gov.pt
 ```
 
-## Small example
+## Small sample
+
+An example on which data is gather is in the [MONGODB](https://github.com/vecna/ETPIR/blob/main/MONGODB.md) file, it has been produced by running
 
 ```
 npm install
 bin/collect-with-wec.mjs
+mongosh -d etpir-default -c beacons -q 'db.beacons.find({}).limit(1)'
 ```
 
-Then read the debug messages. You should find result into mongodb.
+Where `etpir-default` is the default database name, `beacons` is one of the collection generated based on the Web Evidence Collector output.
 
 ---
 
 ### Contacts
 
-* This project is coordinated by [Claudio Agosti](https://twitter.com/@_vecna), for the [Hermes Center](https://hermescenter.org).  Mail to <projects at hermescenter dot org>.
-* A new discussion place for communities and organized should be defined
+* This project is coordinated by [Claudio Agosti](https://twitter.com/@_vecna), for the [Hermes Center](https://hermescenter.org).  Mail at `<projects at hermescenter dot org>`.
+* A new discussion place for communities and organized should be defined.
+
+
+### License
+
+* AGPL-3
 
