@@ -2,12 +2,18 @@
 /* eslint-disable camelcase */
 
 import _ from 'lodash';
-import { fs, $, os, fetch, path, question } from 'zx';
+import { argv, fs, $, os, fetch, path, question } from 'zx';
 import { fetch as fogp } from 'fetch-opengraph';
 
+if (!argv.country) {
+  console.log("Missing --country, which is a marker that would follow in the database (can be any kind of string)");
+  process.exit(1);
+}
 
-/* hardcoded for the alpha version */
-const country = "portugal";
+if (!argv.source) {
+  console.log("Missing --source, which should be a .json file with a list of URL");
+  process.exit(1);
+}
 
 /* this script execute in sequence:
  * 1) wec
@@ -18,8 +24,7 @@ const country = "portugal";
 const wec = `./website-evidence-collector/bin/website-evidence-collector.js`;
 const acquirer = `./bin/acquire.mjs`;
 const dailyIdGenerator = `./bin/id.mjs`;
-const sourceList = path.join("input", `${country}-partial.json`);
-const list = await fs.readJSON(sourceList);
+const list = await fs.readJSON(argv.source);
 
 for (const site of list) {
 
@@ -41,10 +46,10 @@ for (const site of list) {
   const inspection = path.join(banner0dir, 'inspection.json');
   /* the ID is unique every day, timedate is part of the path, 
     * this ensure predictable and daily ID, to avoid dups */
-  const id = await $`${dailyIdGenerator} --country ${country} --path ${banner0dir}`;
+  const id = await $`${dailyIdGenerator} --country ${argv.country} --path ${banner0dir}`;
   console.log(`Site ${hostname} in ${day} has unique ID ${id}`);
   try {
-    await $`${acquirer} --id ${id} --country ${country} --source ${inspection}`
+    await $`${acquirer} --id ${id} --country ${argv.country} --source ${inspection}`
   } catch(error) {
     console.log(`Impossible to acquire: ${error.message}`);
   }
