@@ -16,6 +16,7 @@
     "browserless": "^9.6.9",
     "fetch-opengraph": "^1.0.35",
     "html-get": "^2.9.22",
+    "jsonexport": "^3.2.0",
     "lodash": "^4.17.21",
     "metascraper": "^5.30.4",
     "metascraper-author": "^5.30.4",

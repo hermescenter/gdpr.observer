@@ -2,7 +2,7 @@
 /* eslint-disable camelcase */
 
 import _ from 'lodash';
-import { argv, fs, $, os, fetch, path, question } from 'zx';
+import { argv, fs, $, os, path } from 'zx';
 import { fetch as fogp } from 'fetch-opengraph';
 
 if (!argv.country) {

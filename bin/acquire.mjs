@@ -56,7 +56,7 @@ const mongoqs = _.compact(_.map(content, function(value, key) {
       id: argv.id,
       evidence: argv.source,
       country: argv.country,
-      when: new Date().toISOString(),
+      when: new Date(),
     }
   }
   retval.content[key] = value;
