@@ -1,0 +1,11 @@
+1. you should copy this file then DELETE LINES till the '---' INCLUDED
+2. you should rename this file in `settings.json` inside the `config/` directory
+3. you should change the key value in `airtable_key` and so other fields
+4. if you don't know what this is about, ask claudio at tracking dot exposed
+
+---
+{
+  "airtable_key":"#abbiamomessolakey",
+  "airtable_base":"appXy7zclAet5Sspp",
+  "airtable_table":"tblSh0CwhbNNQRjYU"
+}

@@ -13,6 +13,7 @@
   },
   "homepage": "https://github.com/vecna/ETPIR#readme",
   "dependencies": {
+    "airtable": "^0.11.5",
     "browserless": "^9.6.9",
     "fetch-opengraph": "^1.0.35",
     "html-get": "^2.9.22",

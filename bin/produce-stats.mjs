@@ -28,14 +28,27 @@ if(argv.kind === 'cookies' || argv.kind === 'all') {
 
 async function pullCookieData(country) {
   const client = await connect();
-  const amount = await client.db().collection("cookies").countDocuments({ country });
+  const amount = await client.db()
+    .collection("cookies")
+    .countDocuments({ country });
+
   console.log(`Amount of objects in 'cookies' matching ${country} as ${amount}`);
-  const lasto = await client.db().collection("cookies")
-    .find({ country }).sort({when: -1}).limit(1).toArray();
+  const lasto = await client.db()
+    .collection("cookies")
+    .find({ country })
+    .sort({when: -1})
+    .limit(1)
+    .toArray();
+
   const lastDay = lasto[0].when.substring(0, 10);
   console.log(`Last day observed for ${country} is ${lastDay}`);
-  const evidences = await client.db().collection("cookies")
-    .find({ country, when: { "$gte": new Date(lastDay)} }).sort({when: -1}).toArray();
+
+  const evidences = await client.db()
+    .collection("cookies")
+    .find({ country, when: { "$gte": new Date(lastDay)} })
+    .sort({when: -1})
+    .toArray();
+
   console.log(`Evidences found older then ${new Date(lastDay)} is ${evidences.length}`);
 
   await client.close();

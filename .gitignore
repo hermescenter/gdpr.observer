@@ -3,3 +3,4 @@
 website-evidence-collector
 output
 node_modules
+config/*.json
