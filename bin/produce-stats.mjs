@@ -58,7 +58,9 @@ async function pullCookieData(country) {
 
 async function distinct(variableName) {
   const client = await connect();
-  const list = await client.db().collection("hosts").distinct(variableName);
+  const list = await client.db()
+    .collection("hosts")
+    .distinct(variableName);
   await client.close();
   return list;
 }
