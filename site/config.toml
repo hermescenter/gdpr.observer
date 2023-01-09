@@ -1,0 +1,75 @@
+baseURL = "/"
+themesDir = "themes"
+theme = "hugo-serif-theme"
+languageCode = "en-us"
+title = "GDPR observer"
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.55.0"
+
+[params]
+
+  [params.homepage]
+    show_contact_box = true      # show / hide the contaxt box on the homepage
+    show_services_button = false # show / hide the "view all services" button
+
+  [params.logo]
+    mobile = "images/logo/logo-mobile.svg"
+    mobile_height = "36px"
+    desktop = "images/logo/logo.svg"
+    desktop_height = "36px"
+    alt = "GDPR observer"
+
+  #[params.fonts]
+  
+    # sets the google font link in layouts/partials/google-fonts.html
+  #  google_fonts = 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Source+Sans+Pro:wght@400;700&display=swap'
+  #  heading = "Playfair Display"
+  #  base = "Source Sans Pro"
+
+  [params.colors]
+    primary = "#f24088"
+    black = "#2f2f41"
+    white = "#ffffff"
+    white_offset = "#f6f7ff"
+    grey = "#5C5A5A"
+
+  [params.seo]
+    meta_twitter_site = "@zerostaticio"
+    meta_twitter_creator = "@zerostaticio"
+    meta_og_image = "https://www.zerostatic.io/theme/hugo-serif/hugo-serif-screenshot.png"
+
+  [params.services]
+    summary_truncate = 120 # How many characters to include in the summary of the services before truncating
+
+  [params.team]
+    summary_large_truncate = 120 # How many characters to include in the summary of the team bios (large layout) before truncating
+
+  [params.footer]
+    copyright_text = 'Supporting Europan DPOs by <a class="zerostatic" href="https://hermescenter.org">Hermes Center</a>'
+
+[menu]
+  # Main Menu
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 1
+
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Backstory"
+    url = "/backstory/"
+    weight = 3
+
+
+  # Footer Menu
+  [[menu.footer]]
+    name = "Technical logs"
+    url = "/logs/"
+    weight = 1

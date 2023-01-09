@@ -4,3 +4,9 @@ website-evidence-collector
 output
 node_modules
 config/*.json
+
+# HUGO site
+site/themes/
+site/.hugo_build.lock
+site/public/
+site/resources/
