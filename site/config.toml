@@ -18,16 +18,9 @@ title = "GDPR observer"
   [params.logo]
     mobile = "images/logo/logo-mobile.svg"
     mobile_height = "36px"
-    desktop = "images/logo/logo.svg"
+    desktop = "images/logo/gdpr-observer-logo-v1.png"
     desktop_height = "36px"
     alt = "GDPR observer"
-
-  #[params.fonts]
-  
-    # sets the google font link in layouts/partials/google-fonts.html
-  #  google_fonts = 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Source+Sans+Pro:wght@400;700&display=swap'
-  #  heading = "Playfair Display"
-  #  base = "Source Sans Pro"
 
   [params.colors]
     primary = "#f24088"
