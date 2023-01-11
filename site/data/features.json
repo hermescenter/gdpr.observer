@@ -1,17 +1,20 @@
 [
   {
-    "title": "Free Consultation",
-    "description": "New clients recieve an obligation free consultation.",
-    "image": "images/features/noun_branding_1885335.svg"
+    "title": "Who we talk to?",
+    "description": "European NGO active in the digial privacy domain",
+    "image": "images/features/noun_branding_1885335.svg",
+    "href": "/blog/accounting/"
   },
   {
-    "title": "Certified Accountants",
-    "description": "All members of our team are certified accountants.",
-    "image": "images/features/noun_The Process_1885341.svg"
+    "title": "How our pipeline works?",
+    "description": "What we're offering and how you can use it",
+    "image": "images/features/noun_The Process_1885341.svg",
+    "href": "/blog/business-advisory/"
   },
   {
-    "title": "Tax Compliance",
-    "description": "We stay up to date on the latest changes to the tax code.",
-    "image": "images/features/noun_3d modeling_1885342.svg"
+    "title": "Solutions",
+    "description": "Once the instution wants to drop google analytics they'll look for replacement.",
+    "image": "images/features/noun_3d modeling_1885342.svg",
+    "href": "/blog/tax-preperation/"
   }
 ]

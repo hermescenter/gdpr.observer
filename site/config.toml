@@ -23,7 +23,7 @@ title = "GDPR observer"
     alt = "GDPR observer"
 
   [params.colors]
-    primary = "#f24088"
+    primary = "#ff1fff"
     black = "#2f2f41"
     white = "#ffffff"
     white_offset = "#f6f7ff"
@@ -59,7 +59,6 @@ title = "GDPR observer"
     name = "Backstory"
     url = "/backstory/"
     weight = 3
-
 
   # Footer Menu
   [[menu.footer]]
