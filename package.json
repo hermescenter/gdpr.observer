@@ -29,6 +29,7 @@
     "metascraper-publisher": "^5.30.4",
     "metascraper-title": "^5.30.4",
     "metascraper-url": "^5.30.4",
+    "moment": "^2.29.4",
     "mongodb": "^4.10.0",
     "zx": "^7.0.7"
   }

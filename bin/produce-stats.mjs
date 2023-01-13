@@ -5,8 +5,9 @@
  * statistics based on the option passed */
 
 import _ from 'lodash';
-import { argv, fs, $, question } from 'zx';
+import { argv, fs, $ } from 'zx';
 import connect from '../lib/mongodb.mjs';
+import moment from 'moment';
 
 if (!argv.country) {
   console.log("Missing --country, this is fundamental, at the moment we've these:");
@@ -22,7 +23,24 @@ if (!argv.kind) {
 
 if(argv.kind === 'cookies' || argv.kind === 'all') {
   const data = await pullCookieData(argv.country);
-  // console.table(data);
+  const clean = _.map(data, function(o) {
+    return {
+      ..._.pick(o, ['country']),
+      source: o.evidence.replace(/inspection.*/, ''),
+      firstParty: _.filter(o.cookies, { firstPartyStorage: true }).length,
+      thirdParty: _.filter(o.cookies, { firstPartyStorage: false }).length,
+      /*
+      firstParty: _.map(_.filter(o.cookies, { firstPartyStorage: true }), (c) => {
+        return c.name;
+      }).join(','),
+      thirdParty: _.map(_.filter(o.cookies, { firstPartyStorage: false }), (c) => {
+        return c.name;
+      }).join(','),
+      */
+    }
+  })
+  console.log(JSON.stringify(clean, null ,1));
+  console.table(clean);
   // to be continued
 }
 
@@ -40,16 +58,20 @@ async function pullCookieData(country) {
     .limit(1)
     .toArray();
 
-  const lastDay = lasto[0].when.substring(0, 10);
-  console.log(`Last day observed for ${country} is ${lastDay}`);
+  const lastDayStr = moment(lasto[0].when).format("YYYY-MM-DD");
+  console.log(`Last day seen for [${country}] is ${lastDayStr}`);
 
   const evidences = await client.db()
     .collection("cookies")
-    .find({ country, when: { "$gte": new Date(lastDay)} })
+    .find({ country, when: { "$gte": new Date(lastDayStr)} })
     .sort({when: -1})
     .toArray();
 
-  console.log(`Evidences found older then ${new Date(lastDay)} is ${evidences.length}`);
+  const older = await client.db()
+    .collection("cookies")
+    .countDocuments({ country, when: { "$lt": new Date(lastDayStr)} })
+
+  console.log(`Found ${evidences.length} evidences in ${lastDayStr} and ${older} older (ignored)`);
 
   await client.close();
   return evidences;

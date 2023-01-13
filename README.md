@@ -5,12 +5,44 @@ This project uses the European Data Protection Supervisor tool: website-evidence
 
 ## Repository Map
 
-* `site`: it contains the structure of a site in [HUGO](https://gohugo.io) and the content are automatically published in [WEBSITE-TO-BE-DEFINED.org](https://xxx.org).
+* `site`: it contains the structure of a site in [HUGO](https://gohugo.io) and the content are automatically published in [gdpr.observer](https://gdpr.observer).
 * `assets`: everything binary that might be used, reused, ans worthy of the shared. Presentation, articles, whatever
 * `.gitignore`: it would let you understand why this repository has not code to crawl website
 * `bin`: scripts to be executed
 
-## Getting started
+## How To
+
+1. you need to have a valid list of URL, and perhaps with other additional metadata, in JSON or CSV format. **This list would be named Batch**. Normally this list is in `input/` folder.
+2. you can run a command to analyze a Batch. Normally this is associated with a country (i.e. the spanish privacy activist might have a Batch with all the public institutions). A Batch is a string, such as, "institution-ES-1"
+3. If you want to expand the list of tested websites, it is suggested to change your Batch string to reflect it, such as "institution-ES-2", because you might want to avoid the growth of tested website interfere with your statistics.
+4. Every Batch can be re-tested everyday. Testing the same Batch more often is discouraged (and not even guarantee it work).
+
+Now you're ready to lunch commands. These commands should be run after the [setup](#setup).
+
+#### 1st: acquisition
+
+```
+bin/collect-with-wec.mjs --country XX --source input/portugal-partial.json
+```
+
+This command invokes also `bin/acquire.mjs` and `bin/id.mjs`, as well as `./website-evidence-collector/bin/website-evidence-collector.js`
+
+#### 2nd: utilities
+
+```
+bin/produce-stats.mjs
+```
+
+
+#### 3rd: not yet completed
+
+```
+bin/infofetch.js
+bin/airtable-fetcher.mjs
+```
+
+
+## Setup
 
 The commands below assume your Linux system has a NodeJS version >= 16.x
 

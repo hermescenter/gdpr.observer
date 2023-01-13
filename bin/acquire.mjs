@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 /* eslint-disable camelcase */
 
+// this command is invoked by `collect-with-wec`
+
 import _ from 'lodash';
-import { argv, fs, $, fetch, question } from 'zx';
+import { argv, fs } from 'zx';
 import connect from '../lib/mongodb.mjs';
 
 if (!argv.country) {
