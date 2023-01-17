@@ -16,6 +16,7 @@ This project uses the European Data Protection Supervisor tool: website-evidence
 2. you can run a command to analyze a Batch. Normally this is associated with a country (i.e. the spanish privacy activist might have a Batch with all the public institutions). A Batch is a string, such as, "institution-ES-1"
 3. If you want to expand the list of tested websites, it is suggested to change your Batch string to reflect it, such as "institution-ES-2", because you might want to avoid the growth of tested website interfere with your statistics.
 4. Every Batch can be re-tested everyday. Testing the same Batch more often is discouraged (and not even guarantee it work).
+5. You should `cd website-evidence-collecto/assets; wget https://easylist.to/easylist/easyprivacy.txt` once a while.
 
 Now you're ready to lunch commands. These commands should be run after the [setup](#setup).
 
