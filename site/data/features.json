@@ -3,18 +3,18 @@
     "title": "Who we talk to?",
     "description": "European NGO active in the digial privacy domain",
     "image": "images/features/noun_branding_1885335.svg",
-    "href": "/blog/accounting/"
+    "href": "/blog/who-we-talk-to/"
   },
   {
     "title": "How our pipeline works?",
     "description": "What we're offering and how you can use it",
     "image": "images/features/noun_The Process_1885341.svg",
-    "href": "/blog/business-advisory/"
+    "href": "/blog/gdpro-architecture-design/"
   },
   {
-    "title": "Solutions",
+    "title": "Replace Google & Co.",
     "description": "Once the instution wants to drop google analytics they'll look for replacement.",
     "image": "images/features/noun_3d modeling_1885342.svg",
-    "href": "/blog/tax-preperation/"
+    "href": "/blog/replacements/"
   }
 ]

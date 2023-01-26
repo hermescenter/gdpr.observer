@@ -39,7 +39,6 @@ if(argv.kind === 'cookies' || argv.kind === 'all') {
       */
     }
   })
-  console.log(JSON.stringify(clean, null ,1));
   console.table(clean);
   // to be continued
 }

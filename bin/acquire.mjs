@@ -5,7 +5,7 @@
 
 import _ from 'lodash';
 import { argv, fs } from 'zx';
-import connect from '../lib/mongodb.mjs';
+import { connect } from '../lib/mongodb.mjs';
 
 if (!argv.country) {
   console.log("Missing --country");

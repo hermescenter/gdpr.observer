@@ -12,11 +12,11 @@ This project uses the European Data Protection Supervisor tool: website-evidence
 
 ## How To
 
-1. you need to have a valid list of URL, and perhaps with other additional metadata, in JSON or CSV format. **This list would be named Batch**. Normally this list is in `input/` folder.
+1. you need to have a valid list of URL, and perhaps with other additional metadata, in JSON or CSV format. **This list is named Batch**. Normally this list is in `input/` folder.
 2. you can run a command to analyze a Batch. Normally this is associated with a country (i.e. the spanish privacy activist might have a Batch with all the public institutions). A Batch is a string, such as, "institution-ES-1"
 3. If you want to expand the list of tested websites, it is suggested to change your Batch string to reflect it, such as "institution-ES-2", because you might want to avoid the growth of tested website interfere with your statistics.
 4. Every Batch can be re-tested everyday. Testing the same Batch more often is discouraged (and not even guarantee it work).
-5. You should `cd website-evidence-collecto/assets; wget https://easylist.to/easylist/easyprivacy.txt` once a while.
+5. You should `cd website-evidence-collector/assets; wget https://easylist.to/easylist/easyprivacy.txt` once a while (or git pull the repository `web-evidence-collector` to refresh the content, among them, `easyprivacy.txt`).
 
 Now you're ready to lunch commands. These commands should be run after the [setup](#setup).
 
@@ -34,14 +34,12 @@ This command invokes also `bin/acquire.mjs` and `bin/id.mjs`, as well as `./webs
 bin/produce-stats.mjs
 ```
 
-
 #### 3rd: not yet completed
 
 ```
 bin/infofetch.js
 bin/airtable-fetcher.mjs
 ```
-
 
 ## Setup
 
@@ -79,13 +77,25 @@ Where `etpir-default` is the default database name, `beacons` is one of the coll
 
 ---
 
+## Site maintenance & compilation
+
+```
+git submodule update --init 
+cd site
+hugo -D server
+```
+
+To update the theme:
+
+```
+git submodule update --remote --merge
+```
+
 ### Contacts
 
 * This project is coordinated by [Claudio Agosti](https://twitter.com/@_vecna), for the [Hermes Center](https://hermescenter.org).  Mail at `<projects at hermescenter dot org>`.
 * A new discussion place for communities and organized should be defined.
 
-
 ### License
 
 * AGPL-3
-

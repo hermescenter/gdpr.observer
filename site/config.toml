@@ -12,7 +12,7 @@ title = "GDPR observer"
 [params]
 
   [params.homepage]
-    show_contact_box = true      # show / hide the contaxt box on the homepage
+    show_contact_box = false # show / hide the contaxt box on the homepage
     show_services_button = false # show / hide the "view all services" button
 
   [params.logo]
@@ -30,9 +30,9 @@ title = "GDPR observer"
     grey = "#5C5A5A"
 
   [params.seo]
-    meta_twitter_site = "@zerostaticio"
-    meta_twitter_creator = "@zerostaticio"
-    meta_og_image = "https://www.zerostatic.io/theme/hugo-serif/hugo-serif-screenshot.png"
+    meta_twitter_site = "@hermescenter"
+    meta_twitter_creator = "@hermescenter"
+    meta_og_image = "https://www.ffwd.org/wp-content/uploads/0f2987d.png"
 
   [params.services]
     summary_truncate = 120 # How many characters to include in the summary of the services before truncating
@@ -41,7 +41,7 @@ title = "GDPR observer"
     summary_large_truncate = 120 # How many characters to include in the summary of the team bios (large layout) before truncating
 
   [params.footer]
-    copyright_text = 'Supporting Europan DPOs by <a class="zerostatic" href="https://hermescenter.org">Hermes Center</a>'
+    copyright_text = 'Supporting European DPOs in get rid of Google & Co; <a class="zerostatic" href="https://hermescenter.org">Hermes Center</a>.'
 
 [menu]
   # Main Menu
@@ -65,3 +65,8 @@ title = "GDPR observer"
     name = "Technical logs"
     url = "/logs/"
     weight = 1
+
+  [[menu.footer]]
+    name = "Meet the team"
+    url = "/team/"
+    weight = 2
