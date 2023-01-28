@@ -2,6 +2,7 @@
 # and should not be commited
 website-evidence-collector
 output
+tmp
 node_modules
 config/*.json
 

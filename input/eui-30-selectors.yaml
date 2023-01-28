@@ -1,0 +1,169 @@
+"European Parliament":
+  site: "https://www.europarl.europa.eu/portal/en"
+  selector: '.epjs_agree'
+
+"European Commission":
+  site: "https://commission.europa.eu/index_pl"
+  selector: '[href="#accept"]'
+
+#"Court of Justice of the European Union":
+#  site: "https://curia.europa.eu/jcms/jcms/j_6/it"
+#  selector: This was slightly too complex to configure, because the difference between the two buttons is in the function onClick=
+
+"Court of Auditors":
+  site: "https://www.eca.europa.eu/es/Pages/ecadefault.aspx"
+  selector: '#eucookielaw_accept'
+
+"Council of the European Union":
+  site: "https://www.coe.int"
+  selector: '.coe-cookies-accept-all'
+
+"European Economic and Social Committee (EESC)":
+  site: "https://www.eesc.europa.eu"
+  selector: '.agree-button'
+
+"Committee of the Regions (CoR)":
+  site: "https://cor.europa.eu/en"
+  selector: '[href="#accept"]'
+
+"European Investment Bank (EIB)":
+  site: "https://www.eib.org/de/index.htm"
+  selector: '#accept_cookies_footer'
+
+"EIB internal page":
+  site: "https://www.eib.org/en/global/index.htm"
+  selector: '#accept_cookies_footer'
+
+"European External Action Service (EEAS)":
+  site: "https://www.eeas.europa.eu/_en"
+  selector: '[href="#accept"]'
+
+"European Ombudsman":
+  site: "https://www.ombudsman.europa.eu/en/home"
+  selector:
+# This has not a cookie banner even if there are two cookies installed
+
+"European Data Protection Board (EDPB)":
+  site: "https://edpb.europa.eu/edpb_en"
+  selector: '.edp-cookies-accept'
+
+"European Data Protection Supervisor (EDPS)":
+  site: "https://edps.europa.eu/_en"
+  selector: '.edp-cookies-accept'
+
+"European Central Bank (ECB)":
+  site: "https://www.ecb.europa.eu/home/html/index.en.html"
+  selector: 'a.check'
+
+"European Anti-Fraud Office (OLAF)":
+  site: "https://anti-fraud.ec.europa.eu/index_de"
+  selector: '[href="#accept"]'
+
+"Translation Centre for the Bodies of the European Union (CdT)":
+  site: "https://cdt.europa.eu/en"
+  selector: '.agree-button'
+
+"European Union Intellectual Property Office (EUIPO)":
+  site: "https://euipo.europa.eu/ohimportal/en/web/guest/home"
+  selector:
+# Only analytics, no consent banned
+
+"Agency for Fundamental Rights (FRA)":
+  site: "https://fra.europa.eu/en"
+  selector: '[href="#accept"]'
+
+"Agency for the Cooperation of Energy Regulators (ACER)":
+  site: "https://european-union.europa.eu/institutions-law-budget/institutions-and-bodies/institutions-and-bodies-profiles/agency-cooperation-energy-regulators-acer_en"
+  selector: '[href="#accept"]'
+
+"European Medicines Agency (EMA)":
+  site: "https://www.ema.europa.eu/en"
+  selector: '[href="#accept"]'
+
+"Community Plant Variety Office (CPVO)":
+  site: "https://cpvo.europa.eu/en"
+  selector:
+# Only analytics, no consent banned
+
+"European Training Foundation (ETF)":
+  site: "https://www.etf.europa.eu/en"
+  selector: '.agree-button'
+
+"European Asylum Support Office (EASO)":
+  site: "https://euaa.europa.eu/"
+  selector: '.allowAll'
+
+"European Network and Information Security Agency (ENISA)":
+  site: "https://www.enisa.europa.eu/"
+  selector: '[data-cookie="allow"]'
+
+"European Foundation for the Improvement of Living and Working Conditions (Eurofound)":
+  site: "https://www.eurofound.europa.eu/"
+  selector: '#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll'
+
+"European Monitoring Centre for Drugs and Drug Addiction (EMCDDA)":
+  site: "https://www.emcdda.europa.eu/emcdda-home-page_en"
+  selector: 
+# This has not a cookie banner even if there are two cookies installed
+
+"European Food Safety Authority (EFSA)":
+  site: "https://www.efsa.europa.eu/de"
+  selector:
+# No cookies at all
+
+"European Maritime Safety Agency (EMSA)":
+  site: "https://www.emsa.europa.eu/"
+  selector: '.popup-modal-dismiss'
+
+"European Centre for the Development of Vocational Training (CEDEFOP)":
+  site: "https://www.cedefop.europa.eu/en"
+  selector: '.agree-button'
+
+"European Education and Culture Executive Agency (EACEA)":
+  site: "https://www.eacea.ec.europa.eu/index_en"
+  selector: '[href="#accept"]'
+
+"European Agency for Safety and Health at Work (EU-OSHA)":
+  site: "https://osha.europa.eu/en"
+  selector: '.agree-button'
+
+#  "European Fisheries Control Agency (EFCA)"
+#  "European Union Satellite Centre (SATCEN)"
+#  "European Institute for Gender Equality (EIGE)"
+#  "European GNSS Agency (GSA)"
+#  "European Union Agency for Railways (ERA)"
+#  "European Centre for Disease Prevention and Control (ECDC)"
+#  "European Environment Agency (EEA)"
+#  "European Investment Fund (EIF)"
+#  "European Border and Coast Guard Agency (Frontex)"
+#  "European Securities and Markets Authority (ESMA)"
+#  "European Aviation Safety Agency (EASA)"
+#  "European Innovation Council and SMEs Executive Agency (EISMEA)"
+#  "European Climate Infrastructure and Environment Executive Agency (CINEA)"
+#  "European Banking Authority (EBA)"
+#  "European Chemicals Agency (ECHA)"
+#  "European Research Council Executive Agency (ERCEA)"
+#  "European Research Executive Agency (REA)"
+#  "European Systemic Risk Board (ESRB)"
+#  "Fusion for Energy"
+#  "SESAR Joint Undertaking"
+#  "ECSEL"
+#  "Clean Sky Joint Undertaking"
+#  "Innovative Medicines Initiative Joint Undertaking (IMI)"
+#  "Fuel Cells & Hydrogen Joint Undertaking"
+#  "European Insurance and Occupations Pensions Authority (EIOPA)"
+#  "European Agency for Law Enforcement Training (CEPOL)"
+#  "European Institute of Innovation and Technology (EIT)"
+#  "European Defence Agency (EDA)"
+#  "Body of European Regulators for Electronic Communications (BEREC)"
+#  "European Union Institute for Security Studies (EUISS)"
+#  "eu-LISA"
+#  "Bio-Based Industries Joint Undertaking"
+#  "Europol"
+#  "EFTA Surveillance Authority (ESA)"
+#  "Single Resolution Board (SRB)"
+#  "EUROJUST"
+#  "European Public Prosecutor's Office (EPPO)"
+#  "European Health and Digital Executive Agency (HaDEA)"
+#  "European Labour Authority (ELA)"
+#  "European High Performance Computing Joint Undertaking (EuroHPC-JU)"

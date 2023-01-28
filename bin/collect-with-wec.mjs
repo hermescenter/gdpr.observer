@@ -3,7 +3,7 @@
 
 import _ from 'lodash';
 import { argv, fs, $, os, path } from 'zx';
-import { fetch as fogp } from 'fetch-opengraph';
+// import { fetch as fogp } from 'fetch-opengraph';
 
 if (!argv.country) {
   console.log("Missing --country, which is a marker that would follow in the database (can be any kind of string)");
@@ -34,8 +34,10 @@ for (const site of list) {
   const day = new Date().toISOString().substring(0, 10);
   const banner0dir = path.join('output', 'banner0', day, hostname);
   await fs.ensureDir(banner0dir);
-  const ogdir = path.join('output', 'og', day, hostname);
-  await fs.ensureDir(ogdir);
+
+  // it is open graph dir
+  // const ogdir = path.join('output', 'og', day, hostname);
+  // await fs.ensureDir(ogdir);
 
   try {
     const output = await $`${wec} ${site} --output ${banner0dir}`;
@@ -45,7 +47,7 @@ for (const site of list) {
 
   const inspection = path.join(banner0dir, 'inspection.json');
   /* the ID is unique every day, timedate is part of the path, 
-    * this ensure predictable and daily ID, to avoid dups */
+   * this ensure predictable and daily ID, to avoid dups */
   const id = await $`${dailyIdGenerator} --country ${argv.country} --path ${banner0dir}`;
   console.log(`Site ${hostname} in ${day} has unique ID ${id}`);
   try {
