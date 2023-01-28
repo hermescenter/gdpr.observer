@@ -34,6 +34,15 @@ This command invokes also `bin/acquire.mjs` and `bin/id.mjs`, as well as `./webs
 bin/produce-stats.mjs
 ```
 
+
+#### 2nd+: additional collections
+
+```
+bin/consent-clicker.mjs --country EUI --source input/eui-30-selectors.yaml 
+```
+
+Please consider deleting the `tmp/udd_*` directories
+
 #### 3rd: not yet completed
 
 ```
