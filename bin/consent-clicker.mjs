@@ -26,6 +26,11 @@ async function runPuppeteer(site, selector) {
     } else {
         await new Promise(resolve => setTimeout(resolve, 1500));
         await page.click(selector);
+        await new Promise(resolve => setTimeout(resolve, 100));
+        await page.evaluate(_ => {
+            window.scrollBy(0, window.innerHeight);
+        });
+        await new Promise(resolve => setTimeout(resolve, 1500));
     }
 
     const client = await page.target().createCDPSession();
@@ -45,7 +50,7 @@ if (!argv.country) {
 }
 
 if (!argv.source) {
-  console.log("Missing --source, which should be a .json file with a list of URL");
+  console.log("Missing --source, which should be a .yaml file with selector and site");
   process.exit(1);
 }
 
@@ -76,7 +81,7 @@ for (const entry of trimmed) {
 
   let cookies = null;
   try {
-    console.log(`Connecting to ${entry.name}`);
+    console.log(`Connecting to ${entry.name} via ${entry.site}`);
     cookies = await runPuppeteer(entry.site, entry.selector);
     console.log(_.map(cookies, function (e) { return _.pick(e, ['domain', 'name'])}));
   } catch(error) {
