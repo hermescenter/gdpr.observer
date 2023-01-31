@@ -10,11 +10,11 @@ debug("Setting up database and indexes...");
 import { ensureIndex } from '../lib/build-index.mjs';
 
 const dbSettings = await fs.readJSON('./config/database.json');
-debug("Loaded scheduled-db settings %O", dbSettings);
+debug("Loaded GDPRo-backend-db settings %O", dbSettings);
 
 debug("Verifying and configuring databases presence and indexes");
 if(!await ensureIndex(dbSettings, 'backend')) {
-    console.log("Database fatal error (scheduled)");
+    console.log("Database fatal error (GDPRo-backend)");
     process.exit(1);
 }
 
