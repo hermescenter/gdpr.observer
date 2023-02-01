@@ -1,8 +1,8 @@
 ---
 title: "The 2022 experience of Monitora-PA"
 date: 2023-01-01
-featured: true
 draft: false
+type: post
 ---
 
 In less than 1 year, more than 90% of the institutional website that were using Google Analytics, **removed it from their pages**. _This apply also to other Google services._

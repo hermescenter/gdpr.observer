@@ -3,6 +3,7 @@ title: "gdpr.observer architecture design"
 date: 2023-01-18
 draft: false
 featured: true
+type: post
 description: "A design of our pipeline, with existing and future components"
 ---
 

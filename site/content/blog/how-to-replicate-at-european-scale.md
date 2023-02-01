@@ -1,8 +1,8 @@
 ---
 title: "Analysis: how to replicate Monitora-PA in European Scale?"
 date: 2023-01-05
-featured: true
 draft: false
+type: post
 ---
 
 #### The success of the Italian Monitor-PA experience has been surprising and inpiring.

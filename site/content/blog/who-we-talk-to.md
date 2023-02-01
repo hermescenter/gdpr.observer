@@ -1,7 +1,7 @@
 ---
 title: "Who we are looking for?"
 date: 2023-01-25
-featured: true
+type: post
 draft: false
 ---
 

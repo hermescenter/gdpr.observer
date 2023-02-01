@@ -4,12 +4,15 @@ theme = "hugo-serif-theme"
 languageCode = "en-us"
 title = "GDPR observer"
 
+
 [module]
   [module.hugoVersion]
     extended = true
     min = "0.55.0"
 
 [params]
+
+  dateFormat = "2006-01-02" 
 
   [params.homepage]
     show_contact_box = false # show / hide the contaxt box on the homepage

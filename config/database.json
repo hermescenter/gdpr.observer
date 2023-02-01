@@ -1,6 +1,5 @@
 {
   "cookies": {
-     "mongodb":"mongodb://127.0.0.1:27017/etpir",
      "index": [
        { "key": { "id": 1 } },
        { "key": { "when": -1 } },
@@ -8,7 +7,6 @@
      ]
   },
   "beacons": {
-     "mongodb":"mongodb://127.0.0.1:27017/etpir",
      "index": [
        { "key": { "id": 1 } },
        { "key": { "when": -1 } },
@@ -16,11 +14,11 @@
      ]
   },
   "localStorage": {
-     "mongodb":"mongodb://127.0.0.1:27017/etpir",
      "index": [
        { "key": { "id": 1 } },
        { "key": { "when": -1 } },
        { "key": { "country": -1 } }
      ]
-  }
+  },
+  "mongodb":"mongodb://127.0.0.1:27017/etpir"
 }

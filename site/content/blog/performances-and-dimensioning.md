@@ -2,7 +2,7 @@
 title: "Performances and Dimensioning"
 description: "How many website we can test per day?"
 date: 2023-01-10
-featured: true
+type: post
 draft: false
 ---
 
