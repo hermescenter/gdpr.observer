@@ -1,6 +1,6 @@
 ---
 title: "Analysis: how to replicate Monitora-PA in European Scale?"
-date: 2023-01-05
+date: 2022-10-20
 draft: false
 type: post
 ---

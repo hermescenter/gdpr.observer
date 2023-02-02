@@ -10,11 +10,5 @@
     "description": "What we're offering and how you can use it",
     "image": "images/features/noun_The Process_1885341.svg",
     "href": "/blog/gdpro-architecture-design/"
-  },
-  {
-    "title": "Replace Google & Co.",
-    "description": "Once the instution wants to drop google analytics they'll look for replacement.",
-    "image": "images/features/noun_3d modeling_1885342.svg",
-    "href": "/blog/replacements/"
   }
 ]

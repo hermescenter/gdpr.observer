@@ -1,6 +1,6 @@
 ---
 title: "The 2022 experience of Monitora-PA"
-date: 2023-01-01
+date: 2022-09-25
 draft: false
 type: post
 ---
@@ -9,11 +9,12 @@ In less than 1 year, more than 90% of the institutional website that were using 
 
 #### The `Monitora-PA` pipeline
 
-1. Download a database of institutions names along with website address and email address of the DPO.
+1. Download a database of public agencies names along with website address and contact email address of the DPO.
 2. Analyze each website and search for google-analytics. Produce a short report and open data.
-3. Filter the database got at point 1, keep only the organizations/websites/emails that match the analysis of point 2.
-4. To all the emails from point 3, send a notification email to the DPO with a predefined template.
-5. Repeat from point 2.
+3. Filter the dataset from point 1, keep only the organizations/websites/emails that match the analysis of point 2.
+4. Send a notification email to the DPO with a predefined template.
+5. Measure and publish removal rate % each month.
+6. Repeat from point 2.
 
 #### This was also possible because of two specific italian perks
 

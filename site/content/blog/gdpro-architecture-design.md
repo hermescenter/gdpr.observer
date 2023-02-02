@@ -1,10 +1,10 @@
 ---
-title: "gdpr.observer architecture design"
-date: 2023-01-18
+title: "Architecture Design"
+date: 2022-12-01
 draft: false
 featured: true
 type: post
-description: "A design of our pipeline, with existing and future components"
+description: "How to organize the working prototype and improve Web Evidence Collector to feed existing and future components"
 ---
 
 GDPRo is a pipeline, a sequence of components that need to be executed in sequence.
@@ -14,7 +14,7 @@ Is implemented under an AGPL-v3 license, and you can review or fork the code fro
 
 It is implemented to run via `nodejs` and depends from these fundamental frameworks:
 * Web Evidence Collector, from the EDPS, based on Puppeteer.
-* _Consent-o-matic_ (not really, the [Extension](https://github.com/cavi-au/Consent-O-Matic) is not working with the various cookie banner we're spotting on institution. Finding way to contribute to the package is part of our mandate, so we're keeping it into the design)
+* _Consent-o-matic_ (an [Extension](https://github.com/cavi-au/Consent-O-Matic) is not working with the various cookie banner we're spotting on institution. Finding way to contribute to the package is part of our mandate, so we're keeping it into the design). _This is not currently implemented, as there is a research in progress._
 * Javascript frameworks: `expressJS`, `zx`, `lodash`.
 
 ![architecture-design-1](/images/design/architecture-1.jpg)
