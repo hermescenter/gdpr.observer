@@ -65,7 +65,9 @@ const mongoqs = _.compact(_.map(content, function(value, key) {
   return retval;
 }))
 
-const client = await connect();
+const { mongodb } = (await fs.readJSON('./config/database.json'));
+
+const client = await connect(mongodb);
 for(const block of mongoqs) {
   await client.db().collection(block.collection).insertOne(block.content);
 }

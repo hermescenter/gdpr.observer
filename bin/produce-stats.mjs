@@ -9,9 +9,12 @@ import { argv, fs, $ } from 'zx';
 import connect from '../lib/mongodb.mjs';
 import moment from 'moment';
 
+const { mongodb } = (await fs.readJSON('./config/database.json'));
+
 if (!argv.country) {
   console.log("Missing --country, this is fundamental, at the moment we've these:");
-  console.log(await distinct('country'));
+  // --country should become --batch and it is used the 'hosts' collection
+  console.log(await distinct(mongodb, 'country'));
   process.exit(1);
 }
 
@@ -22,7 +25,7 @@ if (!argv.kind) {
 }
 
 if(argv.kind === 'cookies' || argv.kind === 'all') {
-  const data = await pullCookieData(argv.country);
+  const data = await pullCookieData(mongodb, argv.country);
   const clean = _.map(data, function(o) {
     return {
       ..._.pick(o, ['country']),
@@ -43,8 +46,8 @@ if(argv.kind === 'cookies' || argv.kind === 'all') {
   // to be continued
 }
 
-async function pullCookieData(country) {
-  const client = await connect();
+async function pullCookieData(mongodb, country) {
+  const client = await connect(mongodb);
   const amount = await client.db()
     .collection("cookies")
     .countDocuments({ country });
@@ -77,8 +80,8 @@ async function pullCookieData(country) {
 }
 
 
-async function distinct(variableName) {
-  const client = await connect();
+async function distinct(mongodb, variableName) {
+  const client = await connect(mongodb);
   const list = await client.db()
     .collection("hosts")
     .distinct(variableName);
