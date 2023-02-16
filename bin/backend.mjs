@@ -53,7 +53,7 @@ for (const route of routes) {
     await route(dbSettings.mongodb, expressApp);
 }
 
-expressApp.get('/health', (req, res) => {
+expressApp.get('/api/health', (req, res) => {
     debug("Health check from [%s]: OK", req.ip);
     res.send('OK');
 });
