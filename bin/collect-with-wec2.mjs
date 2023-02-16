@@ -15,6 +15,11 @@ if (!argv.source) {
   process.exit(1);
 }
 
+if(!_.endsWith(argv.source, '.yaml')) {
+  console.log("Possible invalid format, expecting .yaml as --source");
+  process.exit(1);
+}
+
 /* this script execute in sequence:
  * 1) wec
  * 2) produce a unique ID so every website can have only one entry per day in the DB
@@ -52,8 +57,8 @@ for (const title of _.keys(list) ) {
 
   try {
     const poutput = await $`${wec} ${info.site} --overwrite --output ${banner0dir}`.quiet();
-    const logfile = path.join(banner0dir, 'output.log');
-    const errfile = path.join(banner0dir, 'error.log');
+    const logfile = path.join(banner0dir, 'stdout.log');
+    const errfile = path.join(banner0dir, 'debug.log');
     await fs.writeFile(logfile, poutput.stdout, 'utf-8');
     await fs.writeFile(errfile, poutput.stderr, 'utf-8');
     await $`ls -lh ${banner0dir}/*.log`
