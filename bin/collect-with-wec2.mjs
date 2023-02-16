@@ -23,8 +23,7 @@ if(!_.endsWith(argv.source, '.yaml')) {
 /* this script execute in sequence:
  * 1) wec
  * 2) produce a unique ID so every website can have only one entry per day in the DB
- * 3) acquire the produced output of wec into mongodb
- */
+ * 3) acquire the produced output of wec into mongodb */
 
 const wec = `./website-evidence-collector/bin/website-evidence-collector.js`;
 const acquirer = `./bin/acquire.mjs`;
@@ -33,7 +32,9 @@ const list = parse(await fs.readFile(argv.source, 'utf-8'));
 
 for (const title of _.keys(list) ) {
 
+  /* info would also be passed to `acquire` and would become part of the DB */
   const info = list[title];
+  info.name = title;
 
   let hostname = null;
   try {
@@ -56,7 +57,7 @@ for (const title of _.keys(list) ) {
   }
 
   try {
-    const poutput = await $`${wec} ${info.site} --overwrite --output ${banner0dir}`.quiet();
+    const poutput = await $`${wec} ${info.site} --page-timeout 30000 --overwrite --output ${banner0dir}`.quiet();
     const logfile = path.join(banner0dir, 'stdout.log');
     const errfile = path.join(banner0dir, 'debug.log');
     await fs.writeFile(logfile, poutput.stdout, 'utf-8');
@@ -71,8 +72,8 @@ for (const title of _.keys(list) ) {
   const id = await $`${dailyIdGenerator} --country ${info.batch} --path ${banner0dir}`;
   console.log(`Site ${hostname} in ${day} has unique ID ${id}`);
   try {
-    await $`${acquirer} --id ${id} --country ${info.batch} --source ${inspection}`.quiet();
-    console.log(`Acquired ${hostname} into DB (${info.batch})`);
+    await $`${acquirer} --id ${id} --info ${JSON.stringify(info)} --country ${argv.country} --source ${inspection}`.quiet();
+    console.log(`Acquired ${hostname} into DB (${argv.country})`);
   } catch(error) {
     console.log(`Impossible to acquire: ${error.message}`);
   }

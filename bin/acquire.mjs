@@ -31,6 +31,14 @@ console.log("Validation successful");
 
 const content = await fs.readJSON(argv.source);
 
+let extraInfo = {};
+if(argv.info) {
+  extraInfo = JSON.parse(argv.info);
+  extraInfo.siteId = extraInfo.id;
+  _.unset(extraInfo, 'id');
+  _.unset(extraInfo, 'site');
+  _.unset(extraInfo, 'batch');
+}
 
 /* every key should go in a dedicated collection */
 const mongoqs = _.compact(_.map(content, function(value, key) {
@@ -59,6 +67,7 @@ const mongoqs = _.compact(_.map(content, function(value, key) {
       evidence: argv.source,
       country: argv.country,
       when: new Date(),
+      ...extraInfo,
     }
   }
   retval.content[key] = value;
