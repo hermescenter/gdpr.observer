@@ -1,0 +1,967 @@
+"| Cert":
+  ipv4: 193.191.213.161
+  site: http://cert.be
+  id: 649d8f0453a82ef167c25beeb90398ce25a93b08
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+CERT-EU:
+  ipv4: 40.74.12.40
+  site: http://cert.europa.eu
+  description: CERT-EU
+  image: https://cert.europa.eu/files/images/certeu_home_share.png
+  id: 1ac7efcf4f93bf6f7a348dfc10deb2734c4816d2
+  geoip: NL
+  batch: Belgium
+  addedOn: 2023-02-16
+FPS Chancellery of the Prime Minister:
+  ipv4: 193.191.213.160
+  site: http://chancellerie.belgium.be
+  reverses: kafka.be - generaldeclaration.be - premiere.fed.be -
+    premier.michel.archive.belgium.be
+  id: f12b4761d7111606954c3abe42d6382929f45912
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Paradigm:
+  ipv4: 195.244.170.201
+  site: http://cirb.brussels
+  image: https://paradigm.brussels/fr/++theme++plonetheme.bric/images/share.png
+  reverses: rp1.irisnet.be
+  id: 6b5e80db42cf6263f7809f532270b14690ca2b06
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Language selection | European Commission:
+  ipv4: 147.67.34.30
+  site: http://ec.europa.eu
+  image: https://commission.europa.eu/profiles/contrib/ewcms/modules/ewcms_seo/assets/images/ec-socialmedia-fallback.png
+  id: 5c536d2ae3d65af7c03376802d31f651d38bad6f
+  geoip: LU
+  batch: Belgium
+  addedOn: 2023-02-16
+Taalkeuze | eID software:
+  ipv4: 193.191.245.121
+  site: http://eid.belgium.be
+  id: 9bbf1e186d89be3d90471ef79004ff1c959e7358
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+"Homepage | Service public fédéral Emploi, Travail et Concertation sociale":
+  ipv4: 193.191.245.121
+  site: http://www.emploi.belgique.be
+  id: cae27077d24a5340f7bb4a7c5bf945bf54c43096
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+The digital strategy Platform in Wallonia:
+  ipv4: 13.225.244.46
+  site: http://en.digitalwallonia.be
+  description: "The place that brings people together and shares information about
+    the projects that make up the digital strategy together with Wallonia’s
+    latest digital news. It offers a wide range of services: sector-specific
+    networks, ecosystems, international mission catalogue, open data, API,
+    calendar, press review, and much more."
+  image: https://images.ctfassets.net/myqv2p4gx62v/4kgPrXILSbmv0VlhUXO1Bq/396115a7a543e1cf188ba8576e0ec226/Logo_Digital_Wallonia_Couleur_RVB?w=300&fm=webp&fm=png
+  reverses: server-13-225-244-46.lis50.r.cloudfront.net
+  id: ef935ebee021108008687925324838eb12c0ca7b
+  geoip: US
+  batch: Belgium
+  addedOn: 2023-02-16
+Federaal agentschap voor beroepsrisico's | Agence fédérale des risques professionnels:
+  ipv4: 85.91.179.49
+  site: http://fedris.be
+  reverses: www.eboxenterprise.be
+  id: fa808e050a8e999d90d5fd704bc6aea5df354348
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Fedweb |:
+  ipv4: 193.191.245.121
+  site: http://fedweb.belgium.be
+  id: e1a98415e3136e24272d73f79952a9eb4c579b41
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+FIDO:
+  ipv4: 193.191.213.160
+  site: http://fido.belgium.be
+  reverses: generaldeclaration.be - premiere.fed.be -
+    premier.michel.archive.belgium.be - kafka.be
+  id: 071fc3be2e603ab323486b5e85e6b0e214b2b293
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+IBZ - SPF Intérieur | Votre sécurité est notre métier:
+  ipv4: 144.76.27.196
+  site: http://www.ibz.be
+  reverses: dedi2.koba.be
+  id: e4042c63efa59ffdc27f606b0751894a80a5742d
+  geoip: DE
+  batch: Belgium
+  addedOn: 2023-02-16
+Welkom:
+  ipv4: 193.191.245.214
+  site: http://igvm-iefh.belgium.be
+  image: https://igvm-iefh.belgium.be/nlsites/all/themes/custom/igvm_iefh_theme/logo-opengraph.jpg
+  reverses: soczek-live.ta.belgium.be - soczek-preview.ta.belgium.be
+  id: 61a0d0b5c84007c7a4f48d28d41963a6c9e091ca
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+INCC:
+  ipv4: 86.39.66.50
+  site: http://incc.fgov.be
+  description: NICC haalt veel uit weinig
+  image: http://nicc.fgov.be/upload/images/niccfrontpage.png
+  reverses: lb-cluster.web.tigron.net
+  id: 6f48d115f9bcc2fd32b10231f1e32d4b82fa9d5c
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+IRISnet - Accueil:
+  ipv4: 195.244.169.32
+  site: http://irisnet.brussels
+  reverses: dev.irisnet.brussels
+  id: f9f9e79b5067d51daa7c281e2093fb68aa34772a
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Home EN | KCE:
+  ipv4: 185.3.217.140
+  site: http://kce.fgov.be
+  image: /sites/default/files/Logo_KCE.png
+  reverses: paddle-cl9-web1.level27.eu
+  id: 02f4d5d337166ce5542eed809085584191d25c2a
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Federal Public Service - Social Security | Taalkeuze | Choix de langue | Sprachauswahl | Language Choice:
+  ipv4: 193.191.245.121
+  site: http://socialsecurity.belgium.be
+  id: 7a5469edef8537c6f5fb87086fe27544022f9a21
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+VLAIO - Aanspreekpunt voor ondernemers in Vlaanderen | Agentschap Innoveren en Ondernemen:
+  ipv4: 83.217.77.51
+  site: http://vlaio.be
+  image: https://www.vlaio.be/themes/custom/vlaio/logo.jpg
+  reverses: 83.217.77.51.static.hosted.by.combell.com
+  id: ee2560a353ab4cfb80aed68b2e1c717c8d7f3b2c
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Home | BIRA-IASB:
+  ipv4: 193.190.231.229
+  site: http://www.aeronomie.be
+  description: Scientific research into the atmosphere of the Earth and other
+    planets, and of outer space. Latest developments.
+  image: https://www.aeronomie.be/sites/default/files/2019-04/Magical_aurora.jpg
+  reverses: proxydmz3-ae.oma.be
+  id: 3860ef3db13a4cea3b8f6abf28ded4f355e70794
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Royal Museum for Central Africa - Tervuren - Belgium:
+  ipv4: 193.190.223.51
+  site: http://www.africamuseum.be
+  description: The AfricaMuseum in Tervuren, near Brussels, is a museum and
+    research centre on Africa, with a focus on Central Africa.
+  reverses: webrmca.africamuseum.be
+  id: 6ca1f42636fc752b54cd8459b5367d7361ef36eb
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Startpagina | Algemene Inspectie Politie:
+  ipv4: 193.191.212.97
+  site: http://www.aigpol.be
+  description: Welkom op de politie website. Voor dringende politiehulp bel 101.
+  reverses: www.generaldeclaration.be - aigpol.be - foederalepolizei.be -
+    jobpol.be - www.federalpolice.be
+  id: 5ebaa274ae850ad3f730173d2d53ce9c2e2645f3
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+"Allo Parents: Parents joignables sur 7 numéros de téléphone\r\n":
+  ipv4: 194.78.96.25
+  site: http://www.alloparents.be
+  reverses: 25.96-78-194.adsl-static.isp.belgacom.be
+  id: 11107777a7355cceb3e26912d7b1cf1f61c98cc8
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Archives de l'État en Belgique - Rijksarchief in België - Das Staatsarchiv in Belgien - State Archives in Belgium:
+  ipv4: 193.190.219.187
+  site: http://www.arch.be
+  reverses: arch187.arch.be
+  id: 0c89345d6c832d3f8e9f0b15972433b31531037b
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+ASTRID:
+  ipv4: 104.20.55.185
+  site: http://www.astrid.be
+  description: ASTRID manages a voice and data communication network for all
+    emergency and security services in Belgium.
+  image: https://www.astrid.be/themes/custom/calibr8_theme/images/metatag_fallback.jpg
+  id: 8f7a95d2663d6226e1309d6cd2a030af9e41a32a
+  geoip: US
+  batch: Belgium
+  addedOn: 2023-02-16
+"NMBS/SNCB – train tickets and season tickets ":
+  ipv4: 51.105.160.150
+  site: http://www.belgianrail.be
+  description: <meta
+  id: 48e2aa596543e412f737f411c345b5dca84788c9
+  geoip: NL
+  batch: Belgium
+  addedOn: 2023-02-16
+Homepage | Belnet corporate:
+  ipv4: 217.19.230.167
+  site: http://www.belnet.be
+  reverses: 217.19.230.167.static.hosted.by.combell.com
+  id: ff02e0b4641fea8a4d66b8a6ec7be1e4da73980a
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Home | Belspo:
+  ipv4: 193.191.208.70
+  site: http://www.belspo.be
+  id: e99d877520858ccd0a75e3078fc325639df1cb01
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Home - Bel V:
+  ipv4: 34.252.100.195
+  site: http://www.belv.be
+  description: With more than 50 years of experience in nuclear safety and
+    radiation protection, BelV is entirely part of the Belgian Nuclear
+    Regulatory Body.
+  reverses: ec2-34-252-100-195.eu-west-1.compute.amazonaws.com
+  id: 2d3b4971fc2711b06a92482578d4e6aaef8d82a4
+  geoip: IE
+  batch: Belgium
+  addedOn: 2023-02-16
+FPS Policy and Support | BOSA:
+  ipv4: 193.191.245.121
+  site: http://www.bosa.be
+  id: 4dadac69e0f1f7d54a6fb922e358a661d16ad4ba
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Centre for Fine Arts  | Bozar Brussels:
+  ipv4: 52.215.88.119
+  site: http://www.bozar.be
+  description: "Discover our cultural and artistic programme: concerts,
+    exhibitions, film screenings, contemporary dance and theatre performances,
+    talks and guided tours"
+  image: https://www.bozar.be/sites/default/files/styles/open_graph_style/public/media/images/Singing%20Brussels%20201805%20LIGHT-%20%2037.jpeg?h=af5dbc32&itok=a7BAx62L
+  reverses: ec2-52-215-88-119.eu-west-1.compute.amazonaws.com
+  id: 2f67003387f9077b009bf07694c15410a409b20e
+  geoip: IE
+  batch: Belgium
+  addedOn: 2023-02-16
+Page d'accueil du portail de la Région de Bruxelles-Capitale — Région bruxelloise - Brussels Gewest:
+  ipv4: 195.244.170.207
+  site: http://www.bruxelles.irisnet.be
+  description: Le portail de la Région de Bruxelles-Capitale est un important
+    vecteur d'informations pour le citoyen bruxellois, le chef d'entreprise et
+    le touriste belge ou étranger.
+  reverses: rp3.irisnet.be
+  id: 61242c29cd11e0bdca6167c889bcf5e9338ee076
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Enabel - Belgian Development Agency |:
+  ipv4: 193.190.238.122
+  site: http://www.btcctb.org
+  description: Enabel is the development agency of Belgium’s federal government.
+    We promote sustainable international solidarity.
+  image: https://www.enabel.be/app/uploads/2022/10/homepage-website-header-image-1.jpg
+  id: 5797885422465c0c2c83ddee13ada7bfe6e50ca6
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+HZIV | CAAMI | HKIV:
+  ipv4: 85.91.184.166
+  site: http://www.caami-hziv.fgov.be
+  id: 236a78c91d2a21337c961ddc4145bec008b880f6
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+"| Centre for Cyber security Belgium":
+  ipv4: 193.191.213.161
+  site: http://www.ccb.belgium.be
+  id: ad40b7064d5f09c53a568762309037181a89c00b
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Portail FW-B&nbsp;-&nbsp;Portail&nbsp;de&nbsp;la&nbsp;Fédération Wallonie-Bruxelles:
+  ipv4: 77.246.241.140
+  site: http://www.cfwb.be
+  description: Portail FW-B
+  id: ab2098ee08652be8b16313f90b87fd4ae3dda42a
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+"CREG: Commission for Electricity and Gas Regulation | CREG: Commission for Electricity and Gas Regulation":
+  ipv4: 23.251.137.70
+  site: http://www.creg.be
+  reverses: 70.137.251.23.bc.googleusercontent.com
+  id: 06861b5f537cd6ec76f50a286cc562ffc89cdef1
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Clinique Saint-Pierre Ottignies:
+  ipv4: 188.65.219.230
+  site: http://www.cspo.be
+  reverses: clinique-pierre.hosting.defimedia.be
+  id: 987de8c3f838c307ab04b6601b53be0caaaec24b
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Cyber Security Coalition:
+  ipv4: 5.134.7.160
+  site: http://www.cybersecuritycoalition.be
+  description: The Cyber Security Coalition brings together the academic world,
+    the public authorities and the private sector in Belgium to fight against
+    cybercrime.
+  reverses: linweb570.webhosting.be
+  id: 5a1771dcc6093c3f808307e15d6f503bad6fce33
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+"Homepage\n     | Autorité de protection des données&lt;br&gt;Gegevensbeschermingsautoriteit":
+  ipv4: 85.91.179.49
+  site: http://www.dataprotectionauthority.be
+  description: Elastic website
+  reverses: www.eboxenterprise.be
+  id: 590b0dd7778fa03b48d98a91549fba068ceefbf1
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Die Deutschsprachige Gemeinschaft in Belgien:
+  ipv4: 213.221.81.154
+  site: http://www.dg.be
+  description: Die Deutschsprachige Gemeinschaft ist eine der drei Gemeinschaften
+    des belgischen Bundesstaats. Sie verfügt wie die beiden großen
+    Gemeinschaften - Flandern und Französische Gemeinschaft - über weitreichende
+    politische Eigenständigkeit
+  id: ecd3c55cfb5e7a29d722a7fcdf4f8ef1c6809b1a
+  geoip: DE
+  batch: Belgium
+  addedOn: 2023-02-16
+"Unia : pour l’égalité,  contre la discrimination | Unia":
+  ipv4: 212.123.6.254
+  site: http://www.diversite.be
+  description: Unia est un service public indépendant de lutte contre la
+    discrimination et de promotion de l’égalité des chances.
+  image: https://www.unia.be/img/svg/fallback/logo-fr.png
+  reverses: relay.hostbasket.com
+  id: 526bdf1614566efc936519673d0b0a70e240cbec
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Homepage | Credendo:
+  ipv4: 35.187.168.7
+  site: http://www.ducroire.be
+  description: homepage description goes here
+  reverses: 7.168.187.35.bc.googleusercontent.com
+  id: 7b018b5a3d2bd92443d11253696a498f70e161b3
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Eurometropolitan e-Campus:
+  ipv4: 35.189.254.78
+  site: http://www.ee-campus.be
+  description: L'Eurometropolitan e-Campus vous propose un catalogue de formations
+    continues dédiées aux différents métiers du numérique et à la transition
+    digitale des activités.
+  image: https://www.ee-campus.be/wp-content/uploads/2023/02/banner-site-web-1-300x200.jpg
+  reverses: 78.254.189.35.bc.googleusercontent.com
+  id: fe0747feb4b1165532e53746d4c29f524e5aa0bc
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+eGezondheid | eGezondheid:
+  ipv4: 185.153.71.8
+  site: http://www.ehealth.fgov.be
+  description: website.description
+  reverses: wwwup.ehealth.fgov.be
+  id: cced0e9d130ee1f1991b5fee7dd93748e7460810
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+AFSCA-FAVV:
+  ipv4: 193.191.217.82
+  site: http://www.favv-afsca.fgov.be
+  description:  
+  id: 11475418dfc72eb51628ab51a38756d50c585993
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+"Fedasil | Taalkeuze | Choix de langue |\n        Sprachauswahl | Language Choice":
+  ipv4: 193.105.133.231
+  site: http://www.fedasil.be
+  reverses: sweetcraze.net
+  id: 68ffc9ccf2b0dad85b80536c3276ad0f932d2dd4
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+DG Digital Transformation:
+  ipv4: 193.191.245.214
+  site: http://www.fedict.belgium.be
+  reverses: soczek-live.ta.belgium.be - soczek-preview.ta.belgium.be
+  id: ec4cca41de871a7e45031ad1c7eba6d6b762e312
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Home – Royal Museums of Fine Arts of Belgium:
+  ipv4: 193.190.214.50
+  site: http://www.fine-arts-museum.be
+  reverses: archidoc.be - www.aacb-ahkb.be - expo-romantisme.be -
+    www.fine-arts-museum.info - maecenas.fine-arts-museum.be -
+    www.octave-maus.be - rubens.fine-arts-museum.be - www.expo-quadrum.be -
+    www.xn--fin-de-sicle-museum-yyb.be - www.expo-symbolisme.be - expo-2050.be -
+    www.expo-panamarenko.be - musee-magritte-museum.be -
+    podcatcher.fine-arts-museum.be - expo-meunier.be - expo-jordaens.be -
+    photo.fine-arts-museum.be - expo-bing.be - xn--fin-de-sicle-museum-yyb.be -
+    expo-alechinsky.be - www.musee-magritte-museum.be - expo-khnopff.be -
+    octavemaus.be - survey.fine-arts-museum.be - www.themuseumistheworld.be -
+    groups.fine-arts-museum.be - www.expo-bing.be - fine-arts-museum.be -
+    www.fin-de-siecle-museum.be - fin-de-siecle-museum.be -
+    shop.fine-arts-museum.be - museumlife.fine-arts-museum.be -
+    onlineticketing.fine-arts-museum.be - www.expo-khnopff.be -
+    www.fine-arts-museum.be - plan2.fine-arts-museum.be - romantisme.be -
+    t.fine-arts-museum.be - expo-rubens.be - www.expo-spilliaert.be -
+    expo-symbolisme.be - plan.fine-arts-museum.be - opac-archibald.be -
+    expo-vanderweyden.be - www.expo-vanderweyden.be - meunier-museum.be -
+    a99g46x983.fine-arts-museum.be - www.expo-meunier.be - expo-spilliaert.be -
+    expo-royalcollection.be - expo-chagall.be - fine-arts-museum.info -
+    www.octavemaus.be - reservation.fine-arts-museum.be - www.expo-jordaens.be -
+    expo-cobra.be - cultural-goods-wwii.fine-arts-museum.be - www.expo-cobra.be
+    - aacb-ahkb.be - expo-quadrum.be - 2.fine-arts-museum.be - expo-delvaux.be -
+    www.romantisme.be - www.expo-chagall.be - expo-eurovisions.be -
+    www.expo-2050.be - www.archidoc.be - themuseumistheworld.be -
+    conference.fine-arts-museum.be - www.opac-archibald.be -
+    www.expo-royalcollection.be - www.expo-romantisme.be - www.meunier-museum.be
+    - www.expo-delvaux.be - www.expo-alechinsky.be - www.expo-rubens.be -
+    www.expo-eurovisions.be - epay.fine-arts-museum.be - octave-maus.be
+  id: 682b53857e6ee08c2264ccc34505bd99419d37f9
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Henallux | Haute École de Namur-Liège-Luxembourg:
+  ipv4: 176.62.165.58
+  site: http://www.henallux.be
+  description: La Haute École de Namur-Liège-Luxembourg compte plus de 6500
+    étudiants répartis sur dix sites, en Province de Namur, à Liège et en
+    Province de Luxembourg. Elle propose un éventail quasi complet des
+    formations dans l'enseignement supérieur de type court ("bacheliers"), ainsi
+    que des masters, plusieurs années de spécialisation et de nombreux cycles de
+    formations continues.
+  reverses: 176.62.165.58.static.hosted.by.combell.com
+  id: ae1479ed5e88f71ec8a886a1ad4dbd50f65c53d0
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+"Howest, de Hogeschool West-Vlaanderen":
+  ipv4: 185.162.30.243
+  site: http://www.howest.be
+  description: Howest is een innovatieve en ondernemende hogeschool met 29 future
+    proof bachelors en 13 graduaten, waaronder een aantal unieke voor
+    Vlaanderen.
+  image: https://www.howest.be/sites/default/files/vlaggenRSS.jpg
+  reverses: 185.162.30.243.static.hosted.by.combell.com
+  id: 1a8d620e588378a49152636860a9508e6c879815
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+HRZKMO - Hoge Raad voor de Zelfstandigen en de KMO:
+  ipv4: 34.117.168.233
+  site: http://www.hrzkmo.fgov.be
+  description: "Federale adviesraad die meer dan 180 beroepsorganisatie en
+    interprofessionele organisaties groepeert en de belangen van de
+    zelfstandigen en de kmo's vertegenwoordigt "
+  reverses: 233.168.117.34.bc.googleusercontent.com
+  id: 5165fbe4ac88f153f8230756a5632b3d58c4bd23
+  geoip: US
+  batch: Belgium
+  addedOn: 2023-02-16
+"Consommateurs&nbsp;|&nbsp;IBPT\n            ":
+  ipv4: 85.91.179.49
+  site: http://www.ibpt.be
+  description: L’IBPT (Institut belge des services postaux et des
+    télécommunications) est le régulateur fédéral compétent pour le marché des
+    communications électroniques, le marché postal, le spectre électromagnétique
+    des radiofréquences et la radiodiffusion sonore et télévisuelle dans la
+    région de Bruxelles-Capitale.
+  reverses: www.eboxenterprise.be
+  id: 43b966223f684b6180b3becec0e909b6741664a1
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Direction générale Identité et Affaires citoyennes&nbsp;- &nbsp;Direction générale - Direction générale Identité et Affaires citoyennes:
+  ipv4: 193.191.221.203
+  site: http://www.ibz.rrn.fgov.be
+  description: Site web de la Direction générale Identité et Affaires citoyennes
+    du SPF Intérieur
+  reverses: ibz.rrn.fgov.be - www.ibz.rrn.fgov.be
+  id: 657a27d3e54839ee55db5616e8cd2a80c5e95bcb
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Bienvenue à l&#039;ICHEC ! | ICHEC:
+  ipv4: 193.190.94.53
+  site: http://www.ichec.be
+  reverses: ichec.be - www.ichec.be
+  id: c36978d69164b3cbcfad4535f79130c675ff1202
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+"IDELUX, 5 intercommunales":
+  ipv4: 185.179.192.61
+  site: http://www.idelux.be
+  description: IDELUX réunit les intercommunales qui ont pour mission de stimuler
+    le développement économique et optimiser la gestion de l'environnement par
+    le tri, le recyclage et la valorisation des déchets et l'assainissement des
+    eaux dans la province du Luxembourg belge. Il est au service des communes,
+    des entreprises et des particuliers - dont les jeunes - de 55 communes
+    luxembourgeoises et liégeoises.
+  reverses: idelux-prod-web01.audaxis.net
+  id: 3b2939a3c1d9fb47f096076d55d891f4855e3b57
+  geoip: FR
+  batch: Belgium
+  addedOn: 2023-02-16
+Bienvenue:
+  ipv4: 188.165.186.183
+  site: http://www.imio.be
+  image: https://www.imio.be/@@site-logo/IMIO_LOGO.svg
+  reverses: lb.imio.be
+  id: c00322703bcee02112de240b32aa27a26c75b47b
+  geoip: FR
+  batch: Belgium
+  addedOn: 2023-02-16
+"Accueil - INAMI\r\n\r\n":
+  ipv4: 85.91.178.48
+  site: http://www.inami.fgov.be
+  reverses: www.inami-riziv.fgov.be
+  id: 39420000d668f400a6fd8534f7159f959f58c563
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Language selection - Justice:
+  ipv4: 193.191.241.114
+  site: http://www.just.fgov.be
+  reverses: iacsso.be - ciaosn.be - docs.just.fgov.be -
+    justonwebconsultonline-acc.just.fgov.be - biva.just.fgov.be - *.juridat.be -
+    *.cass.be
+  id: ac4c90621a32a2adc8e28eda0ed82ae29ca0d4c4
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Home • KBR:
+  ipv4: 185.99.48.31
+  site: http://www.kbr.be
+  description: KBR is the national scientific library and collects all Belgian
+    publications. We preserve, manage and study more than 8 million documents.
+  image: https://www.kbr.be/wp-content/uploads/2018/11/melusine.jpg
+  reverses: mutu-1.tinycluster.com
+  id: d4c0581419b63649f211f4a63cefd452efcdf875
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+De kunst van erfgoed | KIK-IRPA:
+  ipv4: 5.134.7.118
+  site: http://www.kikirpa.be
+  description: Het KIK is de federale instelling die het culturele en artistieke
+    erfgoed van België documenteert, bestudeert en conserveert voor de toekomst.
+  image: https://www.kikirpa.be/files/_1200x590_crop_center-center_none/Algemeen-werken-aan-het-lam-gods_bijgesneden.jpg
+  reverses: linweb568.webhosting.be
+  id: 1d10dcfed45bc0eac78b8e8863524ab81529dd0a
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+CBSS - Crossroads Bank for Social Security:
+  ipv4: 85.91.179.49
+  site: http://www.ksz-bcss.fgov.be
+  reverses: www.eboxenterprise.be
+  id: 8e688499b05ae07778ab8906a0c264bedbf52e02
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+KU Leuven:
+  ipv4: 134.58.64.12
+  site: http://www.kuleuven.be
+  description: KU Leuven is een internationale community waar innovatief onderzoek
+    aan de basis ligt van alle opleidingen. Gedreven onderzoekers en
+    nieuwsgierige studenten doen voortdurend nieuwe inzichten op en zetten hun
+    kennis in om de uitdagingen van onze tijd aan te pakken. 
+  image: https://stijl.kuleuven.be/releases/latest/img/sample.jpg
+  reverses: www.kuleuven.be
+  id: 0744d429ded16656697dd71f8e5f6d29a54c355c
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+La Monnaie / De Munt:
+  ipv4: 164.132.88.123
+  site: http://www.lamonnaie.be
+  description: La maison d’opéra fédérale belge réunit les gens autour de
+    spectacles d’opéra et de danse, de concerts et de récitals.
+  image: https://d3ew0l5caq1ulf.cloudfront.net/picture/10080/og/bastarda.jpg
+  reverses: ip123.ip-164-132-88.eu
+  id: 18dcedd33b5842e6bf785f37687bc15f52238320
+  geoip: FR
+  batch: Belgium
+  addedOn: 2023-02-16
+Het weerbericht voor Brussel - KMI:
+  ipv4: 193.190.231.166
+  site: http://www.meteo.be
+  description: Het weerbericht in Brussel. Kies uw favoriete locatie voor
+    uurlijkse voorspellingen tot 48u en dagelijkse voorspellingen tot 14 dagen.
+  reverses: yoda.oma.be
+  id: 3e15f96c5373cc599056be5b1aed53a6de114bc3
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+DEFENSIE Uw toekomst:
+  " Onze missie":
+    "":
+      ipv4: 104.22.11.82
+      site: http://www.mil.be
+      description: Als je een missie hebt, maakt het niet uit waar, hoe, wanneer of
+        onder welke omstandigheden. Zolang je weet voor wie je het doet.
+      id: cb7230b91249219b58031ccb2546f434b59d2af2
+      geoip: US
+      batch: Belgium
+      addedOn: 2023-02-16
+Musées royaux d&#039;Art et d&#039;Histoire | Royal Museums of Art and History:
+  ipv4: 13.51.62.86
+  site: http://www.mrah.be
+  reverses: ec2-13-51-62-86.eu-north-1.compute.amazonaws.com
+  id: a09b213bd8f2ef493e7c25605243c157277bc2fe
+  geoip: SE
+  batch: Belgium
+  addedOn: 2023-02-16
+NBN - Bureau for Standardisation:
+  ipv4: 91.236.244.88
+  site: http://www.nbn.be
+  description: NBN is responsible for developing, publishing and selling standards
+    in Belgium. You can contact us for all Belgian (NBN), European (EN) and
+    international standards (ISO).
+  reverses: 91.236.244.88.static.ipworks.be
+  id: b4f298103438113febc7a353c98cccb35875cbde
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Onze geodata zetten u op de kaart - NGI:
+  ipv4: 193.190.215.250
+  site: http://www.ngi.be
+  description: Het Nationaal Geografisch Instituut (NGI) verzamelt, beheert en
+    verspreidt geografische informatie over België. Zowel kaarten, foto’s als
+    digitale geodata. Samen met u bekijken we graag de mogelijkheden voor
+    persoonlijke of professionele toepassingen.
+  reverses: ngi.be
+  id: efb60516836bc4c1de0c9bdf3456b80eb528a440
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Royal Observatory of Belgium:
+  ipv4: 193.190.230.31
+  site: http://www.observatoire.be
+  reverses: proxy2-as.oma.be
+  id: 2d712bc928a1c1e53e774fdfbac2a855441d6b19
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Rijksdienst voor Sociale Zekerheid | RSZ:
+  ipv4: 85.91.179.49
+  site: http://www.onssrszlss.fgov.be
+  description: Rijksdienst voor Sociale Zekerheid
+  reverses: www.eboxenterprise.be
+  id: 583fbb694ab244ac37b5cd410c87361f3e1e4224
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Home:
+  ipv4: 185.3.217.43
+  site: http://www.onva.fgov.be
+  image: /sites/default/files/Schermafbeelding%202022-01-14%20om%2010.12.38.png
+  reverses: paddle-cl10-web1.level27.eu
+  id: 7d788544306a002a04b029859ef81075ad0deccc
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Site internet du Parlement de Wallonie:
+  ipv4: 193.190.147.205
+  site: http://www.parlement-wallonie.be
+  description: Site internet du Parlement de Wallonie
+  image: http://www.parlement-wallonie.be/embleme-600x600.png
+  id: e812041378cf6e97cc25145033d411c823c139ba
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Persopoint | Taalkeuze | Choix de langue | Sprachauswahl | Language Choice:
+  ipv4: 193.191.245.214
+  site: http://www.persopoint.be
+  reverses: soczek-live.ta.belgium.be - soczek-preview.ta.belgium.be
+  id: 08e8c3a9940bdab17352724b3508f0818a70a1d3
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Bureau du plan - Federaal Planbureau:
+  ipv4: 213.186.33.40
+  site: http://www.plan.be
+  reverses: cluster011.ovh.net
+  id: 6e36fa34655fa4ce963aa75e59465d50cc73f4f4
+  geoip: FR
+  batch: Belgium
+  addedOn: 2023-02-16
+Politie:
+  be | Portaal:
+    ipv4: 193.191.212.97
+    site: http://www.politie.be
+    description: Welkom op de politie website. Voor dringende politiehulp bel 101.
+    reverses: jobpol.be - foederalepolizei.be - aigpol.be -
+      www.generaldeclaration.be - www.federalpolice.be
+    id: e6fe6ee94e3fc3b8403870a8c40de70213ffe61f
+    geoip: BE
+    batch: Belgium
+    addedOn: 2023-02-16
+Police:
+  be | Portaal:
+    ipv4: 193.191.212.97
+    site: http://www.police.be
+    description: Bienvenue sur le site de la police. Pour une aide policière
+      urgente, formez le 101.
+    reverses: www.federalpolice.be - jobpol.be - aigpol.be - foederalepolizei.be -
+      www.generaldeclaration.be
+    id: e632e961c2a3df724d3e0386be530a3329e797f1
+    geoip: BE
+    batch: Belgium
+    addedOn: 2023-02-16
+Hogeschool PXL:
+  ipv4: 193.190.154.243
+  site: http://www.pxl.be
+  description: De hogeschool met het netwerk. Hasselt, Diepenbeek en Genk. 16
+    graduaatsopleidingen, 20 bachelors, 3 masters, 33 afstudeerrichtingen.
+    Onderwijs, onderzoek, dienstverlening en beoefening van de kunsten.
+  id: e8a5dd77cfe5f555c5e9c73b4d148fb9f4fd1547
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Welcome - Council of State:
+  ipv4: 193.191.217.11
+  site: http://www.raadvst-consetat.be
+  reverses: www.raadvst-consetat.be
+  id: 1c3c152bb4204f7686e76a1c0b76d23c0484ee0c
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Régie des Bâtiments | Le gestionnaire immobilier de l'État fédéral:
+  ipv4: 193.191.245.214
+  site: http://www.regiedesbatiments.be
+  reverses: soczek-live.ta.belgium.be - soczek-preview.ta.belgium.be
+  id: 0d70b351519dc447d0609db9c8deaa20bca57407
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+NISSE | Social Security Self-employed Entrepreneurs:
+  ipv4: 34.78.2.178
+  site: http://www.rsvz-inasti.fgov.be
+  reverses: 178.2.78.34.bc.googleusercontent.com
+  id: 520118e6677954d78db10a67b4b2f5350691743a
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+"Welkom | De Rijksdienst voor Arbeidsvoorziening                ":
+  ipv4: 85.91.179.49
+  site: http://www.rva-onem.fgov.be
+  description: De RVA is een openbare instelling van sociale zekerheid en past het
+    stelsel van de werkloosheidsverzekering en een aantal
+    tewerkstellingsmaatregelen toe. De RVA is ook verantwoordelijk voor het
+    stelsel van loopbaanonderbreking en tijdskrediet.
+  reverses: www.eboxenterprise.be
+  id: a4a6854d14aa9ea5adca3e188fe56e9b675904fe
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Institut royal des Sciences naturelles de Belgique |:
+  ipv4: 193.190.234.9
+  site: http://www.sciencesnaturelles.be
+  reverses: hermes.naturalsciences.be
+  id: def79e9161da8c1c64e34caf80f2441b5e8779f5
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Exploring a better tomorrow:
+  ipv4: 185.135.12.188
+  site: http://www.sckcen.be
+  description: "We explore. Driven by our passion for science. Boosted by our
+    unique infrastructure. We sound out the frontiers. We expand our knowledge
+    in various nuclear areas. However many horizons we may explore, we always
+    pursue the same objective: developing innovative applications for society.
+    Why do we strive for this objective? Because we are convinced that, with one
+    of the smallest elements on earth, the atom, we can make the biggest
+    difference for society. Both now and in the future."
+  image: https://www.sckcen.be/themes/custom/itr_theme/dist/img/logo_share.png
+  reverses: 185.135.12.188.static.hosted.by.nofollow.com
+  id: 6dc10d4d4a9a8778dc7248a40f0f3a69c579544c
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+"NL  - Selor, selectiebureau van de overheid":
+  ipv4: 193.191.209.80
+  site: http://www.selor.be
+  description: "Op werkenvoor.be vind je de jobs bij de overheid. Solliciteer bij
+    de federale overheid, gemeenschappen en gewesten. Je krijgt informatie over
+    hoe je moet solliciteren, welke testen je moet afleggen. Je kan je ook
+    inschrijven voor de taaltesten en je kan testen afleggen als je bij de
+    veiligheids- en bewakingssector wil werken. "
+  reverses: 80.selor.be
+  id: a851e52d11bf9d38f69cd3c21f422c8c54139c80
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+SFPD:
+  ipv4: 85.91.186.67
+  site: http://www.sfpd.fgov.be
+  reverses: onprvp.fgov.be
+  id: be9a138d15ceb0fe58d2108854f7968a564c11db
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Solvay Brussels School - Economics & Management:
+  ipv4: 128.65.195.153
+  site: http://www.solvay.edu
+  description: "Careers in management, finance, economics, marketing & more... Are
+    you searching for top-level management and economics education in the heart
+    of Brussels, capital of Europe? Solvay Brussels School of Economics and
+    Management provides quality learning experiences for all superior education
+    levels: undergraduate, postgraduate, executive education."
+  reverses: h2web142.infomaniak.ch
+  id: 4b0e853e08dcf9b74ca80ea87d0ab6ca8228536c
+  geoip: CH
+  batch: Belgium
+  addedOn: 2023-02-16
+STIB - Société des Transports Intercommunaux de Bruxelles:
+  ipv4: 195.244.180.232
+  site: http://www.stib-mivb.be
+  id: fcc5c5cc27d8bad727f507754a00ca65ba56511b
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Front page:
+  ipv4: 217.19.237.54
+  site: http://www.syntrapxl.be
+  description: SyntraPXL organiseert praktijkgerichte opleidingen voor iedereen
+    die ondernemend of ondernemer is. Leer een beroep, school jezelf bij of
+    studeer voltijds verder in onze campussen in Genk, Hasselt, Pelt, Maaseik en
+    Westerlo.
+  image: https://www.syntra-limburg.be//themes/custom/sassy/assets/images/og-syntra-default.png
+  reverses: 217.19.237.54.static.hosted.by.combell.com
+  id: e0744cbc0874919d544f2cfb8b1384f5cfb41126
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Thomas More hogeschool:
+  ipv4: 13.225.244.67
+  site: http://www.thomasmore.be
+  description: "De stap naar het hoger onderwijs is een stap vol verwachtingen. En
+    jij wil natuurlijk de beste keuze maken. Kom daarom ontdekken, twijfelen,
+    vergelijken en beleven tijdens een van onze vele infomomenten! #expectmore"
+  image: https://www.thomasmore.be/sites/default/files/TM_metaimage.png
+  reverses: server-13-225-244-67.lis50.r.cloudfront.net
+  id: fd79406642ddbcc730741ea9a8d169449368d558
+  geoip: US
+  batch: Belgium
+  addedOn: 2023-02-16
+Université catholique de Louvain:
+  ipv4: 130.104.6.136
+  site: http://www.uclouvain.be
+  image: https://cdn.uclouvain.be/styles/full_content/public/Exports%20reddot/_picsum/logo_UCL_portail.jpg?itok=_Tw3F_u7
+  reverses: uclouvain.be
+  id: 849b005c8f7feb48838d16d2246f8410ca23abe1
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Universiteit Gent:
+  ipv4: 157.193.43.50
+  site: http://www.ugent.be
+  description: De UGent is een van de grootste universiteiten in het Nederlandse
+    taalgebied en profileert zich als open, sociaal geëngageerd en
+    pluralistisch.
+  image: https://www.ugent.be/logo.png
+  reverses: portlvs.ugent.be
+  id: 03fff87eb55bf63930c2a4ce3fa8ee2a34eefef5
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Université de Namur:
+  ipv4: 138.48.5.222
+  site: http://www.unamur.be
+  reverses: proxyweb.fundp.ac.be
+  id: 52e433bc573addedece6af87b6232c3d1d6b2ef8
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+VDAB - Welkom:
+  ipv4: 193.53.226.200
+  site: http://www.vdab.be
+  reverses: ikl.vdab.be
+  id: 2bae92a32b27b0c2860e851dd21c0a405b9ce7ce
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Home | Hogeschool VIVES:
+  ipv4: 172.67.72.3
+  site: http://www.vives.be
+  description: Studeer bij Hogeschool VIVES op een van onze campussen in
+    West-Vlaanderen of van bij je thuis op afstand. Via levenslang leren
+    ontwikkel je je verder als professional. Maak kennis met wat je kunt!
+  id: af66ab9a49f48d50325d2567cc5900f0801ce5c5
+  geoip: US
+  batch: Belgium
+  addedOn: 2023-02-16
+Informatie van de Vlaamse overheid:
+  ipv4: 2.17.41.128
+  site: http://www.vlaanderen.be
+  description: Officiële website van de Vlaamse overheid
+  image: https://assets.vlaanderen.be/image/upload/c_fill,h_630,q_auto:eco,w_1200/Digitaal-Vlaanderen-Winter-Ruiters-20221213-012
+  reverses: a2-17-41-128.deploy.static.akamaitechnologies.com
+  id: 5e582bff6d15b1f799adf33d1a502918eff5ba18
+  geoip: ES
+  batch: Belgium
+  addedOn: 2023-02-16
+Vrije Universiteit Brussel:
+  ipv4: 134.184.0.178
+  site: http://www.vub.ac.be
+  description: Studeer aan de VUB en bouw mee aan een duurzame toekomst voor onze
+    volgende generaties.
+  image: https://www.vub.be/sites/default/files/2022-09/hero-header-2400x1100-eu-en-diversiteit.jpg
+  reverses: www.vub.be - www.theworldneedsyou.be - theworldneedsyou.be -
+    www.dewereldheeftjenodig.be - dewereldheeftjenodig.be - news.vub.be
+  id: d6a5555333772fbf5196c2b6bbe9b23f9b08f13b
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Accueil:
+  ipv4: 157.164.185.203
+  site: http://www.wallonie.be
+  description: "Le site officiel de la Wallonie : vos démarches administratives,
+    les actualités et événements de votre Région, les acteurs et institutions du
+    service public, le magazine Vivre la Wallonie, …"
+  image: https://www.wallonie.be/themes/custom/w/assets/img/wallonie_coq_fb.png
+  reverses: www.wallonie.be
+  id: 3f8d399530b70c1bea9b579dad3d4a2f98097f72
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
+Taalkeuze | War Heritage Institute:
+  ipv4: 172.67.170.251
+  site: http://www.warheritage.be
+  id: 04de86d73dfc17767cedf775432800b59d001066
+  geoip: US
+  batch: Belgium
+  addedOn: 2023-02-16

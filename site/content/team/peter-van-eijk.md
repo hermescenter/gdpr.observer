@@ -1,14 +1,16 @@
 ---
-title: "Nomen Nescio"
+title: "Claudio Agosti"
 date: 2018-11-19T10:47:58+10:00
 draft: false
 image: "images/team/peter-van-eijk-711986-unsplash.jpg"
-jobtitle: "Technology"
-linkedinurl: "https://www.linkedin.com/"
+jobtitle: "Technology and Coordination"
+# linkedinurl: "https://www.linkedin.com/"
+mail: "claudio.agosti at hermescenter dot org"
+mastodon: "@vecna@retro.pizza"
+# mail e mastodon non sono ancora supportati dal team
 promoted: true
 weight: 1
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Pitches the project around and maintain the infrastructure running. Design privacy tests and listed on partners needs.
+Reach out for any question.
