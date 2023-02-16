@@ -626,16 +626,14 @@ Het weerbericht voor Brussel - KMI:
   batch: Belgium
   addedOn: 2023-02-16
 DEFENSIE Uw toekomst:
-  " Onze missie":
-    "":
-      ipv4: 104.22.11.82
-      site: http://www.mil.be
-      description: Als je een missie hebt, maakt het niet uit waar, hoe, wanneer of
-        onder welke omstandigheden. Zolang je weet voor wie je het doet.
-      id: cb7230b91249219b58031ccb2546f434b59d2af2
-      geoip: US
-      batch: Belgium
-      addedOn: 2023-02-16
+  ipv4: 104.22.11.82
+  site: http://www.mil.be
+  description: Als je een missie hebt, maakt het niet uit waar, hoe, wanneer of
+    onder welke omstandigheden. Zolang je weet voor wie je het doet.
+  id: cb7230b91249219b58031ccb2546f434b59d2af2
+  geoip: US
+  batch: Belgium
+  addedOn: 2023-02-16
 Musées royaux d&#039;Art et d&#039;Histoire | Royal Museums of Art and History:
   ipv4: 13.51.62.86
   site: http://www.mrah.be
@@ -719,28 +717,15 @@ Bureau du plan - Federaal Planbureau:
   batch: Belgium
   addedOn: 2023-02-16
 Politie:
-  be | Portaal:
-    ipv4: 193.191.212.97
-    site: http://www.politie.be
-    description: Welkom op de politie website. Voor dringende politiehulp bel 101.
-    reverses: jobpol.be - foederalepolizei.be - aigpol.be -
-      www.generaldeclaration.be - www.federalpolice.be
-    id: e6fe6ee94e3fc3b8403870a8c40de70213ffe61f
-    geoip: BE
-    batch: Belgium
-    addedOn: 2023-02-16
-Police:
-  be | Portaal:
-    ipv4: 193.191.212.97
-    site: http://www.police.be
-    description: Bienvenue sur le site de la police. Pour une aide policière
-      urgente, formez le 101.
-    reverses: www.federalpolice.be - jobpol.be - aigpol.be - foederalepolizei.be -
-      www.generaldeclaration.be
-    id: e632e961c2a3df724d3e0386be530a3329e797f1
-    geoip: BE
-    batch: Belgium
-    addedOn: 2023-02-16
+  ipv4: 193.191.212.97
+  site: http://www.police.be
+  description: Bienvenue sur le site de la police. Pour une aide policière
+    urgente, formez le 101.
+  reverses: www.federalpolice.be - jobpol.be - aigpol.be - foederalepolizei.be - www.generaldeclaration.be
+  id: e632e961c2a3df724d3e0386be530a3329e797f1
+  geoip: BE
+  batch: Belgium
+  addedOn: 2023-02-16
 Hogeschool PXL:
   ipv4: 193.190.154.243
   site: http://www.pxl.be
@@ -775,7 +760,7 @@ NISSE | Social Security Self-employed Entrepreneurs:
   geoip: BE
   batch: Belgium
   addedOn: 2023-02-16
-"Welkom | De Rijksdienst voor Arbeidsvoorziening                ":
+Welkom | De Rijksdienst voor Arbeidsvoorziening:
   ipv4: 85.91.179.49
   site: http://www.rva-onem.fgov.be
   description: De RVA is een openbare instelling van sociale zekerheid en past het
@@ -811,7 +796,7 @@ Exploring a better tomorrow:
   geoip: BE
   batch: Belgium
   addedOn: 2023-02-16
-"NL  - Selor, selectiebureau van de overheid":
+"NL - Selor, selectiebureau van de overheid":
   ipv4: 193.191.209.80
   site: http://www.selor.be
   description: "Op werkenvoor.be vind je de jobs bij de overheid. Solliciteer bij
