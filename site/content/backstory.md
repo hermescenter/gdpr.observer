@@ -13,6 +13,11 @@ date: 2022-12-22T17:01:34+07:00
 
 ## [Visit results up to 30 November 2022](https://monitora-pa.it/2022/11/30/MonitoraPA_results.html).
 
+{{<figure
+  src="/images/monitorapa/November-2022.svg"
+  href="https://monitora-pa.it/2022/11/30/MonitoraPA_results.html"
+>}}
+
 #### Because Monitora PA success was so effective in Italy, we:
 1. Want to replicate the same success in other European Member State, exception made for Italy, where we leave Monitora PA continuing its activity
 2. We want no abstract and separate the technical effort from the national-level activism necessary to get results.
