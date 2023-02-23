@@ -33,6 +33,10 @@ const list = await fs.readFile(argv.source, 'utf-8');
 
 for (let site of list.split('\n')) {
 
+  if(_.startsWith(site, '#')) {
+console.log(`Skipping commented line ${site}`);
+    continue;
+  }
   if(!_.startsWith(site, 'http'))
     site = `http://${site}`;
 
@@ -70,10 +74,17 @@ for (let site of list.split('\n')) {
     await dns.lookup(stripped,
       async function onLookup(err, address, family) {
         ogpe['ipv4'] = address;
-        console.log(`IP resolved for ${site}: ${address}`)
-        const location = await geoip.lookup(address);
+        console.log(`IP resolved for ${stripped}: ${address}`)
+        let location = null;
 
-        if(location.country) {
+	      try {
+	      	location = await geoip.lookup(address);
+	      }
+	      catch(error) {
+		      console.log(`Error: ${error.message} in ${site}`);
+	      }
+
+        if(location && location.country) {
           ogpe.country = location.country;
           ogpe.region = location.region;
           ogpe.city = location.city;
