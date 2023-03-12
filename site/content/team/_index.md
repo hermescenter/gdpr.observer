@@ -5,8 +5,6 @@ intro_image_absolute: false
 intro_image_hide_on_mobile: false
 ---
 
-# Meet The Team
+# Key people of GDPR.observer
 
-Meet the peopke working on GDPR.observer;
-
-Below are listed the (partners) organizations supporting the activities in their member state.
+Below you can meet the partners organizations responsible in their member state.
