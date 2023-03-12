@@ -19,3 +19,6 @@ We also need the list of data protection officers for each of those sites. This 
 
 This is work that requires perseverance over time, knowledge of the language, and in the later stages interactions with Data Protection Officers and Data Protection Authorities.
 
+## In each member state a statitics website or notebook should be present
+
+* example: [Belgium](https://observablehq.com/@vecna/belgium-case-study).
