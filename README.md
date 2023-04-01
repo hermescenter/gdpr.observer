@@ -6,16 +6,15 @@ This project uses the European Data Protection Supervisor tool: website-evidence
 ## Repository Map
 
 * `site`: it contains the structure of a site in [HUGO](https://gohugo.io) and the content are automatically published in [gdpr.observer](https://gdpr.observer).
-* `website-evidence-collector`: the original EDPS web analysis tool, you clone it by hand.
-* `bin` contains the script to executed collections, analysis, import/export, and the `bin/backend.mjs` that exports the API.
-* `input`: the files in YAML format containing the site to analyze.
-* `.gitignore`: it excludes the `output` folder, `web-evidence-collector` and the `logs`.
+* `website-evidence-collector`: the original EDPS web analysis tool you clone it by hand.
+* `bin` Software commands to perform collections, analysis, import/export, API webserver `bin/backend.mjs` .
+* `input`: The sites/domains lists to be analyzed as the input of the software, defined in YAML format .
 * `output`: created folders and results, you can delete after the imports, as the data goes in a MongoDB
-* `bin`: scripts to be executed
+* `.gitignore`: it excludes the `output` folder, `web-evidence-collector` and the `logs`.
 
 ## How To
 
-1. you need to have a valid list of URL, and perhaps with other additional metadata, in JSON or CSV format. **This list is named Batch**. Normally this list is in `input/` folder.
+1. you need to have a valid list of URLs, pssibly with other additional metadata such as owners data and DPO email contact, in JSON or CSV format. **This list is named Batch**. Normally this list is in `input/` folder.
 2. you can run a command to analyze a Batch. Normally this is associated with a country (i.e. the spanish privacy activist might have a Batch with all the public institutions). A Batch is a string, such as, "institution-ES-1"
 3. If you want to expand the list of tested websites, it is suggested to change your Batch string to reflect it, such as "institution-ES-2", because you might want to avoid the growth of tested website interfere with your statistics.
 4. Every Batch can be re-tested everyday. Testing the same Batch more often is discouraged (and not even guarantee it work).
