@@ -61,6 +61,7 @@ Input Lists are the lists of websites and it's associated metadata, that can be 
 # See lists of EDRi member websites
 ls rawlists\
 head -4 rawlists/edri-gross-list.txt
+```
 
 TITOLO: OpenGraph Enrichment from RawLists
 
