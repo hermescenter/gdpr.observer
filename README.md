@@ -14,15 +14,19 @@ This project uses the European Data Protection Supervisor tool: website-evidence
 
 # Setup 
 
-The commands below assume your Linux system has a NodeJS version >= 16.x
+The commands below assume your Linux system has a NodeJS version >= 16.x on Linux Debian systems.
+
 You need in sequence to:
-* clone the repository
-* `npm i` 
-* `git clone https://github.com/EU-EDPS/website-evidence-collector.git`
-
-And then setup that system: we should consider to a submodule!
-
+# Install NPM
 ```
+sudo apt-get install npm
+# clone the repository
+git clone https://github.com/hermescenter/gdpr.observer.git
+cd gdpr.observer
+# Install GDPR Observer
+npm i
+# Install EDPS's WEC - Website Evidence Collector as submodule:
+git clone https://github.com/EU-EDPS/website-evidence-collector.git
 cd website-evidence-collector
 npm install
 cd ..
