@@ -95,8 +95,6 @@ YAML list file to be generated with the following example syntax:
   addedOn: 2023-02-23
 ```
 
-
-
 #### 1st: acquisition
 
 ```

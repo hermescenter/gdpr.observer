@@ -42,7 +42,7 @@ async function processURL(title) {
   } catch(error) {
     console.log(`Invalid URL? (${info.site}) ${error.message}`);
     console.log(JSON.stringify(info, undefined, 2));
-    continue;
+    return;
   }
 
   const day = new Date().toISOString().substring(0, 10);
@@ -51,8 +51,8 @@ async function processURL(title) {
 
   const inspection = path.join(banner0dir, 'inspection.json');
   if(fs.existsSync(inspection)) {
-    console.log(`File ${inspection} present, skipping!`);
-    continue;
+    console.log(`File ${inspection} is present, skipping!`);
+    return;
   }
 
   try {
@@ -78,9 +78,17 @@ async function processURL(title) {
   }
 }
 
-for (const title of _.keys(list) ) {
-  await processURL(title);
-}
+
+const chunks = _.chunks(_.keys(list), 5);
+await window.setTimeout(async function() {
+  console.log("Execution of 5 wec");
+  processURL(batch[0]);
+  processURL(batch[1]);
+  processURL(batch[2]);
+  processURL(batch[3]);
+  processURL(batch[4]);
+}, 10000);
+}\
 
 
 console.log("Execution complete");

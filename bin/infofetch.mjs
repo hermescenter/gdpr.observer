@@ -13,6 +13,11 @@ if (!argv.source) {
   process.exit(1);
 }
 
+if (!argv.name) {
+  console.log("Missing --name, which would produce later input/$name.yaml");
+  process.exit(1);
+}
+
 /* not actually used 
 
 async function metascrap(site) {
@@ -40,13 +45,26 @@ console.log(`Skipping commented line ${site}`);
   if(!_.startsWith(site, 'http'))
     site = `http://${site}`;
 
-  let metaidir = null;
+  let metaidir, hostname = null;
   try {
     const urlo = new URL(site);
-    const hostname = urlo.hostname;
+    hostname = urlo.hostname;
 
     const day = new Date().toISOString().substring(0, 10);
-    metaidir = path.join('output', 'metai', day, hostname);
+    metaidir = path.join('output', 'metai', argv.name, day);
+    // create symlink to the latest argv.name
+    const dest = path.join(argv.name, day);
+    console.log(metaidir);
+    await $`mkdir -p ${metaidir}`
+    const latest = path.join('output', 'metai', `${argv.name}-latest`);
+    try {
+      await fs.symlink(dest, latest);
+    } catch(error) {
+      if(error.code != "EEXIST") {
+        console.log(`Symlink error: ${error.message}`);
+        process.exit(1);
+      }
+    }
   } catch(error) {
     console.log(`System error in ${site}: ${error.message}`);
     continue;
@@ -59,7 +77,7 @@ console.log(`Skipping commented line ${site}`);
        throw new Error(`Not actually produced data?`);
     const outf = path.join(metaidir, 'metascraper.json');
     await fs.writeFile(outf, JSON.stringify(res, undefined, 2), 'utf-8'); */
-    const ogf = path.join(metaidir, 'ogp.json');
+    const ogf = path.join(metaidir, `${hostname}.json`);
     if(fs.existsSync(ogf)) {
       console.log(`File ${ogf} exists, skipping`);
       continue;
