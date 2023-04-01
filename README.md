@@ -25,6 +25,7 @@ wget https://nodejs.org/dist/v18.15.0/node-v18.15.0-linux-x64.tar.xz
 sudo mkdir -p /usr/local/lib/nodejs
 sudo tar -xJvf node-v18.15.0-linux-x64.tar.xz -C /usr/local/lib/nodejs 
 echo 'export PATH=/usr/local/lib/nodejs/node-v18.15.0-linux-x64/bin:$PATH' >> $HOME/.profile
+source $HOME/.profile
 ```
 # Install GDPR Observer
 ```
