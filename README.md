@@ -6,8 +6,11 @@ This project uses the European Data Protection Supervisor tool: website-evidence
 ## Repository Map
 
 * `site`: it contains the structure of a site in [HUGO](https://gohugo.io) and the content are automatically published in [gdpr.observer](https://gdpr.observer).
-* `assets`: everything binary that might be used, reused, ans worthy of the shared. Presentation, articles, whatever
-* `.gitignore`: it would let you understand why this repository has not code to crawl website
+* `website-evidence-collector`: the original EDPS web analysis tool, you clone it by hand.
+* `bin` contains the script to executed collections, analysis, import/export, and the `bin/backend.mjs` that exports the API.
+* `input`: the files in YAML format containing the site to analyze.
+* `.gitignore`: it excludes the `output` folder, `web-evidence-collector` and the `logs`.
+* `output`: created folders and results, you can delete after the imports, as the data goes in a MongoDB
 * `bin`: scripts to be executed
 
 ## How To
