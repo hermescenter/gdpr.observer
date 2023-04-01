@@ -66,6 +66,11 @@ title = "GDPR observer"
     name = "Backstory"
     url = "/backstory/"
     weight = 3
+  
+  [[menu.main]]
+    name = "Campaign"
+    url = "/campaign/"
+    weight = 4
 
   # Footer Menu
   [[menu.footer]]

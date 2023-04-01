@@ -23,14 +23,30 @@ intro_image_hide_on_mobile: true
         let elem = document.getElementById('map')
             const doc = elem.getSVGDocument(); // that's the inner document
             doc.addEventListener('click', function(e){
-                console.log(e.originalTarget.id)
+                //console.log(e.originalTarget.id)
+
+                if (e.originalTarget.attributes.getNamedItem("style")){
+                    let value =  e.originalTarget.attributes.getNamedItem("style").nodeValue
+                    let index = value.indexOf("fill:")
+                    let index_2 = value.indexOf(";", index)
+
+                    value = value.substr(index +5, index_2-5 )
+
+                if ( value == "#f24088" || value == " rgb(242, 64, 136)"){
+
+                location.href = window.location + "campaign/" + e.originalTarget.id;
+             }}
+
             });
             doc.addEventListener('mouseover', function(e){
                 if (e.originalTarget.attributes.getNamedItem("style")){
                     let value =  e.originalTarget.attributes.getNamedItem("style").nodeValue
                     let index = value.indexOf("fill:")
-                    value = value.substr(index +5, index + 7 )
-                if ( value == "#f24088"){
+                    let index_2 = value.indexOf(";", index)
+
+                    value = value.substr(index +5, index_2-5 )
+
+                if ( value == "#f24088" || value == " rgb(242, 64, 136)"){
                 e.originalTarget.style.cursor = "pointer"
                 }}
             })
