@@ -53,21 +53,21 @@ The last command would tell you if the system is ready to run. remind you need m
 
 Now you're ready to start your analysis. These commands should be run after the [setup](#setup).
 
-#### Input Lists
+#### Input Country Lists
 
-Input Lists are the lists of websites and it's associated metadata, that can be generated from Raw Files present in the rawlists\ directory:
+Input Lists are the lists of websites and it's associated metadata, by default categorized by Country, that can be generated from Raw Files present in the rawlists\ directory:
 
 ```
-# See lists of EDRi member websites
+# See lists of DE rawlist
 ls rawlists\
-head -4 rawlists/edri-gross-list.txt
+head -4 rawlists/DE
 ```
 
-TITOLO: OpenGraph Enrichment from RawLists
+#### OpenGraph Enrichment from RawLists
 
 Raw Files are automatically enriched with additional metadata using the [OpenGraph protocol](https://ogp.me), GeoIP and DNS reserve.
 
-By default a Rawlist of websites for each country subject to GDPR are provided, with only two entries: The Parliament and the Data Protection Authority.
+By default a Rawlist of websites for each country subject to GDPR are provided, with only two entries: The Parliament and the Data Protection Authority. With contribution and curation by the community will be extended to all public agencies and beyond.
 
 The enriched country files will be saved into `output\metai\COUNTRY` directory, generated with the following command:
 ```
@@ -86,7 +86,7 @@ You can see the output being generated for each file from rawfiles, providing on
 ls output/metai/{IT,ES,DE,BE}
 ```
 
-TITLE: YAML File Generation from OpenGraph Enriched Output
+#### YAML File Generation from OpenGraph Enriched Output
 
 Now we need to generate the YAML file as input for gdpr observer software.
 ```
@@ -97,6 +97,7 @@ bin/importer.mjs --ogp output/metai/IT-latest --coll IT
 
 YAML list file to be generated with the following example syntax:
 
+TODO: Fix example with a Country
 ```Amnesty International:
   ipv4: 141.193.213.21
   site: http://amnesty.org
