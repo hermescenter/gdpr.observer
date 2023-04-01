@@ -2,21 +2,14 @@
 /* eslint-disable camelcase */
 
 import _ from 'lodash';
-import { argv, fs, $, os, path } from 'zx';
+import { argv, fs, $, path } from 'zx';
 import { parse } from 'yaml';
+import { connect } from '../lib/mongodb.mjs';
 
-if (!argv.country) {
-  console.log("Missing --country, which is a marker that would follow in the database (can be any kind of string)");
-  process.exit(1);
-}
-
-if (!argv.source) {
-  console.log("Missing --source, which should be a .yaml file");
-  process.exit(1);
-}
-
-if(!_.endsWith(argv.source, '.yaml')) {
-  console.log("Possible invalid format, expecting .yaml as --source");
+if (!argv.source && !argv.name) {
+  console.log("Missing --name or --source");
+  console.log("--name is the field 'campaign' in (db.etpir.campaings)");
+  console.log("--source is a YAML file in input/; check README.md");
   process.exit(1);
 }
 
@@ -26,13 +19,59 @@ if(!_.endsWith(argv.source, '.yaml')) {
  * 3) acquire the produced output of wec into mongodb */
 
 const wec = `./website-evidence-collector/bin/website-evidence-collector.js`;
-const acquirer = `./bin/acquire.mjs`;
-const dailyIdGenerator = `./bin/id.mjs`;
-const list = parse(await fs.readFile(argv.source, 'utf-8'));
+const acquirer = `./scripts/internal/mongosave.mjs`;
+const dailyIdGenerator = `./scripts/internal/id.mjs`;
+
+const { name, data } = await acquireSource(argv.source, argv.name);
+
+/* this is the parallelizzation logic that needs debug */
+const chunksN = 12
+const chunks = _.chunk(_.keys(data), chunksN);
+
+await setInterval(async () => {
+
+  if(!chunks.length) {
+    console.log("Batch all consumed...")
+  } else {
+    const batch = chunks.pop();
+    for (const index of batch) {
+      console.log(`Of the ${chunksN} wec ${batch.join('_')}: ${data[index].title}`);
+      await processURL(index);
+    }
+  }
+
+}, 3000);
+
+await setTimeout(async () => {
+  console.log(`This process should keep hanging till ${data.length * 20000}`);
+}, data.length * 20000)
+
+async function acquireSource(source, name) {
+
+  if(source) {
+    const data = parse(await fs.readFile(argv.source, 'utf-8'));
+    console.log(`With ${source} we picked ${data.length} sites`);
+    const c = argv.source.split('/').pop();
+    return {
+      name: c.replace(/\.yaml/, ''),
+      data
+  }
+  } else {
+    const { mongodb } = (await fs.readJSON('./config/database.json'));
+    const client = await connect(mongodb);
+    const data = await client.db().collection("campaigns").find({campaign: name}).toArray();
+    console.log(`With ${name} we picked ${data.length} sites`);
+    await client.close();
+    return {
+      name,
+      data
+    }
+  }
+}
 
 async function processURL(title) {
   /* info would also be passed to `acquire` and would become part of the DB */
-  const info = list[title];
+  const info = data[title];
   info.name = title;
 
   let hostname = null;
@@ -68,27 +107,12 @@ async function processURL(title) {
 
   /* the ID is unique every day, timedate is part of the path, 
    * this ensure predictable and daily ID, to avoid dups */
-  const id = await $`${dailyIdGenerator} --country ${info.batch} --path ${banner0dir}`;
+  const id = await $`${dailyIdGenerator} --country ${name} --path ${banner0dir}`;
   console.log(`Site ${hostname} in ${day} has unique ID ${id}`);
   try {
-    await $`${acquirer} --id ${id} --info ${JSON.stringify(info)} --country ${argv.country} --source ${inspection}`.quiet();
-    console.log(`Acquired ${hostname} into DB (${argv.country})`);
+    await $`${acquirer} --id ${id} --info ${JSON.stringify(info)} --campaign ${name} --source ${inspection}`.quiet();
+    console.log(`Acquired ${hostname} into DB (${name})`);
   } catch(error) {
     console.log(`Impossible to acquire: ${error.message}`);
   }
 }
-
-
-const chunks = _.chunks(_.keys(list), 5);
-await window.setTimeout(async function() {
-  console.log("Execution of 5 wec");
-  processURL(batch[0]);
-  processURL(batch[1]);
-  processURL(batch[2]);
-  processURL(batch[3]);
-  processURL(batch[4]);
-}, 10000);
-}\
-
-
-console.log("Execution complete");

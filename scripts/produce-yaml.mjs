@@ -8,18 +8,19 @@ import { stringify } from 'yaml';
 import path from 'path';
 import moment from 'moment';
 
-if (!argv.coll) {
-  console.log("Missing Source DB Collection --coll");
+console.log("This script might be not used, to run collector you can simply use --name");
+
+if (!argv.name) {
+  console.log("Missing campaign --name to pick from mongodb");
   process.exit(1);
 }
 
 const { mongodb } = (await fs.readJSON('./config/database.json'));
 const client = await connect(mongodb);
-const data = await client.db().collection(argv.coll).find({}).toArray();
+const data = await client.db().collection("campaigns").find({}).toArray();
 await client.close();
 
-const outputf = path.join(`input`, `${argv.coll}.yaml`);
-console.log(`Producing YAML file in ${outputf}`);
+const outputf = path.join(`input`, `${argv.name}.yaml`);
 
 const reformat = _.reduce(data, function(memo, e) {
   const saved = _.omit(e, ['_id', 'title', 'when', 'country']);
@@ -32,4 +33,4 @@ const reformat = _.reduce(data, function(memo, e) {
 
 fs.writeFileSync(outputf, stringify(reformat), 'utf-8');
 
-console.log(`New input produced in ${outputf}`);
+console.log(`New input file produced in ${outputf}`);

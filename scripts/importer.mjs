@@ -48,7 +48,7 @@ async function processFile(fileogp, name) {
   unit.site = content.url;
   unit.campaign = name;
 
-  /* optional fields */
+  /* optional fields *
   unit.description = pullOptional(content, 'description');
   unit.image = pullOptional(content, 'image');
 

@@ -5,10 +5,10 @@
 
 import _ from 'lodash';
 import { argv, fs } from 'zx';
-import { connect } from '../lib/mongodb.mjs';
+import { connect } from '../../lib/mongodb.mjs';
 
-if (!argv.country) {
-  console.log("Missing --country");
+if (!argv.campaign) {
+  console.log("Missing --campaign");
   process.exit(1);
 }
 
@@ -65,7 +65,7 @@ const mongoqs = _.compact(_.map(content, function(value, key) {
     content: {
       id: argv.id,
       evidence: argv.source,
-      country: argv.country,
+      campaign: argv.campaign,
       when: new Date(),
       ...extraInfo,
     }

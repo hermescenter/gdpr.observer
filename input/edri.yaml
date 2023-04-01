@@ -1,213 +1,247 @@
 Amnesty International:
-  ipv4: 141.193.213.21
+  ipv4: 141.193.213.20
   site: http://amnesty.org
+  campaign: edri
   description: We campaign for a world where human rights are enjoyed by all
   image: https://www.amnesty.org/en/wp-content/uploads/2019/12/whoweare_2944x1224_header.jpg
-  id: dd7b59427ccca244ab14c14d059169d730926b2c
+  id: 6f41a4ba636fec2a526467ed3fc1bc3fb4ef778f
   geoip: US
-  batch: edri
-  addedOn: 2023-02-23
+  batch: ""
+  addedOn: 2023-04-01
 Strona główna - Centrum Cyfrowe:
   ipv4: 146.59.36.238
   site: http://centrumcyfrowe.pl
+  campaign: edri
   description: Centrum Cyfrowe – wspieramy otwartość!
   image: https://centrumcyfrowe.pl/wp-content/uploads/sites/16/2018/06/obserwujacy-ryby-e1529703309678.jpg
   reverses: ip238.ip-146-59-36.eu
-  id: 91d0f2f97edbefebfb6b25f2ec76f9ffdaf42efa
+  id: 98417600572e5f87c7f9fdefdf4395a6e93cda5b
   geoip: FR
-  batch: edri
-  addedOn: 2023-02-23
+  batch: ""
+  addedOn: 2023-04-01
 Home - cild:
-  ipv4: 37.58.63.233
-  site: http://cild.eu
-  description: Uniti. Per i diritti di tutti.
-  image: https://cild.eu/wp-content/uploads/2020/03/immagine_Coronavirus_home02-1.jpg
-  id: 825422690b3ef743765cb05f74b54cf9dd3d2605
-  geoip: DE
-  batch: edri
-  addedOn: 2023-02-23
+  eu:
+    ipv4: 37.58.63.233
+    site: http://cild.eu
+    campaign: edri
+    description: Uniti. Per i diritti di tutti.
+    image: https://cild.eu/wp-content/uploads/2020/03/immagine_Coronavirus_home02-1.jpg
+    id: fd3f716c5d776b8462a33d7c018083ddf8120b53
+    geoip: DE
+    batch: ""
+    addedOn: 2023-04-01
 Committee to Protect Journalists – Defending Journalists Worldwide:
-  ipv4: 104.20.62.188
-  site: http://cpj.org
-  description: Latest press freedom news from around the globe.
-  image: https://cpj.org/wp-content/uploads/2020/05/cpj-logo-1.png
-  id: 681d1603f10d90a7e224ccb47a720c4046e89b85
-  geoip: US
-  batch: edri
-  addedOn: 2023-02-23
-Deutsche Vereinigung für Datenschutz:
-  ipv4: 213.133.104.160
-  site: http://datenschutzverein.de
-  reverses: www160.your-server.de
-  id: 5a59ba07125176afa8baf249bb38bca98e3f2869
-  geoip: DE
-  batch: edri
-  addedOn: 2023-02-23
-DFRI Föreningen för Digitala Fri- och Rättigheter:
+  "":
+    ipv4: 104.20.62.188
+    site: http://cpj.org
+    campaign: edri
+    description: Latest press freedom news from around the globe.
+    image: https://cpj.org/wp-content/uploads/2020/05/cpj-logo-1.png
+    id: faf8875b5c4095c2453d4d0b20eba406adb0b9b0
+    geoip: US
+    batch: ""
+    addedOn: 2023-04-01
+Deutsche Vereinigung für Datenschutz e:
+  V:
+    " &#8211; Datenschutz ist Menschenrecht":
+      ipv4: 213.133.104.160
+      site: http://datenschutzverein.de
+      campaign: edri
+      reverses: www160.your-server.de
+      id: a15703339aca96650c34fbd0f838f62c76ef4fcf
+      geoip: DE
+      batch: ""
+      addedOn: 2023-04-01
+:DFRI &#8211; Föreningen för Digitala Fri- och Rättigheter:
   ipv4: 171.25.193.226
   site: http://dfri.se
+  campaign: edri
   reverses: dev.dfri.se
-  id: 9de7b096b4d81c13e6cd3737a83f3dace7d24216
+  id: 9ba1375cd9ad5b8bc181a7fd0b5a4af88a98b089
   geoip: SE
-  batch: edri
-  addedOn: 2023-02-23
+  batch: ""
+  addedOn: 2023-04-01
 Digitalcourage:
   ipv4: 94.130.145.107
   site: http://digitalcourage.de
+  campaign: edri
   reverses: edge6-1.freistilbox.net
-  id: 0e9df235784a3c950602d1e78c0663370ff736ff
+  id: b0394fff75eddfda19cab4c607bfd0e329ccee48
   geoip: DE
-  batch: edri
-  addedOn: 2023-02-23
+  batch: ""
+  addedOn: 2023-04-01
 Digitale Gesellschaft:
   ipv4: 185.162.248.57
   site: http://digitalegesellschaft.de
+  campaign: edri
   reverses: www.digitalegesellschaft.de
-  id: 548c4877cd1f4294cb36efb964b149ed75e67d6c
+  id: ecc1b4e149311122c32f2bb42d69346c78c72015
   geoip: DE
-  batch: edri
-  addedOn: 2023-02-23
+  batch: ""
+  addedOn: 2023-04-01
 Цифрова република:
   ipv4: 185.45.66.199
   site: http://digrep.bg
+  campaign: edri
   reverses: host-185-45-66-199.superhosting.bg
-  id: da5a1352d472e199ec71933cd14f1b36c9bc7a18
+  id: eb4af3a9b82873e7bd96d3ba01d91bb09ef6f25a
   geoip: BG
-  batch: edri
-  addedOn: 2023-02-23
+  batch: ""
+  addedOn: 2023-04-01
 D3 - Defesa dos Direitos Digitais:
   ipv4: 185.32.188.19
   site: http://direitosdigitais.pt
+  campaign: edri
   description: Associação sem fins lucrativos, dedicada à defesa dos direitos
     fundamentais no contexto digital.
   image: https://direitosdigitais.pt/images/d3/d3-logo/logo-d3_twitter_140x682px.png
   reverses: andromeda.ptservidor.net
-  id: d73d39ed0341cc2a8d32840d29b7cb128424e3a1
+  id: 2de3c77c4738b0f459d0433aed046185f69409fd
   geoip: PT
-  batch: edri
-  addedOn: 2023-02-23
+  batch: ""
+  addedOn: 2023-04-01
 Naslovnica:
   ipv4: 45.157.5.40
   site: http://drzavljand.si
+  campaign: edri
   description: Covid-19 tracing apps and human rights How are covid-19 apps
-    impacting our freedoms? Join us! Who made who? Case for regulatory framework
-    of artificial intelligence Watch the debate! EU media […]
+    impacting our freedoms? Watch the debate Who made who? Case for regulatory
+    framework of artificial intelligence Watch the debate! EU […]
   reverses: veronika.zabec.net
-  id: aa4442020ecd1601235ffd3f8742e70648d8d5cf
+  id: f2c52a74f6572190c5960e6dfe7b6e5dbd27d073
   geoip: SI
-  batch: edri
-  addedOn: 2023-02-23
-ECNL:
+  batch: ""
+  addedOn: 2023-04-01
+Home | ECNL:
   ipv4: 172.67.169.254
   site: http://ecnl.org
-  id: b87e50704d26129f292363c56e576ac2688d2030
+  campaign: edri
+  id: 410c8831eacfa75018beacc6dc57c1814eb4f4ee
   geoip: US
-  batch: edri
-  addedOn: 2023-02-23
-Electronic Frontier Finland:
-  ipv4: 185.185.169.228
-  site: http://effi.org
-  reverses: tolstoi.effi.org
-  id: 030211fdaac3b79d6b9483896570bdd51eaa915e
-  geoip: FI
-  batch: edri
-  addedOn: 2023-02-23
+  batch: ""
+  addedOn: 2023-04-01
 Electronic Frontier Foundation:
   ipv4: 173.239.79.196
   site: http://eff.org
+  campaign: edri
   description: Defending your rights in the digital world
   image: https://www.eff.org/files/eff-og.png
   reverses: vm1.eff.org
-  id: eb0c956d17e01bc38bea522fde7178009b90a3e4
+  id: 1dc75ef2fa90c1e7ca677662067f7e2d7df0b430
   geoip: US
-  batch: edri
-  addedOn: 2023-02-23
+  batch: ""
+  addedOn: 2023-04-01
+Electronic Frontier Finland &#8211; Effi ry &#8211; Electronic Frontier Finland &#8211; Effi ry:n kotisivut:
+  ipv4: 185.185.169.228
+  site: http://effi.org
+  campaign: edri
+  reverses: tolstoi.effi.org
+  id: b47995a6b2febc79e45f97047fbbb34da61c5574
+  geoip: FI
+  batch: ""
+  addedOn: 2023-04-01
 EFN:
   ipv4: 185.56.187.5
   site: http://efn.no
+  campaign: edri
   description: EFN
   image: https://efn.no/_/attachment/inline/f6779f03-596d-474f-95f6-d72d4070912f:e3a9522aa995342ab8f6d57f12223ba6db8762c3/logo-fb.png
   reverses: 5-187-56.185.c.no-osl1.zetta.io
-  id: 017acf12539dc2d05b52f72084d4101f31be9473
+  id: c62e3730f035ab779ad41bf5967b7d11c704149e
   geoip: NO
-  batch: edri
-  addedOn: 2023-02-23
-epicenter works:
-  ipv4: 5.9.131.26
-  site: http://epicenter.works
-  reverses: obrien.akvorrat.at
-  id: af69c2455dac4fc17a5fd05cc2cf297265d88d40
-  geoip: DE
-  batch: edri
-  addedOn: 2023-02-23
+  batch: ""
+  addedOn: 2023-04-01
 We all share a fundamental right to privacy:
-  ipv4: 104.26.4.134
-  site: http://epic.org
-  image: https://epic.org/wp-content/uploads/fly-images/26871/EPIC-2021-logo-social-1200x630-c.png
-  id: bf213308c7e87e09207e4fe6a17f932b61ddb206
-  geoip: US
-  batch: edri
-  addedOn: 2023-02-23
-Forum InformatikerInnen für Frieden und gesellschaftliche Verantwortung:
-  ipv4: 185.231.124.171
-  site: http://fiff.de
-  reverses: fiff.dotplex.host
-  id: e8d75f3f9979059f61d3c77c8f6499624b044e17
-  geoip: DE
-  batch: edri
-  addedOn: 2023-02-23
+  "":
+    ipv4: 104.26.5.134
+    site: http://epic.org
+    campaign: edri
+    image: https://epic.org/wp-content/uploads/fly-images/26871/EPIC-2021-logo-social-1200x630-c.png
+    id: 29d0452fc1528a03933bfd603732643870ac47e3
+    geoip: US
+    batch: ""
+    addedOn: 2023-04-01
+epicenter:
+  works | Zivilgesellschaft wirkt!:
+    ipv4: 5.9.131.26
+    site: http://epicenter.works
+    campaign: edri
+    reverses: obrien.akvorrat.at
+    id: 9ed730ae9eae2d074f22e2a77c576e013dfcee4b
+    geoip: DE
+    batch: ""
+    addedOn: 2023-04-01
+Aktuelles &mdash; Forum InformatikerInnen für Frieden und gesellschaftliche Verantwortung e:
+  V:
+    "":
+      ipv4: 185.231.124.171
+      site: http://fiff.de
+      campaign: edri
+      reverses: fiff.dotplex.host
+      id: ed71f48191fba67b01d4d2fc7febbf52bda5ff04
+      geoip: DE
+      batch: ""
+      addedOn: 2023-04-01
 GFF – Gesellschaft für Freiheitsrechte e:
-  ipv4: 80.241.59.35
-  site: http://freiheitsrechte.org
-  description: Wir verteidigen die Grund- und Menschenrechte mit rechtlichen Mitteln.
-  reverses: freiheitsrechte.kunden.heinlein-hosting.de
-  id: 0f58e79a2c41edaf9c6f655e642b87a08ab5125b
-  geoip: DE
-  batch: edri
-  addedOn: 2023-02-23
+  V:
+    "":
+      ipv4: 80.241.59.35
+      site: http://freiheitsrechte.org
+      campaign: edri
+      description: Wir verteidigen die Grund- und Menschenrechte mit rechtlichen Mitteln.
+      reverses: freiheitsrechte.kunden.heinlein-hosting.de
+      id: 0de8ba011663a8e04144a36ee96fcc4e6781fb3b
+      geoip: DE
+      batch: ""
+      addedOn: 2023-04-01
 FSFE - Free Software Foundation Europe:
   ipv4: 213.95.165.54
   site: http://fsfe.org
+  campaign: edri
   description: "Non profit organisation working to create general understanding
     and support for software freedom. Includes news, events, and campaigns. "
   image: https://fsfe.org/graphics/logo-text_square.png
   reverses: proxy.noris.fsfeurope.org
-  id: 6d6f59f8e30ea09b6a47c18dee726cafa2e50c50
+  id: 06feb19b57d6673fe8ef6fe5fa342d5fb0879635
   geoip: DE
-  batch: edri
-  addedOn: 2023-02-23
+  batch: ""
+  addedOn: 2023-04-01
 Gong:
   ipv4: 178.218.165.124
   site: http://gong.hr
+  campaign: edri
   description: Gong je nestranačka udruga građana utemeljena 1997. radi poticanja
     građana na aktivnije sudjelovanje u političkim procesima.
   image: https://gong.hr/wp-content/uploads/2022/10/vizual-3_IG-post.png
   reverses: lin77.mojsite.com
-  id: 811875195c37b42800e12bcdac055f5d4ebec49a
+  id: 36aa94f31289ed52728e75dfb3f0417732fb9bc3
   geoip: HR
-  batch: edri
-  addedOn: 2023-02-23
+  batch: ""
+  addedOn: 2023-04-01
 Homo Digitalis:
   ipv4: 95.216.16.146
   site: http://homodigitalis.gr
+  campaign: edri
   image: https://www.homodigitalis.gr/wp-content/uploads/2018/06/homodigitalis_final-02-e1528104571905-1-e1529820547299.png
   reverses: linux1117.grserver.gr
-  id: fa125767df5de143a6483a8177d4e3d9fc4bae49
+  id: 9da9d2a42eec4f8021bb79faaa29f8d7dfd81ea6
   geoip: FI
-  batch: edri
-  addedOn: 2023-02-23
-ISOC Bulgarian:
+  batch: ""
+  addedOn: 2023-04-01
+�������� �������� - ��������:
   ipv4: 164.138.218.65
   site: http://isoc.bg
+  campaign: edri
   description: ISOC.BG - Bulgarian chapter of Internet Society (isoc.org)
   reverses: host-164-138-218-65.superhosting.bg
-  id: 6ce7c33e81b6a4d489d3a179d5ba5b6b52647c6f
+  id: efc5a85ea9a55c09e485fc4d979ee32b712e95e2
   geoip: BG
-  batch: edri
-  addedOn: 2023-02-23
+  batch: ""
+  addedOn: 2023-04-01
 La Quadrature du Net:
   ipv4: 185.34.33.4
   site: http://laquadrature.net
+  campaign: edri
   description: La Quadrature du Net promeut et défend les libertés fondamentales
     remises en question par certains usages des outils informatiques.
     L’association lutte par exemple contre la censure et la surveillance, que
@@ -215,305 +249,333 @@ La Quadrature du Net:
     façon dont le numé
   image: https://www.laquadrature.net/wp-content/uploads/sites/8/2019/10/og.png
   reverses: tau.lqdn.fr
-  id: c7cef6ec298ac9c2a8c72ba1d240fec3a7172619
+  id: d565fceec79e9da9949cbb4f69b044b03ddfb010
   geoip: FR
-  batch: edri
-  addedOn: 2023-02-23
+  batch: ""
+  addedOn: 2023-04-01
 Mensenrechten zijn fundamentele rechten die ieder mens heeft:
-  ipv4: 46.30.213.35
-  site: http://mensenrechten.be
-  description: De Liga is een mensenrechtenbeweging die het beleid wil inspireren
-    en het brede publiek sensibiliseert en kritisch informeert over
-    mensenrechten in Vlaanderen en België.
-  image: https://mensenrechten.be/images/interface/logo_og.png
-  reverses: webcluster2.webpod12-cph3.one.com
-  id: 90bc97b16873518f9dcabc767c465c6d98d2ff56
-  geoip: DK
-  batch: edri
-  addedOn: 2023-02-23
-Metamorphosis:
+  "":
+    ipv4: 46.30.213.35
+    site: http://mensenrechten.be
+    campaign: edri
+    description: De Liga is een mensenrechtenbeweging die het beleid wil inspireren
+      en het brede publiek sensibiliseert en kritisch informeert over
+      mensenrechten in Vlaanderen en België.
+    image: https://mensenrechten.be/images/interface/logo_og.png
+    reverses: webcluster2.webpod12-cph3.one.com
+    id: 0c3f73e1c1270d2ef873f4268bfec529634bf04a
+    geoip: DK
+    batch: ""
+    addedOn: 2023-04-01
+"Metamorphosis ":
   ipv4: 78.46.3.157
   site: http://metamorphosis.org.mk
+  campaign: edri
   reverses: dedi957.your-server.de
-  id: fdb0470bbdf098d625ad6e8edc5f54442106a171
+  id: 9ce1e8eff6ec6be0a39f05b341d24110a6e27409
   geoip: DE
-  batch: edri
-  addedOn: 2023-02-23
-OpenRightsGroup:
+  batch: ""
+  addedOn: 2023-04-01
+Home:
   ipv4: 46.43.9.147
   site: http://openrightsgroup.org
+  campaign: edri
+  description: |-
+    Campaign with us
+
+    Our Blog.
   image: https://www.openrightsgroup.org/app/uploads/2020/05/Twitter-heading-–-1@2x-1200x500.jpg
   reverses: retro.openrightsgroup.org
-  id: ffd9968ebd4a543d87bca33e98d956a6017eb772
+  id: 72db3b4a65542a1f9ef99cfbb06f89aa375e2045
   geoip: GB
-  batch: edri
-  addedOn: 2023-02-23
+  batch: ""
+  addedOn: 2023-04-01
 Nodo50 - Contrainformación en la Red:
   ipv4: 91.226.176.254
   site: http://nodo50.org
+  campaign: edri
   description: Nodo50 es un proveedor de servicios de Internet sin ánimo de lucro
     orientado a los movimientos sociales. Desde 1994, el proyecto 'Nodo50' viene
     proporcionando formación, contenidos, y servicios…
   image: https://info.nodo50.org/local/cache-vignettes/L150xH78/d9b3a25215a4785f7281d07dcce563-baab6.jpg
-  id: cfdd12df78a91de21141356da132f9764505cf47
+  id: 6b1e5bf68c86d267c102ffa18d9946c7f1f5ee1f
   geoip: ES
-  batch: edri
-  addedOn: 2023-02-23
+  batch: ""
+  addedOn: 2023-04-01
 Fundacja Wolne Lektury:
   ipv4: 51.83.143.148
   site: http://nowoczesnapolska.org.pl
+  campaign: edri
   description: Wolność korzystania z dóbr kultury
   image: https://nowoczesnapolska.org.pl/wp-content/themes/koed/images/logofnp.png
   reverses: boleslaw.mdrn.pl
-  id: fe827d3e3ebe1a80bb21de9aabb20ac5b77e10a8
+  id: 5a897e0455839afa01f799eb7801b3d17886aaba
   geoip: FR
-  batch: edri
-  addedOn: 2023-02-23
+  batch: ""
+  addedOn: 2023-04-01
 NOYB enforces your right to privacy everyday:
   ipv4: 176.9.230.49
   site: http://noyb.eu
+  campaign: edri
   description: Noyb - European Center for Digital Rights is a non-profit
     organization based in Vienna, Austria.
   image: https://noyb.eu/themes/ao_canvas/logo.jpg
   reverses: noyb.eu
-  id: b4e0c353584ec04690204963a0be62d7c36efe1b
+  id: 24d82ab5f2790734a04d0b550ccf0afae8a3f4ac
   geoip: DE
-  batch: edri
-  addedOn: 2023-02-23
+  batch: ""
+  addedOn: 2023-04-01
 Open Future – Open Future Foundation:
   ipv4: 213.108.104.117
   site: http://openfuture.eu
+  campaign: edri
   description: Open Future is a think tank that develops new approaches to an open
     internet that maximize societal benefits of shared data, knowledge and
     culture.
   image: http://openfuture.eu/wp-content/themes/openfuture/assets/images/logo.png
   reverses: hosted-by.greenhost.net
-  id: c678346b42c71cf9674f96a3f13a0a1206d5f8af
+  id: ca7513ad8e19fa78b4b021c906de54fbced61707
   geoip: NL
-  batch: edri
-  addedOn: 2023-02-23
+  batch: ""
+  addedOn: 2023-04-01
 Strona główna:
   ipv4: 51.68.155.201
   site: http://panoptykon.org
+  campaign: edri
   image: /sites/all/themes/panoptykon_theme/images/panoptykon_logo.png
   reverses: ns3129874.ip-51-68-155.eu
-  id: af2ee7ab080ab02f2c88a3aed6bfc333ba323cdd
+  id: 025b534b107bae9a9939be7a8764def30a89e718
   geoip: FR
-  batch: edri
-  addedOn: 2023-02-23
+  batch: ""
+  addedOn: 2023-04-01
 Privacy International:
-  ipv4: 78.47.10.123
+  ipv4: 195.201.10.163
   site: http://privacyinternational.org
+  campaign: edri
   description: Privacy International (PI) is a registered charity based in London
     that works at the intersection of modern technologies and rights.
-  reverses: andre.loadbalancer.privacyinternational.org
-  id: 827e3970892923d1428ddb4c3a65fed4ec6d35a5
+  reverses: biggie.loadbalancer.privacyinternational.org
+  id: 8c949b66700d602c5ebbbc9d3dca5a826be465ad
   geoip: DE
-  batch: edri
-  addedOn: 2023-02-23
+  batch: ""
+  addedOn: 2023-04-01
 PROSA | PROSA:
-  ipv4: 77.66.10.204
+  ipv4: 178.72.21.214
   site: http://prosa.dk
+  campaign: edri
   description: PROSA er det eneste fagforbund udelukkende for it-professionelle.
     Derfor har vi ekspertise i de udfordringer, du som it-professionel møder i
     din karriere.
   image: https://www.prosa.dk/fileadmin/_processed_/e/7/csm_Forsidebanner_kampagne_2a4716a6c7.png
   reverses: www.prosa.dk
-  id: 1a1845c4faaeb86b90967ca79c26cefc9842aa72
+  id: ad7c48b47e58e408a4f48c27a5c0147b247cc734
   geoip: DK
-  batch: edri
-  addedOn: 2023-02-23
+  batch: ""
+  addedOn: 2023-04-01
 quintessenz:
-  ipv4: 212.232.26.218
-  site: http://quintessenz.at
-  description: quintessenz - Verein zur Wiederherstellung der Bürgerrechte im
-    Informationszeitalter. Datenschutz ist Menschenrecht
-  reverses: quizzebox.quintessenz.at
-  id: 1ea0f5fe0bb0441e40c24c57c17f274afd2abb5e
-  geoip: AT
-  batch: edri
-  addedOn: 2023-02-23
-Reporter ohne Grenzen:
-  ipv4: 212.87.50.14
-  site: http://reporter-ohne-grenzen.de
-  description: Reporter ohne Grenzen dokumentiert Verstöße gegen die Presse- und
-    Informationsfreiheit weltweit und alarmiert die Öffentlichkeit, wenn
-    Journalisten und deren Mitarbeiter in Gefahr sind. Wir setzen uns online wie
-    offline für mehr Sicherheit und besseren Schutz von Journalisten ein.
-  image: https://www.reporter-ohne-grenzen.de/fileadmin/_processed_/a/4/csm_weltkarte-vorderseite_ohnelaendernamen_9d88e78e8c.png
-  reverses: www.reporter-ohne-grenzen.de
-  id: 03556f0bee61f7f5482aa98bb4161460373994de
-  geoip: DE
-  batch: edri
-  addedOn: 2023-02-23
-Statewatch:
+  at - Datenschutz ist Menschenrecht:
+    ipv4: 212.232.26.218
+    site: http://quintessenz.at
+    campaign: edri
+    description: quintessenz - Verein zur Wiederherstellung der Bürgerrechte im
+      Informationszeitalter. Datenschutz ist Menschenrecht
+    reverses: quizzebox.quintessenz.at
+    id: 796aa14546552db7cf06d53aedc7c9d98f37ff31
+    geoip: AT
+    batch: ""
+    addedOn: 2023-04-01
+Statewatch | Home:
   ipv4: 185.25.241.26
   site: http://statewatch.org
+  campaign: edri
   reverses: dev.statewatch.org
-  id: 42f403de1e975e0471d66f8d2792ae3ecfdc6b06
+  id: 0090970586e8dc2cc9e1b53c1618a095f43e8023
   geoip: GB
-  batch: edri
-  addedOn: 2023-02-23
+  batch: ""
+  addedOn: 2023-04-01
 VIBE!AT:
   ipv4: 92.205.64.148
   site: http://vibe.at
+  campaign: edri
   reverses: sh11919.ispgateway.de
-  id: 21de3ed66fe318e6dee635b2cb11d0c613db2c41
+  id: fed64e6f37cf2941f06f05df69753c521bcc40fa
   geoip: FR
-  batch: edri
-  addedOn: 2023-02-23
+  batch: ""
+  addedOn: 2023-04-01
 Wikimedia Deutschland – Wir befreien Wissen!:
   ipv4: 135.181.157.113
   site: http://wikimedia.de
+  campaign: edri
   description: Wikimedia Deutschland ist Teil einer weltweiten Bewegung für Freies
     Wissen. Wir unterstützen Wikipedia, entwickeln freie Software und setzen uns
     auf allen gesellschaftlichen Ebenen für den freien Zugang zu Wissen und
     Bildung ein.
   image: https://www.wikimedia.de/wp-content/uploads/2022/01/Default-Social-Media-Image.png
   reverses: static.113.157.181.135.clients.your-server.de
-  id: 11b78cab32d482742181835940dd254c0aeff7c7
+  id: c508177d46ae613dca5f4f93fcc3da592cfaff7a
   geoip: FI
-  batch: edri
-  addedOn: 2023-02-23
+  batch: ""
+  addedOn: 2023-04-01
 Wikimédia France – Association pour le libre partage de la connaissance:
   ipv4: 146.59.250.64
   site: http://wikimedia.fr
+  campaign: edri
   description: Bienvenue chez Wikimédia France, association agréée par le
     ministère de l’Éducation nationale dont le but est de promouvoir l’accès
     libre à la connaissance.
   image: https://www.wikimedia.fr/wp-content/uploads/2016/06/wikipediaglobemains.jpg
-  id: 1c46a82cdcef11803a162281494f65d697852a5f
+  id: 71f13657b453946fa3baad70b4aa4446fe9e04ce
   geoip: FR
-  batch: edri
-  addedOn: 2023-02-23
-Access Now:
+  batch: ""
+  addedOn: 2023-04-01
+Access Now - Access Now:
   ipv4: 104.22.8.83
   site: http://www.accessnow.org
-  description: Defending and extending the rights of users at risk around the world.
-  image: https://www.accessnow.org/cms/assets/uploads/2015/07/home-bg-banner.jpg
-  id: 53b79c289a77495de3e47648ed8c5664c30dac9c
+  campaign: edri
+  description: Digital rightsfor everyone. Derechos digitalespara todas. .الحقوق
+    الرقمية للجميع Droits numériquespour tous. Access Now defends and extends
+    the digital
+  id: b17e152edcf1a169d4068cdd96d3eb203c2156de
   geoip: US
-  batch: edri
-  addedOn: 2023-02-23
-Asociația pentru Tehnologie și Internet:
-  ipv4: 93.113.28.253
-  site: http://www.apti.ro
-  reverses: cpanel253.hangar.ro
-  id: 74860d7aeb8697d31e45673960b3aee4d8e3eece
-  geoip: RO
-  batch: edri
-  addedOn: 2023-02-23
+  batch: ""
+  addedOn: 2023-04-01
+"Asociația pentru Tehnologie și Internet | Susținem o lume digitală liberă prin promovarea vieții private, libertății de exprimare și a tehnologiilor deschise pe Internet":
+  "":
+    ipv4: 93.113.28.253
+    site: http://www.apti.ro
+    campaign: edri
+    reverses: cpanel253.hangar.ro
+    id: 7ff127650e8b9e9eb0b02e90b4800c64ddc88a02
+    geoip: RO
+    batch: ""
+    addedOn: 2023-04-01
 ARTICLE 19 - Defending freedom of expression and information:
-  ipv4: 104.22.39.100
-  site: http://www.article19.org
-  description: ARTICLE 19 works for a world where all people everywhere can freely
-    express themselves and actively engage in public life without fear of
-    discrimination.
-  image: https://www.article19.org/wp-content/themes/article19/assets/images/og-image.jpg
-  id: a4c5f2c66fcd935143d7c8a0fa04c1f9483f1f9d
-  geoip: US
-  batch: edri
-  addedOn: 2023-02-23
+  "":
+    ipv4: 104.22.39.100
+    site: http://www.article19.org
+    campaign: edri
+    description: ARTICLE 19 works for a world where all people everywhere can freely
+      express themselves and actively engage in public life without fear of
+      discrimination.
+    image: https://www.article19.org/wp-content/themes/article19/assets/images/og-image.jpg
+    id: d4a770ec01a64e7ab08bcd4c54d174832e87e46a
+    geoip: US
+    batch: ""
+    addedOn: 2023-04-01
 Big Brother Awards CZ &#8211; Ceny pro největší slídily v našem soukromí:
   ipv4: 62.109.151.48
   site: http://www.bigbrotherawards.cz
+  campaign: edri
   reverses: dw073.webglobe.com
-  id: 5da32c8412a473c34998fb328f199e9d0ce072f4
+  id: 4deb1cc6ee65a3713864de582cd51f3b3544d1a2
   geoip: CZ
-  batch: edri
-  addedOn: 2023-02-23
-Bits of Freedom - Voor jouw internetvrijheid:
+  batch: ""
+  addedOn: 2023-04-01
+"Bits of Freedom: Voor jouw internetvrijheid":
   ipv4: 87.251.32.99
   site: http://www.bof.nl
+  campaign: edri
   description: Bits of Freedom komt op voor internetvrijheid door de online
     grondrechten op communicatievrijheid en privacy te beschermen.
   image: https://www.bitsoffreedom.nl/wp-content/uploads/2019/11/bitsoffreedom-twittercard.jpg
   reverses: stia3-87-251-32-99.vm.bit.nl
-  id: 291955df6147685d978c85809aa6d376cff61ae1
+  id: 8b5884c17f7e89ad82507b49b50f06706bc787e2
   geoip: NL
-  batch: edri
-  addedOn: 2023-02-23
+  batch: ""
+  addedOn: 2023-04-01
 CCC | Startseite:
   ipv4: 195.54.164.39
   site: http://www.ccc.de
+  campaign: edri
   reverses: web.ber.ccc.de
-  id: 77ea26294d3eeae087fc23d9c8960a8e908b93d4
+  id: c4032eeec21110f51171239d2678b169a2771744
   geoip: DE
-  batch: edri
-  addedOn: 2023-02-23
+  batch: ""
+  addedOn: 2023-04-01
 dataskydd:
-  ipv4: 163.172.146.87
-  site: http://www.dataskydd.net
-  description: Vi kartlägger EU:s dataskyddspaket, datalagring, och andra
-    integritetskränkningar - samt hur politiken enkelt kan förändras för att
-    hindra integritetskränkningar. Vi samlar skvaller från Bryssel, analyser
-    av politiska dokument, tidsplaner, och aktiviteter som går att genomföra
-    lokalt i Sverige.
-  reverses: dataskydd.net
-  id: a11892929232daabe815197e84dcda43279ea864
-  geoip: FR
-  batch: edri
-  addedOn: 2023-02-23
-FITUG:
-  ipv4: 217.17.192.110
-  site: http://www.fitug.de
-  reverses: fitug.fitug.de
-  id: eaf8a7d63f070773eded1893e9c6be7e077919a8
-  geoip: DE
-  batch: edri
-  addedOn: 2023-02-23
-Irish Council for Civil Liberties:
+  net:
+    ipv4: 163.172.146.87
+    site: http://www.dataskydd.net
+    campaign: edri
+    description: Vi kartlägger EU:s dataskyddspaket, datalagring, och andra
+      integritetskränkningar - samt hur politiken enkelt kan förändras för att
+      hindra integritetskränkningar. Vi samlar skvaller från Bryssel, analyser
+      av politiska dokument, tidsplaner, och aktiviteter som går att genomföra
+      lokalt i Sverige.
+    reverses: dataskydd.net
+    id: fb2fdaf7d367ee1fd1ae87fdfb613fc6986aaf25
+    geoip: FR
+    batch: ""
+    addedOn: 2023-04-01
+FITUG e:
+  V:
+    "":
+      ipv4: 217.17.192.110
+      site: http://www.fitug.de
+      campaign: edri
+      reverses: fitug.fitug.de
+      id: 3dc50387d039b884a959e759ed2ee337f2e31458
+      geoip: DE
+      batch: ""
+      addedOn: 2023-04-01
+"- Irish Council for Civil Liberties":
   ipv4: 193.189.141.121
   site: http://www.iccl.ie
-  description: For All Our Rights. No Exceptions. Police & Justice ReformEquality
-    & InclusionDigital & DataProtest & Civil SocietyAdd your voiceBe first to
-    know what's happening with human rights in Ireland & further afield:  Sign
-    up for ICCL's email updatesJoin ICCLICCL is 100% ... Read More
+  campaign: edri
+  description: For All Our Rights. No Exceptions. Administration of
+    JusticeEquality & DiscriminationDigital RightsDemocratic FreedomsAdd your
+    voiceBe first to know what's happening with human rights in Ireland &
+    further afield:  Sign up for ICCL's email updatesJoin ICCLICCL is 100%
+    independent of government and ... Read More
   reverses: ams2-c7-1.anuhosting.net
-  id: e005c9e95edc8932cb65a78a3b2f4647b6e83d91
+  id: be5240046fb46ce1c782ef0d3a5dfe8680740703
   geoip: GB
-  batch: edri
-  addedOn: 2023-02-23
+  batch: ""
+  addedOn: 2023-04-01
 "ICT Lex &#8211; Diritto, politica, cultura della Rete":
   ipv4: 185.121.208.53
   site: http://www.ictlex.net
+  campaign: edri
   reverses: c-208-53.net-185-121.qfiber.it
-  id: d35d0535a1d8030a3385751506074c1d2acf001c
+  id: c4b0bfbce2b579bf8ef79c3d19c788de224b2fc3
   geoip: IT
-  batch: edri
-  addedOn: 2023-02-23
+  batch: ""
+  addedOn: 2023-04-01
 Privatliv og rettigheder i informationssamfundet | IT-Politisk Forening:
   ipv4: 78.47.136.170
   site: http://www.itpol.dk
+  campaign: edri
   description: IT-Politisk Forening arbejder for at brugen af software og internet
     fremmer frihed, samt for at beskytte borgernes privatliv og rettigheder i
     informationssamfundet. Læs mere og bliv medlem.
   reverses: mail.itpol.dk
-  id: 6d3b7d1704e968db7baf517cdf23812202743701
+  id: 2a333a111abbfdd3fa4a264aa1fc2aa4c730857c
   geoip: DE
-  batch: edri
-  addedOn: 2023-02-23
+  batch: ""
+  addedOn: 2023-04-01
 Iuridicum Remedium - IuRe:
   ipv4: 62.109.151.48
   site: http://www.iure.org
+  campaign: edri
   description: Iuridicum Remedium, o. s. (IuRe) je nevládní nezisková organizace
     na ochranu lidských práv typu “watchdog” (“hlídací pes”) i “advocacy”.
     Zaměřujeme se na konkrétní případy porušování lidských práv i na obecné
     pokusy o omezování práv občanů, např. změnou legislativy.
   reverses: dw073.webglobe.com
-  id: 1795cd67fd046738e01f0eb8c886b579d3b56ae7
+  id: f32f365d7dfdc0858cc594cdb01ebf705a6ead1e
   geoip: CZ
-  batch: edri
-  addedOn: 2023-02-23
+  batch: ""
+  addedOn: 2023-04-01
 "Xnet - Internet, derechos y democracia en la era digital":
   ipv4: 88.99.236.13
   site: http://xnet-x.net
+  campaign: edri
   description: "Xnet: Internet, información y cultura libres. Tecnopolítica.
     Datos, algoritmos y derechos digitales. Libertad de expresión. Democracia y
     anticorrupción"
   image: https://xnet-x.net/img/xnet-home.png
   reverses: xnet.maadix.org
-  id: 98410acaac9174669db3d960319acc77fc0bc818
+  id: bb74f6a2d871a628ddedadc25dc7bcd8077b1918
   geoip: DE
-  batch: edri
-  addedOn: 2023-02-23
+  batch: ""
+  addedOn: 2023-04-01
