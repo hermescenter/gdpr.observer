@@ -67,20 +67,33 @@ TITOLO: OpenGraph Enrichment from RawLists
 
 Raw Files are automatically enriched with additional metadata using the [OpenGraph protocol](https://ogp.me), GeoIP and DNS reserve.
 
-The enriched files are in the `output\metai\$DATE\` directory, generated with the following command:
+By default a Rawlist of websites for each country subject to GDPR are provided, with only two entries: The Parliament and the Data Protection Authority.
+
+The enriched country files will be saved into `output\metai\COUNTRY` directory, generated with the following command:
 ```
-bin/infofetch.mjs --source $file
+# note: file by default are country name but can be any list, such as EDRi, DE_PoliticalParties
+bin/infofetch.mjs --source $file --name $file
+
 ```
 To generate all output files enriched you can run the following one-liner, it may take some time because it will connect to all rawlists websites:
 ```
-for file in rawlists/* ; do echo bin/infofetch.mjs --source $file ;  (bin/infofetch.mjs --source $file&) ; done
+cd rawlist/
+for file in * ; do echo bin/infofetch.mjs --source $file --name $file;  (bin/infofetch.mjs --source $file&) ; done
 ```
-You can see the output being generated for the date of today:
+Outputs are by default organized by countries, default provided for each country where GDPR does apply, but possibly also other lists. 
+You can see the output being generated for each file from rawfiles, providing one file for each country:
 ```
-ls output/metai/*/*
+ls output/metai/{IT,ES,DE,BE}
 ```
 
-TITOLO: YAML File Generation from OpenGraph Enriched Output
+TITLE: YAML File Generation from OpenGraph Enriched Output
+
+Now we need to generate the YAML file as input for gdpr observer software.
+```
+TODO with vecna
+for rawfileoutput in output/metai/*
+bin/importer.mjs --ogp output/metai/IT-latest --coll IT
+```
 
 YAML list file to be generated with the following example syntax:
 
@@ -94,6 +107,8 @@ YAML list file to be generated with the following example syntax:
   batch: edri
   addedOn: 2023-02-23
 ```
+
+
 
 #### 1st: acquisition
 
