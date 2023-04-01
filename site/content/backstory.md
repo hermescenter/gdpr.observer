@@ -14,8 +14,8 @@ date: 2022-12-22T17:01:34+07:00
 ## [Visit results up to 30 November 2022](https://monitora-pa.it/2022/11/30/MonitoraPA_results.html).
 
 {{<figure
-  src="/images/monitorapa/November-2022.svg"
-  href="https://monitora-pa.it/2022/11/30/MonitoraPA_results.html"
+  src="https://monitora-pa.it/2022/11/30/MonitoraPA_results.png"
+  link="https://monitora-pa.it/2022/11/30/MonitoraPA_results.html"
 >}}
 
 #### Because Monitora PA success was so effective in Italy, we:
@@ -24,5 +24,7 @@ date: 2022-12-22T17:01:34+07:00
 
 {{<figure
     src="/images/monitorapa/MonitoraPA.png"
-    href="https://monitora-pa.it"
+    link="https://monitora-pa.it"
+    width="50%"
+    class="center-image"
 >}}

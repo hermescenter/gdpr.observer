@@ -4,6 +4,10 @@ theme = "hugo-serif-theme"
 languageCode = "en-us"
 title = "GDPR observer"
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 [module]
   [module.hugoVersion]

@@ -1,6 +1,6 @@
 ---
-title: 'Homepage'
-meta_title: 'GDPR observer'
+title: "Homepage"
+meta_title: "GDPR observer"
 description: "In support of European Institutions and DPOs"
 intro_image: "images/illustrations/eu_map.svg"
 intro_image_absolute: true
@@ -17,3 +17,24 @@ intro_image_hide_on_mobile: true
 
 #### **Focus on:** web-trackers, informed consent, transport security, cloud location, cookies, and more.
 
+<script type="text/javascript">
+
+    window.onload = function () {
+        let elem = document.getElementById('map')
+            const doc = elem.getSVGDocument(); // that's the inner document
+            doc.addEventListener('click', function(e){
+                console.log(e.originalTarget.id)
+            });
+            doc.addEventListener('mouseover', function(e){
+                if (e.originalTarget.attributes.getNamedItem("style")){
+                    let value =  e.originalTarget.attributes.getNamedItem("style").nodeValue
+                    let index = value.indexOf("fill:")
+                    value = value.substr(index +5, index + 7 )
+                if ( value == "#f24088"){
+                e.originalTarget.style.cursor = "pointer"
+                }}
+            })
+
+    };
+
+</script>
