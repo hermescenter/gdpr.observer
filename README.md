@@ -62,12 +62,24 @@ Input Lists are the lists of websites and it's associated metadata, that can be 
 ls rawlists\
 head -4 rawlists/edri-gross-list.txt
 
-```
-The YAML file can be generated from raw files of lists by the following set of commands:
-```
-#TODO GENERATE commands from raw files
+TITOLO: OpenGraph Enrichment from RawLists
 
+Raw Files are automatically enriched with additional metadata using the [OpenGraph protocol](https://ogp.me), GeoIP and DNS reserve.
+
+The enriched files are in the `output\metai\$DATE\` directory, generated with the following command:
 ```
+bin/infofetch.mjs --source $file
+```
+To generate all output files enriched you can run the following one-liner, it may take some time because it will connect to all rawlists websites:
+```
+for file in rawlists/* ; do echo bin/infofetch.mjs --source $file ;  (bin/infofetch.mjs --source $file&) ; done
+```
+You can see the output being generated for the date of today:
+```
+ls output/metai/*/*
+```
+
+TITOLO: YAML File Generation from OpenGraph Enriched Output
 
 YAML list file to be generated with the following example syntax:
 
