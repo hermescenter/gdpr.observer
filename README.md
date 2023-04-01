@@ -145,3 +145,7 @@ bin/airtable-fetcher.mjs
 ### License
 
 * AGPL-3
+
+## REMINDER
+
+http://localhost:28000/evidences/2023-04-01/amnesty.org/screenshot-full.png

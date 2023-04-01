@@ -2,6 +2,7 @@
 
 import _ from 'lodash';
 import logger from 'debug';
+import { fs, path } from 'zx';
 const debug = logger('bin:backend');
 
 debug("Setting up database and indexes...");
@@ -52,6 +53,10 @@ expressApp.use(bodyParser.urlencoded({ extended: true }));
 for (const route of routes) {
     await route(dbSettings.mongodb, expressApp);
 }
+
+expressApp.use("/evidences",
+    express.static(path.join("output", "banner0"))
+);
 
 expressApp.get('/api/health', (req, res) => {
     debug("Health check from [%s]: OK", req.ip);
