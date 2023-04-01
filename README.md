@@ -39,7 +39,6 @@ git clone https://github.com/EU-EDPS/website-evidence-collector.git
 cd website-evidence-collector
 npm install
 cd ..
-npm test
 ```
 
 The last command would tell you if the system is ready to run. remind you need mongodb running in the server.
