@@ -30,8 +30,7 @@ const acquirer = `./bin/acquire.mjs`;
 const dailyIdGenerator = `./bin/id.mjs`;
 const list = parse(await fs.readFile(argv.source, 'utf-8'));
 
-for (const title of _.keys(list) ) {
-
+async function processURL(title) {
   /* info would also be passed to `acquire` and would become part of the DB */
   const info = list[title];
   info.name = title;
@@ -77,7 +76,11 @@ for (const title of _.keys(list) ) {
   } catch(error) {
     console.log(`Impossible to acquire: ${error.message}`);
   }
-
 }
+
+for (const title of _.keys(list) ) {
+  await processURL(title);
+}
+
 
 console.log("Execution complete");
