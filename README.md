@@ -51,21 +51,36 @@ The last command would tell you if the system is ready to run. remind you need m
 4. Every Batch can be re-tested everyday. Testing the same Batch more often is discouraged (and not even guarantee it work).
 5. You should `cd website-evidence-collector/assets; wget https://easylist.to/easylist/easyprivacy.txt` once a while (or git pull the repository `web-evidence-collector` to refresh the content, among them, `easyprivacy.txt`).
 
-Now you're ready to lunch commands. These commands should be run after the [setup](#setup).
+Now you're ready to start your analysis. These commands should be run after the [setup](#setup).
 
-#### 0es: get input ready
+#### Input Lists
 
-Imagine you've a list of URLs like:
+Input Lists are the lists of websites and it's associated metadata, that can be generated from Raw Files present in the rawlists\ directory:
 
 ```
-cat input/pt-list.1.txt | head -4 
-accessmonitor.acessibilidade.gov.pt
-arquivonacionaldosom.gov.pt
-builtcolab.pt
-c2tn.tecnico.ulisboa.pt
+# See lists of EDRi member websites
+ls rawlists\
+head -4 rawlists/edri-gross-list.txt
+
+```
+The YAML file can be generated from raw files of lists by the following set of commands:
+```
+#TODO GENERATE commands from raw files
+
 ```
 
-You need to transform it in a more complex format, like:
+YAML list file to be generated with the following example syntax:
+
+```Amnesty International:
+  ipv4: 141.193.213.21
+  site: http://amnesty.org
+  description: We campaign for a world where human rights are enjoyed by all
+  image: https://www.amnesty.org/en/wp-content/uploads/2019/12/whoweare_2944x1224_header.jpg
+  id: dd7b59427ccca244ab14c14d059169d730926b2c
+  geoip: US
+  batch: edri
+  addedOn: 2023-02-23
+```
 
 
 
