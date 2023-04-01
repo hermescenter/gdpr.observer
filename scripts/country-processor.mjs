@@ -9,12 +9,12 @@ import { fetch as fogp } from 'fetch-opengraph';
 /* import metai from '../lib/metascraper.mjs'; */
 
 if (!argv.source) {
-  console.log("Missing --source, which should be a file");
+  console.log("Missing --source, normally a .txt of URLs from rawlists/");
   process.exit(1);
 }
 
 if (!argv.name) {
-  console.log("Missing --name, which would produce later input/$name.yaml");
+  console.log("Missing --name (necessary later, would be in input/$name.yaml, and be the 'name' in the mongodb)");
   process.exit(1);
 }
 
@@ -52,10 +52,12 @@ console.log(`Skipping commented line ${site}`);
 
     const day = new Date().toISOString().substring(0, 10);
     metaidir = path.join('output', 'metai', argv.name, day);
+
+    if(!fs.existsSync(metaidir))
+      await $`mkdir -p ${metaidir}`
+
     // create symlink to the latest argv.name
     const dest = path.join(argv.name, day);
-    console.log(metaidir);
-    await $`mkdir -p ${metaidir}`
     const latest = path.join('output', 'metai', `${argv.name}-latest`);
     try {
       await fs.symlink(dest, latest);

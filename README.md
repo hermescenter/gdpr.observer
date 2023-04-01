@@ -58,12 +58,12 @@ Now you're ready to start your analysis. These commands should be run after the 
 Input Lists are the lists of websites and it's associated metadata, by default categorized by Country, that can be generated from Raw Files present in the rawlists\ directory:
 
 ```
-# See lists of DE rawlist
+# See lists of Germany rawlist. You can build new lists.
 ls rawlists\
-head -4 rawlists/DE
+head -4 rawlists/DE.txt
 ```
 
-#### OpenGraph Enrichment from RawLists
+# OpenGraph Enrichment from RawLists
 
 Raw Files are automatically enriched with additional metadata using the [OpenGraph protocol](https://ogp.me), GeoIP and DNS reserve.
 
@@ -71,9 +71,7 @@ By default a Rawlist of websites for each country subject to GDPR are provided, 
 
 The enriched country files will be saved into `output\metai\COUNTRY` directory, generated with the following command:
 ```
-# note: file by default are country name but can be any list, such as EDRi, DE_PoliticalParties
-bin/infofetch.mjs --source $file --name $file
-
+scripts/country--processor.mjs --source $file --name $campaign
 ```
 To generate all output files enriched you can run the following one-liner, it may take some time because it will connect to all rawlists websites:
 ```
@@ -90,15 +88,13 @@ ls output/metai/{IT,ES,DE,BE}
 
 Now we need to generate the YAML file as input for gdpr observer software.
 ```
-TODO with vecna
-for rawfileoutput in output/metai/*
-bin/importer.mjs --ogp output/metai/IT-latest --coll IT
+bin/importer.mjs --sources output/metai/IT-latest --coll IT
 ```
 
 YAML list file to be generated with the following example syntax:
 
-TODO: Fix example with a Country
-```Amnesty International:
+```
+Amnesty International:
   ipv4: 141.193.213.21
   site: http://amnesty.org
   description: We campaign for a world where human rights are enjoyed by all
@@ -109,12 +105,10 @@ TODO: Fix example with a Country
   addedOn: 2023-02-23
 ```
 
-
-
 #### 1st: acquisition
 
 ```
-bin/collect-with-wec2.mjs --country edri --source input/edri.yaml
+bin/collector.mjs  # TODO & review
 ```
 
 This command invokes also `bin/acquire.mjs` and `bin/id.mjs`, as well as `./website-evidence-collector/bin/website-evidence-collector.js`
