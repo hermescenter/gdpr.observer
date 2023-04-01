@@ -12,6 +12,25 @@ This project uses the European Data Protection Supervisor tool: website-evidence
 * `output`: created folders and results, you can delete after the imports, as the data goes in a MongoDB
 * `.gitignore`: it excludes the `output` folder, `web-evidence-collector` and the `logs`.
 
+# Setup 
+
+The commands below assume your Linux system has a NodeJS version >= 16.x
+You need in sequence to:
+* clone the repository
+* `npm i` 
+* `git clone https://github.com/EU-EDPS/website-evidence-collector.git`
+
+And then setup that system: we should consider to a submodule!
+
+```
+cd website-evidence-collector
+npm install
+cd ..
+npm test
+```
+
+The last command would tell you if the system is ready to run. remind you need mongodb running in the server.
+
 ## How To
 
 1. you need to have a valid list of URLs, pssibly with other additional metadata such as owners data and DPO email contact, in JSON or CSV format. **This list is named Batch**. Normally this list is in `input/` folder.
@@ -22,10 +41,26 @@ This project uses the European Data Protection Supervisor tool: website-evidence
 
 Now you're ready to lunch commands. These commands should be run after the [setup](#setup).
 
+#### 0es: get input ready
+
+Imagine you've a list of URLs like:
+
+```
+cat input/pt-list.1.txt | head -4 
+accessmonitor.acessibilidade.gov.pt
+arquivonacionaldosom.gov.pt
+builtcolab.pt
+c2tn.tecnico.ulisboa.pt
+```
+
+You need to transform it in a more complex format, like:
+
+
+
 #### 1st: acquisition
 
 ```
-bin/collect-with-wec.mjs --country XX --source input/portugal-partial.json
+bin/collect-with-wec2.mjs --country edri --source input/edri.yaml
 ```
 
 This command invokes also `bin/acquire.mjs` and `bin/id.mjs`, as well as `./website-evidence-collector/bin/website-evidence-collector.js`
@@ -52,55 +87,7 @@ bin/infofetch.js
 bin/airtable-fetcher.mjs
 ```
 
-## Setup
-
-The commands below assume your Linux system has a NodeJS version >= 16.x
-
-```
-npm install
-git clone https://github.com/EU-EDPS/website-evidence-collector.git 
-cd website-evidence-collector
-npm install
-cd ..
-npm test
-```
-
-The last command would tell you if the system is ready to run. remind you need mongodb running in the server.
-
-### Special: do you want to try WebEvidenceCollector?
-
-```
-cd website-evidence-collector
-bin/website-evidence-collector.js https://eportugal.gov.pt
-```
-
-## Small sample
-
-An example on which data is gather is in the [MONGODB](https://github.com/vecna/ETPIR/blob/main/MONGODB.md) file, it has been produced by running
-
-```
-npm install
-bin/collect-with-wec.mjs
-mongosh -d etpir-default -c beacons -q 'db.beacons.find({}).limit(1)'
-```
-
-Where `etpir-default` is the default database name, `beacons` is one of the collection generated based on the Web Evidence Collector output.
-
 ---
-
-## Site maintenance & compilation
-
-```
-git submodule update --init 
-cd site
-hugo -D server
-```
-
-To update the theme:
-
-```
-git submodule update --remote --merge
-```
 
 ### Contacts
 
