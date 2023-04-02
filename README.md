@@ -119,6 +119,7 @@ Now we need to generate the YAML file as input for gdpr observer software.
 bin/importer.mjs --sources output/metai/IT-latest --coll IT
 ```
 
+
 YAML list file to be generated with the following example syntax:
 
 ```
@@ -168,7 +169,7 @@ bin/airtable-fetcher.mjs
 ### Contacts
 
 * This project is coordinated by [Claudio Agosti](https://twitter.com/@_vecna), for the [Hermes Center](https://hermescenter.org).  Mail at `<projects at hermescenter dot org>`.
-* A new discussion place for communities and organized should be defined.
+* To participate join our [Matrix Chat](https://matrix.to/#/#gdpr.observer:matrix.org) 
 
 ### License
 
