@@ -17,14 +17,18 @@ if (!argv.source && !argv.name) {
 if (!argv.sessions) {
   console.log("--session 5 by default is assumed!");
 }
+if (!argv.consent){
+  console.log("--consent false by default is assumed")
+}
 const sessions = argv?.sessions || 5;
+const consent = argv?.consent || false;
 
 /* this script execute in sequence:
  * 1) wec
  * 2) produce a unique ID so every website can have only one entry per day in the DB
  * 3) acquire the produced output of wec into mongodb */
 
-const wec = `./website-evidence-collector/bin/website-evidence-collector.js`;
+const wec = `./website-evidence-collector.js`;
 const acquirer = `./scripts/internal/mongosave.mjs`;
 const dailyIdGenerator = `./scripts/internal/id.mjs`;
 
@@ -134,17 +138,24 @@ async function processURL(title) {
   }
 
   const day = new Date().toISOString().substring(0, 10);
-  const banner0dir = path.join('output', 'banner0', day, hostname);
-  await fs.ensureDir(banner0dir);
 
-  const inspection = path.join(banner0dir, 'inspection.json');
+  let dir = 'banner0'
+
+  if(consent){
+    dir = 'banner1'
+  }
+
+  const bannerdir = path.join('output', dir, day, hostname);
+  await fs.ensureDir(bannerdir);
+
+  const inspection = path.join(bannerdir, 'inspection.json');
   if(fs.existsSync(inspection)) {
     console.log(`File ${inspection} is present, skipping!`);
     return;
   }
 
   try {
-    const poutput = await $`${wec} ${info.site} --page-timeout 30000 --overwrite --output ${banner0dir}`.quiet();
+    const poutput = await $`${wec} ${info.site} --page-timeout 30000 --overwrite --output ${bannerdir} --consent ${consent}`.quiet();
     const logfile = path.join(banner0dir, 'stdout.log');
     const errfile = path.join(banner0dir, 'debug.log');
     await fs.writeFile(logfile, poutput.stdout, 'utf-8');

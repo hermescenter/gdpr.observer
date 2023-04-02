@@ -1,0 +1,24 @@
+languages:
+  it:
+    - ok
+    - accetta
+    - accetta tutto
+    - consento
+    - consenti tutto
+    - consenti
+    - accetto
+    - accetto tutto
+  en:
+    - agree
+    - allow
+    - got it
+    - continue
+    - close
+    - consent
+    - ok
+    - i've read
+elements:
+  - a
+  - span
+  - div
+  - button
