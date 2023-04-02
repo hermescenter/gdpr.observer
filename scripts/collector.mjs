@@ -23,18 +23,17 @@ if (!argv.consent){
 const sessions = argv?.sessions || 5;
 const consent = argv?.consent || false;
 
-let dir = 'banner0'
-
-if(consent){
-  dir = 'banner1'
-}
+const bannerLevel = !!argv.consent ? 'banner1' : 'banner0';
 
 /* this script execute in sequence:
  * 1) wec
  * 2) produce a unique ID so every website can have only one entry per day in the DB
  * 3) acquire the produced output of wec into mongodb */
 
-const wec = `./website-evidence-collector.js`;
+const wec = !!argv.consent ? 
+  `./scripts/wec-clicker.mjs` :
+  `./website-evidence-collector/bin/website-evidence-collector.js`;
+
 const acquirer = `./scripts/internal/mongosave.mjs`;
 const dailyIdGenerator = `./scripts/internal/id.mjs`;
 
@@ -56,7 +55,7 @@ if(!_.keys(data).length) {
 }
 
 /* here parallelization starts */
-const seconds = 3;
+const seconds = _.parseInt(argv?.seconds) || 3;
 const chunksN = _.round(_.keys(data).length / sessions) || 5;
 console.log(`Dividing ${_.keys(data).length} in ${chunksN} because of ${sessions} sessions; Spin new each ${seconds} seconds`);
 const chunks = _.chunk(_.keys(data), chunksN);
@@ -109,7 +108,7 @@ async function acquireSource(source, name) {
 }
 
 async function analysisIsPresent(info) {
-
+  /* this code was duplicated and we paid already once! -- sorry Zaizen! */
   let hostname = null;
   try {
     const urlo = new URL(info.site);
@@ -121,7 +120,7 @@ async function analysisIsPresent(info) {
   }
 
   const day = new Date().toISOString().substring(0, 10);
-  const bannerdir = path.join('output', dir, day, hostname);
+  const bannerdir = path.join('output', bannerLevel, day, hostname);
   await fs.ensureDir(bannerdir);
 
   const inspection = path.join(bannerdir, 'inspection.json');
@@ -144,8 +143,7 @@ async function processURL(title) {
   }
 
   const day = new Date().toISOString().substring(0, 10);
-
-  const bannerdir = path.join('output', dir, day, hostname);
+  const bannerdir = path.join('output', bannerLevel, day, hostname);
   await fs.ensureDir(bannerdir);
 
   const inspection = path.join(bannerdir, 'inspection.json');
@@ -160,7 +158,7 @@ async function processURL(title) {
     const errfile = path.join(bannerdir, 'debug.log');
     await fs.writeFile(logfile, poutput.stdout, 'utf-8');
     await fs.writeFile(errfile, poutput.stderr, 'utf-8');
-    // await $`ls -lh ${banner0dir}/*.log`
+    // await $`ls -lh ${bannerdir}/*.log`
   } catch(error) {
     console.log(`Failure in connecting to ${info.site}: ${error.message}`);
   }
