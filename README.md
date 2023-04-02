@@ -140,7 +140,7 @@ scripts/importer.mjs --source output/metai/*-latest
 The imported data can be query with the following comand:
 
 ```
-mongosh  etpir --eval "db.campaigns.find()"
+mongosh  gdpro --eval "db.campaigns.find()"
 ```
 Below an example output:
 
@@ -162,10 +162,62 @@ Below an example output:
 We are now ready to starts collecting data:
 
 ```
-bin/collector.mjs  # TODO & review
+scripts/collector.mjs --name DE.txt
 ```
 
-This command invokes also `bin/acquire.mjs` and `bin/id.mjs`, as well as `./website-evidence-collector/bin/website-evidence-collector.js`
+This command uses and execution also `scripts/internal/*` and `./website-evidence-collector/bin/website-evidence-collector.js`
+
+The acquired data has been saved into the mondodb, in raw formats for later processing to analyze Compliance Checks.
+
+All the collector's raw data set is available via APIs, also providing a means for extended data enrichments.
+
+Is possible to have a look at the datas by exploring:
+```
+mongosh  gdpro --eval "db.getCollectionNames()"
+
+[
+  'links',
+  'secure_connection',
+  'beacons',
+  'campaigns',
+  'browsing_history',
+  'uri_refs',
+  'cookies',
+  'hosts'
+]
+```
+
+You can looks at those raw data, for example checking "hosts" table:
+
+```
+mongosh  gdpro --eval "db.hosts.find()"
+{
+    _id: '64297cd198f7aa5c2b44aae9',
+    id: '34b6a1a70eb52d7322c2c0071ad036f601b7989d',
+    evidence: 'output/banner0/2023-04-02/www.bundestag.de/inspection.json',
+    campaign: 'DE.txt',
+    acquiredAt: ISODate("2023-04-02T13:36:09.963Z"),
+    title: 'German Bundestag - Homepage',
+    ipv4: '46.243.122.50',
+    country: 'DE',
+    description: 'Homepage of the German Bundestag, the national parliament of the Federal Republic of Germany',
+    image: 'https://www.bundestag.dehttps://www.bundestag.de/resource/blob/710792/1412e3a264dedb70095c5662743aee3e/adler-data.png',
+    reverses: 'www.bundestag.de',
+    when: '2023-04-02T13:02:08.952Z',
+    name: '0',
+    siteId: '173561af168120ed11d6d0f46e1dc00ceba979d6',
+    hosts: {
+      requests: {
+        firstParty: [ 'www.bundestag.de' ],
+        thirdParty: [
+          'www.bundestag.de',
+          'webtv.bundestag.de',
+          'statistik.bundestag.de'
+        ]
+      }
+ 
+ ```
+     
 
 #### 2nd: utilities
 
