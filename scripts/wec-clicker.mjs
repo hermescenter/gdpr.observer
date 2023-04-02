@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /* eslint-disable camelcase */
 
-import { fs, $, path } from "zx";
+import { fs } from "zx";
 import { parse } from "yaml";
 
 import { create } from "../website-evidence-collector/lib/logger.js";
@@ -20,6 +20,8 @@ const WindowSize = {
 
 (async () => {
   let args = argv.parse();
+
+  // console.log("We're here ", args);
 
   let browser_collector = await collector(args, create({}, args));
   let browser = await browser_collector.createSession();
@@ -43,18 +45,32 @@ const WindowSize = {
               let text = tags[i].textContent || tags[i].innerText;
               text = text.trim().toLowerCase();
 
-              if (text == searchText) {
+              if(text.length > 40)
+              // spare resources, we know we don't have to match everything
+                continue;
+
+              if (text.match(searchText)) {
+                console.log(`matched string, proceeding clicking`);
+                console.log(`[${text}], [${searchText}]`);
+
                 let rect = tags[i].getBoundingClientRect();
                 let xCenter = (rect.left + rect.right) / 2;
                 let yCenter = (rect.top + rect.bottom) / 2;
                 result.push({ xCenter, yCenter });
-              }
+              } /* else {
+                console.log(`Not matched [${text}], [${searchText}]`);
+              } */
             }
           }
         }
       }
+      console.log("results: ", result.length);
       return result;
     },
+    // TODO
+    // by testing with --headless false sometime you see
+    // link uncorrectly clicked, like in
+    // scripts/wec-clicker.mjs https://stackoverflow.com/ --page-timeout 3000 --overwrite --output output/banner1/2023-04-01/www.ilpost.it --consent true --headless  false
     accept_texts
   );
 

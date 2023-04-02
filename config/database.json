@@ -20,5 +20,5 @@
        { "key": { "country": -1 } }
      ]
   },
-  "mongodb":"mongodb://127.0.0.1:27017/etpir"
+  "mongodb":"mongodb://127.0.0.1:27017/gdpro"
 }

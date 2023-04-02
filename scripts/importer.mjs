@@ -72,7 +72,7 @@ async function processFile(fileogp, name) {
     client = await connect(mongodb);
     await client.db().collection("campaigns").createIndex({id: -1}, {unique: true});
     await client.db().collection("campaigns").insertOne(unit);
-    console.log(`Imported ${fname} as unit into db.etpir.campaigns`);
+    console.log(`Imported ${fname} as unit into db.gdpro.campaigns`);
   } catch(error) {
     console.log(`Unit not added: ${error.message}`);
   }
