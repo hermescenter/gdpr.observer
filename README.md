@@ -35,7 +35,7 @@ To participate join our [Matrix Chat](https://matrix.to/#/#gdpr.observer:matrix.
 
 * `site`: it contains the structure of a site in [HUGO](https://gohugo.io) and the content are automatically published in [gdpr.observer](https://gdpr.observer).
 * `website-evidence-collector`: the original EDPS web analysis tool you clone it by hand.
-* `bin` Software commands to perform collections, analysis, import/export, API webserver `bin/backend.mjs` .
+* `scripts` Software commands to perform collections, analysis, import/export, API webserver `scripts/backend.mjs` .
 * `input`: The sites/domains lists to be analyzed as the input of the software, defined in YAML format .
 * `output`: created folders and results, you can delete after the imports, as the data goes in a MongoDB
 * `.gitignore`: it excludes the `output` folder, `web-evidence-collector` and the `logs`.
@@ -237,7 +237,7 @@ nohup npm run backend &
 TODO: Fix with latests relative url
 To play with the API extraction you can for example check the third party trackers and cookies of a collection's of websites.
 
-Variables are the Name of the Collection and the date.
+Variables are the name of the "collection" and the "date" of collection.
 ```
 curl http://127.0.0.1:28000/api/data/DE.txt/2023-04-02
 ```
@@ -281,6 +281,26 @@ To modify the website you need to starts the HUGO server to open it as http://lo
 ```
 hugo -D server
 ```
+
+#### Contributing to the Acceptance Consent Clicker Language Dictionaries
+
+The software need to collect cookies before and after clicking on an acceptance consent banner.
+This is a very important feature in order to automatically later execute Compliance Checker.
+
+This works by matching a set of language specific words and sentences with the text contained in the buttons visible in a web page.
+For example "I Accept" can be a way to identify in english language a likely button to be clicked to Accept Consent.
+
+You can contribute to improve your language specific Dictionary for a reliable Acceptance Consent Clicker:
+TODO: Organize the ay to manage the contribution and the status of localization of Acceptance Content Clicker.
+
+
+#### Contributing to the Legal Compliant Email and Localization
+
+The software, in order to notify a positive Compliance Check, need to send compliants in the right language of the recipient.
+You can contribute by localizing the Email Complaint checks in your language by checking the templates not yet translated on:
+
+TODO: Organize the way to manage the Compliant Email in different languages, which one is available and which not.
+
 
 ---
 
