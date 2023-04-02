@@ -48,7 +48,7 @@ title = "GDPR observer"
     summary_large_truncate = 120 # How many characters to include in the summary of the team bios (large layout) before truncating
 
   [params.footer]
-    copyright_text = 'Supporting European DPOs in get rid of Google & Co; <a class="zerostatic" href="https://hermescenter.org">Hermes Center</a>.'
+    copyright_text = 'Supporting European DPOs; <a class="zerostatic" href="https://hermescenter.org">Hermes Center</a>.'
 
 [menu]
   # Main Menu
