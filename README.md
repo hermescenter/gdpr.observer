@@ -34,7 +34,7 @@ git clone https://github.com/hermescenter/gdpr.observer.git
 cd gdpr.observer
 # Install GDPR Observer
 npm i
-# Install EDPS's WEC - Website Evidence Collector as submodule:
+# clone the EDPS's WEC - Website Evidence Collector repository:
 git clone https://github.com/EU-EDPS/website-evidence-collector.git
 cd website-evidence-collector
 npm install
@@ -148,4 +148,5 @@ bin/airtable-fetcher.mjs
 
 ## REMINDER
 
-http://localhost:28000/evidences/2023-04-01/amnesty.org/screenshot-full.png
+* http://localhost:28000/evidences/2023-04-01/amnesty.org/screenshot-full.png
+* removed metascraper, only 'fetch-opengraph' is kept

@@ -19,38 +19,51 @@ intro_image_hide_on_mobile: true
 
 <script type="text/javascript">
 
-    window.onload = function () {
-        let elem = document.getElementById('map')
-            const doc = elem.getSVGDocument(); // that's the inner document
-            doc.addEventListener('click', function(e){
-                //console.log(e.originalTarget.id)
+function handleClick(doc, twolcc, href) {
 
-                if (e.originalTarget.attributes.getNamedItem("style")){
-                    let value =  e.originalTarget.attributes.getNamedItem("style").nodeValue
-                    let index = value.indexOf("fill:")
-                    let index_2 = value.indexOf(";", index)
+  doc.addEventListener('click', function(e) {
+    console.log(e.originalTarget.id)
+    if (e.originalTarget.attributes.getNamedItem("style")) {
+      let value =  e.originalTarget.attributes.getNamedItem("style").nodeValue
+      let index = value.indexOf("fill:")
+      let index_2 = value.indexOf(";", index)
 
-                    value = value.substr(index +5, index_2-5 )
+      value = value.substr(index +5, index_2-5 )
 
-                if ( value == "#f24088" || value == " rgb(242, 64, 136)"){
+      if ( value == "#f24088" || value == " rgb(242, 64, 136)") {
+        location.href = href ? href : window.location + "campaign/" + e.originalTarget.id;
+      }
+    }
+  });
+}
 
-                location.href = window.location + "campaign/" + e.originalTarget.id;
-             }}
+function styleCountry(doc, country) {
+  doc.addEventListener('mouseover', function(e) {
+    if (e.originalTarget.attributes.getNamedItem("style")) {
+      let value =  e.originalTarget.attributes.getNamedItem("style").nodeValue
+      let index = value.indexOf("fill:")
+      let index_2 = value.indexOf(";", index)
 
-            });
-            doc.addEventListener('mouseover', function(e){
-                if (e.originalTarget.attributes.getNamedItem("style")){
-                    let value =  e.originalTarget.attributes.getNamedItem("style").nodeValue
-                    let index = value.indexOf("fill:")
-                    let index_2 = value.indexOf(";", index)
+      value = value.substr(index +5, index_2-5 )
 
-                    value = value.substr(index +5, index_2-5 )
+      if ( value == "#f24088" || value == " rgb(242, 64, 136)") {
+        e.originalTarget.style.cursor = "pointer"
+      }
+    }
+  })
+}
 
-                if ( value == "#f24088" || value == " rgb(242, 64, 136)"){
-                e.originalTarget.style.cursor = "pointer"
-                }}
-            })
+function debug(doc, country) {
+  console.log("cccscscdsmpcmsodp");
+  debugger;
+}
 
-    };
+window.onload = function () {
+  let elem = document.getElementById('map')
+  const doc = elem.getSVGDocument(); // that's the inner document
+  handleClick(doc);
+  styleCountry(doc);
+  debug(doc);
+};
 
 </script>

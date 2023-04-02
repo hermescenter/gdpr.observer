@@ -109,6 +109,7 @@ async function processURL(title) {
    * this ensure predictable and daily ID, to avoid dups */
   const id = await $`${dailyIdGenerator} --country ${name} --path ${banner0dir}`;
   console.log(`Site ${hostname} in ${day} has unique ID ${id}`);
+  console.log(JSON.stringify(info));
   try {
     await $`${acquirer} --id ${id} --info ${JSON.stringify(info)} --campaign ${name} --source ${inspection}`.quiet();
     console.log(`Acquired ${hostname} into DB (${name})`);

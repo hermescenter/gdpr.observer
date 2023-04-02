@@ -46,9 +46,8 @@ async function processFile(fileogp, name) {
   const content = await fs.readJSON(fname);
   const unit = _.pick(content, ['title', 'ipv4', 'country' ]);
   unit.site = content.url;
-  unit.campaign = name;
+  unit.campaign = name.trim();
 
-  /* optional fields *
   unit.description = pullOptional(content, 'description');
   unit.image = pullOptional(content, 'image');
 

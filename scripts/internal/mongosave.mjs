@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /* eslint-disable camelcase */
 
-// this command is invoked by `collect-with-wec`
+// this command is invoked by `scripts/collector.mjs`
 
 import _ from 'lodash';
 import { argv, fs } from 'zx';
@@ -37,7 +37,6 @@ if(argv.info) {
   extraInfo.siteId = extraInfo.id;
   _.unset(extraInfo, 'id');
   _.unset(extraInfo, 'site');
-  _.unset(extraInfo, 'batch');
 }
 
 /* every key should go in a dedicated collection */
@@ -65,8 +64,8 @@ const mongoqs = _.compact(_.map(content, function(value, key) {
     content: {
       id: argv.id,
       evidence: argv.source,
-      campaign: argv.campaign,
-      when: new Date(),
+      campaign: argv.campaign.trim(),
+      acquiredAt: new Date(),
       ...extraInfo,
     }
   }

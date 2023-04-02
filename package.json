@@ -1,20 +1,21 @@
 {
   "name": "etpir",
-  "version": "0.1.0",
-  "description": "This set of tools helps in managing results and process of https://etpir.hermescenter.org",
+  "version": "0.2.0",
+  "description": "This set of tools helps in managing results and process of https://gdpr.observer",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vecna/ETPIR.git"
+    "url": "git+https://github.com/hermescenter/gdpr.observer.git"
   },
-  "author": "Claudio Agosti",
+  "author": "Claudio Agosti, Hermes Center",
   "license": "AGPL-3.0",
   "bugs": {
-    "url": "https://github.com/vecna/ETPIR/issues"
+    "url": "https://github.com/hermescenter/gdpr.observer/issues"
   },
   "scripts": {
-    "backend": "DEBUG=* node backend/backend.mjs"
+    "backend": "DEBUG=* node backend/backend.mjs",
+    "dev": "DEBUG=* $(npm bin)/nodemon -i site -i output -i tmp backend/backend.mjs"
   },
-  "homepage": "https://github.com/vecna/ETPIR#readme",
+  "homepage": "https://github.com/hermescenter/gdpr.observer",
   "dependencies": {
     "airtable": "^0.11.5",
     "body-parser": "^1.20.1",
@@ -26,18 +27,9 @@
     "html-get": "^2.9.22",
     "jsonexport": "^3.2.0",
     "lodash": "^4.17.21",
-    "metascraper": "^5.30.4",
-    "metascraper-author": "^5.30.4",
-    "metascraper-clearbit": "^5.30.4",
-    "metascraper-date": "^5.30.4",
-    "metascraper-description": "^5.30.4",
-    "metascraper-image": "^5.30.4",
-    "metascraper-logo": "^5.30.4",
-    "metascraper-publisher": "^5.30.4",
-    "metascraper-title": "^5.30.4",
-    "metascraper-url": "^5.30.4",
     "moment": "^2.29.4",
     "mongodb": "^4.10.0",
+    "nodemon": "^2.0.22",
     "zx": "^7.0.7"
   }
 }
