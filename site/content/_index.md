@@ -54,7 +54,8 @@ function styleCountry(doc, country) {
 }
 
 function debug(doc, country) {
-  console.log("cccscscdsmpcmsodp");
+  x = doc.querySelector("#gr")
+  x.parentElement.childNodes.forEach(function(n) { console.log(n.tagName)})
   debugger;
 }
 

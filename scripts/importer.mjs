@@ -66,16 +66,18 @@ async function processFile(fileogp, name) {
 
   unit.when = new Date();
 
-  const { mongodb } = (await fs.readJSON('./config/database.json'));
-  const client = await connect(mongodb);
-  await client.db().collection("campaigns").createIndex({id: -1}, {unique: true});
+  let client = null;
   try {
+    const { mongodb } = (await fs.readJSON('./config/database.json'));
+    client = await connect(mongodb);
+    await client.db().collection("campaigns").createIndex({id: -1}, {unique: true});
     await client.db().collection("campaigns").insertOne(unit);
     console.log(`Imported ${fname} as unit into db.etpir.campaigns`);
   } catch(error) {
     console.log(`Unit not added: ${error.message}`);
   }
-  await client.close();
+  if(client)
+    await client.close();
 }
 
 const chunks = argv.source.split('/');
