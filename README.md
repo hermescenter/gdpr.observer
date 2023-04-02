@@ -254,6 +254,34 @@ scripts/collector.mjs --name DE.txt --consent
 
 Please consider deleting the `tmp/udd_*` directories
 
+#### Contributing to the website
+To contribute in content editing of the website of GDPR Observer you will need to install and uses [HUGO](https://gohugo.io/) software framework.
+With Hugo web pages are edited in markdown under the folder site/content/ .
+```
+sudo apt install hugo
+cd site/
+hugo
+```
+
+This will show the current sites data:
+```
+                   | EN
+-------------------+-----
+  Pages            | 29
+  Paginator pages  |  0
+  Non-page files   |  1
+  Static files     | 74
+  Processed images |  0
+  Aliases          |  0
+  Sitemaps         |  1
+  Cleaned          |  0
+```
+
+To modify the website you need to starts the HUGO server to open it as http://localhost:1313/
+```
+hugo -D server
+```
+
 ---
 
 ### Contacts
