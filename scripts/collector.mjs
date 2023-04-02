@@ -115,10 +115,10 @@ async function analysisIsPresent(info) {
   }
 
   const day = new Date().toISOString().substring(0, 10);
-  const banner0dir = path.join('output', 'banner0', day, hostname);
-  await fs.ensureDir(banner0dir);
+  const bannerdir = path.join('output', dir, day, hostname);
+  await fs.ensureDir(bannerdir);
 
-  const inspection = path.join(banner0dir, 'inspection.json');
+  const inspection = path.join(bannerdir, 'inspection.json');
   return !!fs.existsSync(inspection);
 }
 
@@ -156,8 +156,8 @@ async function processURL(title) {
 
   try {
     const poutput = await $`${wec} ${info.site} --page-timeout 30000 --overwrite --output ${bannerdir} --consent ${consent}`.quiet();
-    const logfile = path.join(banner0dir, 'stdout.log');
-    const errfile = path.join(banner0dir, 'debug.log');
+    const logfile = path.join(bannerdir, 'stdout.log');
+    const errfile = path.join(bannerdir, 'debug.log');
     await fs.writeFile(logfile, poutput.stdout, 'utf-8');
     await fs.writeFile(errfile, poutput.stderr, 'utf-8');
     // await $`ls -lh ${banner0dir}/*.log`
