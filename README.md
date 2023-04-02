@@ -128,29 +128,38 @@ You can see the output being generated for each file from rawfiles, providing on
 ls output/metai/{IT,ES,DE,BE}
 ```
 
-#### YAML File Generation from OpenGraph Enriched Output
+#### Database import from OpenGraph Enriched Collections
 
-Now we need to generate the YAML file as input for gdpr observer software.
+Now we need to import into the database the enriched websites from collections:
 ```
 scripts/importer.mjs --source output/metai/DE.txt-latest
+scripts/importer.mjs --source output/metai/*-latest
 ```
 
 
-YAML list file to be generated with the following example syntax:
+The imported data can be query with the following comand:
 
 ```
-Amnesty International:
-  ipv4: 141.193.213.21
-  site: http://amnesty.org
-  description: We campaign for a world where human rights are enjoyed by all
-  image: https://www.amnesty.org/en/wp-content/uploads/2019/12/whoweare_2944x1224_header.jpg
-  id: dd7b59427ccca244ab14c14d059169d730926b2c
-  geoip: US
-  batch: edri
-  addedOn: 2023-02-23
+mongosh  etpir --eval "db.campaigns.find()"
+```
+Below an example output:
+
+```
+    _id: ObjectId("64297cd198f7aa5c2b44aae9"),
+    title: 'German Bundestag - Homepage',
+    ipv4: '46.243.122.50',
+    country: 'DE',
+    site: 'https://www.bundestag.de/en',
+    campaign: 'DE.txt',
+    description: 'Homepage of the German Bundestag, the national parliament of the Federal Republic of Germany',
+    image: 'https://www.bundestag.dehttps://www.bundestag.de/resource/blob/710792/1412e3a264dedb70095c5662743aee3e/adler-data.png',
+    reverses: 'www.bundestag.de',
+    id: '173561af168120ed11d6d0f46e1dc00ceba979d6',
+    when: ISODate("2023-04-02T13:02:08.952Z")
 ```
 
 #### 1st: acquisition
+We are now ready to starts collecting data:
 
 ```
 bin/collector.mjs  # TODO & review
