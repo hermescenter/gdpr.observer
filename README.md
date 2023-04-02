@@ -3,7 +3,7 @@
 
 This project provide a scalable and collaborative software platform and service for:
 - Enable NGOs and DPAs (and anyone) to perform GDPR Compliance Checks in a code-free (SAAS) way
-- Provide Automatic and Continuous Data Collection / Analisys of Collections
+- Provide Automatic and Continuous Data Collection / Analisys of Website's Collections
 - Display searchable results of Compliance Checks organized by Collection names (default, by Country)
 - Provide an OpenData accessible API of Raw Data (to develop Compliance Checks) and GDPR Compliance Checks results
 - Enable automatic sending of GDPR Compliance Email to Data Processor and it's DPO
