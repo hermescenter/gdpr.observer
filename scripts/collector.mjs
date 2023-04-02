@@ -23,6 +23,12 @@ if (!argv.consent){
 const sessions = argv?.sessions || 5;
 const consent = argv?.consent || false;
 
+let dir = 'banner0'
+
+if(consent){
+  dir = 'banner1'
+}
+
 /* this script execute in sequence:
  * 1) wec
  * 2) produce a unique ID so every website can have only one entry per day in the DB
@@ -138,12 +144,6 @@ async function processURL(title) {
   }
 
   const day = new Date().toISOString().substring(0, 10);
-
-  let dir = 'banner0'
-
-  if(consent){
-    dir = 'banner1'
-  }
 
   const bannerdir = path.join('output', dir, day, hostname);
   await fs.ensureDir(bannerdir);
