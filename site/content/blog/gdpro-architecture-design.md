@@ -14,7 +14,7 @@ Is implemented under an AGPL-v3 license, and you can review or fork the code fro
 
 It is implemented to run via `nodejs` and depends from these fundamental frameworks:
 * Web Evidence Collector, from the EDPS, based on Puppeteer.
-* _Consent-o-matic_ (an [Extension](https://github.com/cavi-au/Consent-O-Matic) is not working with the various cookie banner we're spotting on institution. Finding way to contribute to the package is part of our mandate, so we're keeping it into the design). _This is not currently implemented, as there is a research in progress._
+* Consent Acceptance Clicker with multi-language dictionary
 * Javascript frameworks: `expressJS`, `zx`, `lodash`.
 
 ![architecture-design-1](/images/design/architecture-1.jpg)
