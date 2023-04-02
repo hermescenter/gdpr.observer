@@ -57,8 +57,9 @@ source $HOME/.profile
 ```
 
 # Install MongoDB (latests)
-# From https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-debian/
-# Instruction for Ubuntu 20.04, check manual for appropriate source
+From https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-debian/
+Instruction for Ubuntu 20.04, check manual for appropriate source
+
 ```
 echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
 sudo apt-get install -y mongodb-org
