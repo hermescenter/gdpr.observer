@@ -21,6 +21,15 @@ GDPR Observer extend and improve WEC:
 1. With a multi-language Acceptance Consent Clicker
 2. Elaborating Compliance Checks from its scan results data
 
+# Contribute to the project
+You can contribute to the project in the following way:
+- Provide and Enrich collections of websites of your own country
+- Contribute to the Acceptance Consent Clicker in your language
+- Localize the web pages displaying the results and Compliance Emails
+- Starts GDPR Compliance Email campaigns in your country
+
+To participate join our [Matrix Chat](https://matrix.to/#/#gdpr.observer:matrix.org) .
+
 
 ## Repository Map
 
