@@ -77,6 +77,7 @@ git clone https://github.com/hermescenter/gdpr.observer.git
 cd gdpr.observer
 # Install GDPR Observer
 npm i
+git submodule update --init
 # clone the EDPS's WEC - Website Evidence Collector repository:
 git clone https://github.com/EU-EDPS/website-evidence-collector.git
 cd website-evidence-collector
