@@ -82,6 +82,7 @@ git submodule update --init
 git clone https://github.com/EU-EDPS/website-evidence-collector.git
 cd website-evidence-collector
 npm install
+echo 0> assets/easyprivacy.txt 
 cd ..
 ```
 
