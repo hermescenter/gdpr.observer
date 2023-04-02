@@ -1,7 +1,26 @@
 
-## European Third Party Inclusion Reporting
+## GDPR Observer Project
 
-This project uses the European Data Protection Supervisor tool: website-evidence-collector
+This project provide a scalable and collaborative software platform and service for:
+- Enable NGOs and DPAs (and anyone) to perform GDPR Compliance Checks in a code-free (SAAS) way
+- Provide Automatic and Continuous Data Collection / Analisys of Collections
+- Display searchable results of Compliance Checks organized by Collection names (default, by Country)
+- Provide an OpenData accessible API of Raw Data (to develop Compliance Checks) and GDPR Compliance Checks results
+- Enable automatic sending of GDPR Compliance Email to Data Processor and it's DPO
+
+It's specifically designed to enable contribution in any steps for the process in making it scalable across Europe:
+- Enable contribution of Collections of lists Websites to subject to GDPR Observation (e.g. Collection by country, by organizations, etc)
+- Enable contribution of additional metadata to Collections such as DPO's email or Categories (e.g. Schools, Hospitals, Ministries, etc)
+- Enable curation of Collection's GDPR Compliance Check results by validating it (e.g. Before sending a compliance email)
+- Enable contribution and localization of GDPR Compliance Email 
+- Enable contribution and Diagnostic of Acceptance Consent Clicking Semantic texts
+
+Compliance Checks are performed by multiple technical means, mainly by uses of the European Data Protection Supervisor tool's [Website Evidence Collector](https://github.com/EU-EDPS/website-evidence-collector).
+
+GDPR Observer extend and improve WEC:
+1. With a multi-language Acceptance Consent Clicker
+2. Elaborating Compliance Checks from its scan results data
+
 
 ## Repository Map
 
