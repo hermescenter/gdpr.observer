@@ -10,8 +10,14 @@ if (!argv.source && !argv.name) {
   console.log("Missing --name or --source");
   console.log("--name is the field 'campaign' in (db.etpir.campaings)");
   console.log("--source is a YAML file in input/; check README.md");
+  console.log("p.s. --sessions <number>");
   process.exit(1);
 }
+
+if (!argv.sessions) {
+  console.log("--session 5 by default is assumed!");
+}
+const sessions = argv?.sessions || 5;
 
 /* this script execute in sequence:
  * 1) wec
@@ -22,29 +28,52 @@ const wec = `./website-evidence-collector/bin/website-evidence-collector.js`;
 const acquirer = `./scripts/internal/mongosave.mjs`;
 const dailyIdGenerator = `./scripts/internal/id.mjs`;
 
-const { name, data } = await acquireSource(argv.source, argv.name);
+const { name, fullList } = await acquireSource(argv.source, argv.name);
 
-/* this is the parallelizzation logic that needs debug */
-const chunksN = 12
+/* now remove the duplicates, because the session parallel might fall into 
+ * a race condition if a session terminates before the other have begun */
+const data = {};
+for (const index of _.keys(fullList)) {
+  if(!await analysisIsPresent(fullList[index]))
+    _.set(data, index, fullList[index]);
+}
+
+console.log(`From a full source of ${_.keys(fullList).length} sites, still TOBEDONE ${_.keys(data).length}`);
+
+if(!_.keys(data).length) {
+  console.log(`.. seems the job here is done for today! no need to re-run it`);
+  process.exit(1);
+}
+
+/* here parallelization starts */
+const seconds = 3;
+const chunksN = _.round(_.keys(data).length / sessions) || 5;
+console.log(`Dividing ${_.keys(data).length} in ${chunksN} because of ${sessions} sessions; Spin new each ${seconds} seconds`);
 const chunks = _.chunk(_.keys(data), chunksN);
+let sessionActive = 0;
 
-await setInterval(async () => {
+setInterval(async () => {
 
-  if(!chunks.length) {
-    console.log("Batch all consumed...")
-  } else {
+  if(chunks.length) {
     const batch = chunks.pop();
+    sessionActive++;
+    console.log(`[+] Session ${sessionActive}/${chunks.length} picked a batch of ${batch.length} sites, still to get ${chunks.length} chunks`);
     for (const index of batch) {
-      console.log(`Of the ${chunksN} wec ${batch.join('_')}: ${data[index].title}`);
+      console.log(`  ++ site ${index}, starting ${data[index].title}`);
       await processURL(index);
     }
+    console.log(`Session completed ${sessionActive} decrements`);
+    sessionActive--;
   }
 
-}, 3000);
+}, seconds * 1000);
 
-await setTimeout(async () => {
-  console.log(`This process should keep hanging till ${data.length * 20000}`);
-}, data.length * 20000)
+setInterval(async () => {
+  console.log("                     ", new Date());
+  console.log("                     ", sessionActive, "sessions active");
+  if(!sessionActive)
+    process.exit(0);
+}, 10000)
 
 async function acquireSource(source, name) {
 
@@ -54,7 +83,7 @@ async function acquireSource(source, name) {
     const c = argv.source.split('/').pop();
     return {
       name: c.replace(/\.yaml/, ''),
-      data
+      fullList: data
   }
   } else {
     const { mongodb } = (await fs.readJSON('./config/database.json'));
@@ -64,9 +93,29 @@ async function acquireSource(source, name) {
     await client.close();
     return {
       name,
-      data
+      fullList: data
     }
   }
+}
+
+async function analysisIsPresent(info) {
+
+  let hostname = null;
+  try {
+    const urlo = new URL(info.site);
+    hostname = urlo.hostname;
+  } catch(error) {
+    console.log(`Invalid URL? (${info.site}) ${error.message}`);
+    console.log(JSON.stringify(info, undefined, 2));
+    return;
+  }
+
+  const day = new Date().toISOString().substring(0, 10);
+  const banner0dir = path.join('output', 'banner0', day, hostname);
+  await fs.ensureDir(banner0dir);
+
+  const inspection = path.join(banner0dir, 'inspection.json');
+  return !!fs.existsSync(inspection);
 }
 
 async function processURL(title) {
@@ -100,16 +149,16 @@ async function processURL(title) {
     const errfile = path.join(banner0dir, 'debug.log');
     await fs.writeFile(logfile, poutput.stdout, 'utf-8');
     await fs.writeFile(errfile, poutput.stderr, 'utf-8');
-    await $`ls -lh ${banner0dir}/*.log`
+    // await $`ls -lh ${banner0dir}/*.log`
   } catch(error) {
     console.log(`Failure in connecting to ${info.site}: ${error.message}`);
   }
 
   /* the ID is unique every day, timedate is part of the path, 
    * this ensure predictable and daily ID, to avoid dups */
-  const id = await $`${dailyIdGenerator} --country ${name} --path ${banner0dir}`;
-  console.log(`Site ${hostname} in ${day} has unique ID ${id}`);
-  console.log(JSON.stringify(info));
+  const id = await $`${dailyIdGenerator} --country ${name} --path ${banner0dir}`.quiet();
+  // console.log(`    Site ${hostname} in ${day} has unique ID ${id}`);
+  // console.log(JSON.stringify(info));
   try {
     await $`${acquirer} --id ${id} --info ${JSON.stringify(info)} --campaign ${name} --source ${inspection}`.quiet();
     console.log(`Acquired ${hostname} into DB (${name})`);

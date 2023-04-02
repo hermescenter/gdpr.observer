@@ -83,7 +83,6 @@ const name = chunks.pop().replace(/-latest/, '');
 console.log(`Inferred name: ${name}`);
 
 const files = fs.readdirSync(argv.source);
-console.log(files);
 for (const fileogp of files) {
   await processFile(fileogp, name);
 }
