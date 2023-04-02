@@ -217,29 +217,41 @@ mongosh  gdpro --eval "db.hosts.find()"
       }
  
  ```
-     
 
-#### 2nd: utilities
+It's also possible to access the screenshots being collected with the browser:
+
+TODO: Fix with latests relative url
+ ```
+ http://localhost:28000/evidences/2023-04-02/www.bundestag.de/screenshot-full.png
+ ```
+ 
+#### 2nd: Start Backend Process
+We need now to start the backend process exposing the API to interact with the data:
 
 ```
-bin/produce-stats.mjs
+nohup npm run backend &
+```
+#### 3rd: Extract data with the API
+
+TODO: Fix with latests relative url
+To play with the API extraction you can for example check the third party trackers and cookies of a collection's of websites.
+
+Variables are the Name of the Collection and the date.
+```
+curl http://127.0.0.1:28000/api/data/DE.txt/2023-04-02
 ```
 
 
-#### 2nd+: additional collections
+#### +: Data enrichments
+Additional data enrichment, being developed but not yet implemented, can be tested.
 
+Below the in-development consent acceptance clicker functionality:
 ```
-bin/consent-clicker.mjs --country EUI --source input/eui-30-selectors.yaml 
+scripts/collector.mjs --name DE.txt --consent
+
 ```
 
 Please consider deleting the `tmp/udd_*` directories
-
-#### 3rd: not yet completed
-
-```
-bin/infofetch.js
-bin/airtable-fetcher.mjs
-```
 
 ---
 
@@ -251,8 +263,3 @@ bin/airtable-fetcher.mjs
 ### License
 
 * AGPL-3
-
-## REMINDER
-
-* http://localhost:28000/evidences/2023-04-01/amnesty.org/screenshot-full.png
-* removed metascraper, only 'fetch-opengraph' is kept
