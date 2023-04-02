@@ -55,6 +55,20 @@ sudo tar -xJvf node-v18.15.0-linux-x64.tar.xz -C /usr/local/lib/nodejs
 echo 'export PATH=/usr/local/lib/nodejs/node-v18.15.0-linux-x64/bin:$PATH' >> $HOME/.profile
 source $HOME/.profile
 ```
+
+# Install MongoDB (latests)
+# From https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-debian/
+# Instruction for Ubuntu 20.04, check manual for appropriate source
+```
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+sudo apt-get install -y mongodb-org
+sudo systemctl start mongod
+```
+If there are problems in starting up mongodb automatically you can always start it manually:
+```
+sudo /usr/bin/mongod -f /etc/mongod.conf
+```
+
 # Install GDPR Observer
 ```
 # clone the repository
@@ -99,12 +113,13 @@ By default a Rawlist of websites for each country subject to GDPR are provided, 
 
 The enriched country files will be saved into `output\metai\COUNTRY` directory, generated with the following command:
 ```
-scripts/country--processor.mjs --source $file --name $campaign
+scripts/country-processor.mjs --source $file --name $file
 ```
 To generate all output files enriched you can run the following one-liner, it may take some time because it will connect to all rawlists websites:
 ```
-cd rawlist/
-for file in * ; do echo bin/infofetch.mjs --source $file --name $file;  (bin/infofetch.mjs --source $file&) ; done
+TO BE FIXED: Basename on --name parameter and execution from root, not from raflists
+
+for file in * ; do echo ../scripts/country-processor.mjs --source $file --name $file;  (../scripts/country-processor.mjs --name $file --source $file&) ; done
 ```
 Outputs are by default organized by countries, default provided for each country where GDPR does apply, but possibly also other lists. 
 You can see the output being generated for each file from rawfiles, providing one file for each country:
@@ -116,7 +131,7 @@ ls output/metai/{IT,ES,DE,BE}
 
 Now we need to generate the YAML file as input for gdpr observer software.
 ```
-bin/importer.mjs --sources output/metai/IT-latest --coll IT
+scripts/importer.mjs --source output/metai/DE.txt-latest
 ```
 
 
