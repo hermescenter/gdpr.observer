@@ -75,6 +75,9 @@ const WindowSize = {
   );
 
   for (let click of result) {
+    // perhaps we can add a small milliseconds delay between the different
+    // Clicks, and before clicking them, we can also highlight them with a red border
+    // and save with a screenshot where we're going to click, as a double check.
     await browser_collector.pageSession.har.page.mouse.click(
       click.xCenter,
       click.yCenter
