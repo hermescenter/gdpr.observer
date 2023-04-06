@@ -23,14 +23,15 @@ const list = await fs.readFile(argv.source, 'utf-8');
 
 /* here parallelization starts */
 if (!argv.sessions) {
-  console.log("--session 5 by default is assumed!");
+  console.log("--session 35 by default is assumed!");
 }
-const sessions = argv?.sessions || 5;
+const sessions = argv?.sessions || 35;
 
-const seconds = _.parseInt(argv?.seconds) || 2;
-const chunksN = _.round(list.length / sessions) || 5;
-console.log(`Dividing ${list.length} in ${chunksN} because of ${sessions} sessions; Spin new each ${seconds} seconds`);
-const chunks = _.chunk(list.split('\n'), chunksN);
+const seconds = _.parseInt(argv?.seconds) || 0.1;
+const entries = list.split('\n');
+const chunksN = _.round(entries.length / sessions);
+console.log(`Dividing ${entries.length} in ${chunksN} because of ${sessions} parallel sessions. new on ${seconds} seconds`);
+const chunks = _.chunk(entries, chunksN);
 let sessionActive = 0;
 
 setInterval(async () => {
@@ -39,10 +40,8 @@ setInterval(async () => {
     const batch = chunks.pop();
     sessionActive++;
     console.log(`[+] Session ${sessionActive}/${chunks.length} picked a batch of ${batch.length} sites, still to get ${chunks.length} chunks`);
-    debugger;
     for (const site of batch) {
       console.log(`  ++ site ${site}`);
-      debugger;
       const rv = await processLine(site);
     }
     console.log(`Session completed ${sessionActive} decrements`);
@@ -53,7 +52,7 @@ setInterval(async () => {
 
 setInterval(async () => {
   console.log("                     ", new Date());
-  console.log("                     ", sessionActive, "sessions active");
+  console.log("                     ", `${sessionActive}/${sessions}`, "sessions active");
   if(!sessionActive) {
     console.log(`Process completed in ${difference.humanize()}`)
     process.exit(0);
