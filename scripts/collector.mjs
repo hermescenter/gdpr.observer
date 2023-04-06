@@ -2,9 +2,11 @@
 /* eslint-disable camelcase */
 
 import _ from 'lodash';
+import moment from 'moment';
 import { argv, fs, $, path } from 'zx';
 import { parse } from 'yaml';
 import { connect } from '../lib/mongodb.mjs';
+import hash from '../lib/id.mjs';
 
 if (!argv.source && !argv.name) {
   console.log("Missing --name or --source");
@@ -22,6 +24,7 @@ if (!argv.consent){
 }
 const sessions = argv?.sessions || 5;
 const consent = argv?.consent || false;
+const start = moment();
 
 const bannerLevel = !!argv.consent ? 'banner1' : 'banner0';
 
@@ -33,9 +36,7 @@ const bannerLevel = !!argv.consent ? 'banner1' : 'banner0';
 const wec = !!argv.consent ? 
   `./scripts/wec-clicker.mjs` :
   `./website-evidence-collector/bin/website-evidence-collector.js`;
-
 const acquirer = `./scripts/internal/mongosave.mjs`;
-const dailyIdGenerator = `./scripts/internal/id.mjs`;
 
 const { name, fullList } = await acquireSource(argv.source, argv.name);
 
@@ -80,8 +81,11 @@ setInterval(async () => {
 setInterval(async () => {
   console.log("                     ", new Date());
   console.log("                     ", sessionActive, "sessions active");
-  if(!sessionActive)
+  const difference = moment.duration(moment() - start);
+  if(!sessionActive) {
+    console.log(`Process completed in ${difference.humanize()}`)
     process.exit(0);
+  }
 }, 10000)
 
 async function acquireSource(source, name) {
@@ -107,6 +111,13 @@ async function acquireSource(source, name) {
   }
 }
 
+async function ensureDirectory(hostname) {
+  const day = new Date().toISOString().substring(0, 10);
+  const bannerdir = path.join('output', bannerLevel, day, hostname);
+  await fs.ensureDir(bannerdir);
+  return { day, bannerdir }
+}
+
 async function analysisIsPresent(info) {
   /* this code was duplicated and we paid already once! -- sorry Zaizen! */
   let hostname = null;
@@ -119,10 +130,7 @@ async function analysisIsPresent(info) {
     return;
   }
 
-  const day = new Date().toISOString().substring(0, 10);
-  const bannerdir = path.join('output', bannerLevel, day, hostname);
-  await fs.ensureDir(bannerdir);
-
+  const { day, bannerdir } = await ensureDirectory(hostname);
   const inspection = path.join(bannerdir, 'inspection.json');
   return !!fs.existsSync(inspection);
 }
@@ -142,9 +150,7 @@ async function processURL(title) {
     return;
   }
 
-  const day = new Date().toISOString().substring(0, 10);
-  const bannerdir = path.join('output', bannerLevel, day, hostname);
-  await fs.ensureDir(bannerdir);
+  const { day, bannerdir } = await ensureDirectory(hostname);
 
   const inspection = path.join(bannerdir, 'inspection.json');
   if(fs.existsSync(inspection)) {
@@ -165,8 +171,7 @@ async function processURL(title) {
 
   /* the ID is unique every day, timedate is part of the path, 
    * this ensure predictable and daily ID, to avoid dups */
-  const id = await $`${dailyIdGenerator} --country ${name} --path ${bannerdir}`.quiet();
-  // console.log(`    Site ${hostname} in ${day} has unique ID ${id}`);
+  const id = hash(name, bannerdir);
   // console.log(JSON.stringify(info));
   try {
     await $`${acquirer} --id ${id} --info ${JSON.stringify(info)} --campaign ${name} --source ${inspection}`.quiet();

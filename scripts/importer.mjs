@@ -9,8 +9,32 @@
 import _ from 'lodash';
 import { path, argv, fs } from 'zx';
 import { connect } from '../lib/mongodb.mjs';
-import crypto from 'crypto';
+import hash from '../lib/id.mjs';
 
+if (!argv.source) {
+  console.log(`(this command is invoked on the output of country-collector.mjs)`);
+  console.log("Missing --source it is a directory from output/metai/*-latest");
+  process.exit(1);
+}
+
+const chunks = argv.source.split('/');
+const name = chunks.pop().replace(/-latest/, '');
+console.log(`Inferred name: ${name}`);
+const counters = { duplicated: 0, added: 0 };
+
+const { mongodb } = (await fs.readJSON('./config/database.json'));
+const client = await connect(mongodb);
+await client.db().collection("campaigns").createIndex({id: -1}, {unique: true});
+
+const files = fs.readdirSync(argv.source);
+for (const fileogp of files) {
+  await processFile(fileogp, name);
+}
+
+await client.close();
+console.log(`Completed!: added ${counters.added}, duplicated ${counters.duplicated}`);
+
+/* functions below */
 function pullOptional(content, prefix) {
 
   return _.reduce([prefix, `og:${prefix}`, `twitter:${prefix}` ], (memo, key) => {
@@ -34,12 +58,6 @@ function pullOptional(content, prefix) {
   */
 }
 
-if (!argv.source) {
-  console.log(`(this command is invoked on the output of country-collector.mjs)`);
-  console.log("Missing --source it is a directory from output/metai/*-latest");
-  process.exit(1);
-}
-
 async function processFile(fileogp, name) {
 
   const fname = path.join(argv.source, fileogp);
@@ -60,31 +78,21 @@ async function processFile(fileogp, name) {
   if(content.reverses)
     unit.reverses = content.reverses.replace(/,/g, ' - ');
 
-  const sha1sum = crypto.createHash('sha1');
-  sha1sum.update(`*${unit.site}${unit.campaign}`);
-  unit.id = sha1sum.digest('hex');
-
+  unit.id = hash(unit.site, unit.campaign);
   unit.when = new Date();
 
-  let client = null;
   try {
-    const { mongodb } = (await fs.readJSON('./config/database.json'));
-    client = await connect(mongodb);
-    await client.db().collection("campaigns").createIndex({id: -1}, {unique: true});
+    const rv = await client.db().collection("campaigns").deleteOne({id: unit.id});
+    counters.duplicated += rv.deletedCount; // considering the index, is 1 or 0
+  } catch(error) {
+    console.log(`Error in delete? ${error.message}`);
+  }
+
+  try {
     await client.db().collection("campaigns").insertOne(unit);
     console.log(`Imported ${fname} as unit into db.gdpro.campaigns`);
+    counters.added++;
   } catch(error) {
     console.log(`Unit not added: ${error.message}`);
   }
-  if(client)
-    await client.close();
-}
-
-const chunks = argv.source.split('/');
-const name = chunks.pop().replace(/-latest/, '');
-console.log(`Inferred name: ${name}`);
-
-const files = fs.readdirSync(argv.source);
-for (const fileogp of files) {
-  await processFile(fileogp, name);
 }

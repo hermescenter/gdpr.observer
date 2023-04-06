@@ -2,7 +2,6 @@
 /* eslint-disable camelcase */
 
 // this command is invoked by `scripts/collector.mjs`
-
 import _ from 'lodash';
 import { argv, fs } from 'zx';
 import { connect } from '../../lib/mongodb.mjs';
@@ -27,7 +26,6 @@ if (!_.endsWith(argv.source, '.json')) {
   process.exit(1);
 }
 console.log("Validation successful");
-
 
 const content = await fs.readJSON(argv.source);
 
@@ -71,13 +69,24 @@ const mongoqs = _.compact(_.map(content, function(value, key) {
   }
   retval.content[key] = value;
   return retval;
-}))
+}));
+
+console.log(JSON.stringify(mongoqs, null, 2));
 
 const { mongodb } = (await fs.readJSON('./config/database.json'));
 
 const client = await connect(mongodb);
 for(const block of mongoqs) {
-  await client.db().collection(block.collection).insertOne(block.content);
+  try {
+    await client.db().collection(block.collection).insertOne(block.content);
+  } catch(error) {
+    if(error.code !== 11000) {
+      console.log(error);
+      throw error;
+    } else {
+      console.log(`Duplicated key: ${error.message}`);
+    }
+  }
 }
 await client.close();
 

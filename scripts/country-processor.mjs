@@ -21,14 +21,53 @@ const latestSymlink = path.join('output', 'metai', `${campaignName}-latest`);
 
 const list = await fs.readFile(argv.source, 'utf-8');
 
-for (let site of list.split('\n')) {
+/* here parallelization starts */
+if (!argv.sessions) {
+  console.log("--session 5 by default is assumed!");
+}
+const sessions = argv?.sessions || 5;
+
+const seconds = _.parseInt(argv?.seconds) || 2;
+const chunksN = _.round(list.length / sessions) || 5;
+console.log(`Dividing ${list.length} in ${chunksN} because of ${sessions} sessions; Spin new each ${seconds} seconds`);
+const chunks = _.chunk(list.split('\n'), chunksN);
+let sessionActive = 0;
+
+setInterval(async () => {
+
+  if(chunks.length) {
+    const batch = chunks.pop();
+    sessionActive++;
+    console.log(`[+] Session ${sessionActive}/${chunks.length} picked a batch of ${batch.length} sites, still to get ${chunks.length} chunks`);
+    debugger;
+    for (const site of batch) {
+      console.log(`  ++ site ${site}`);
+      debugger;
+      const rv = await processLine(site);
+    }
+    console.log(`Session completed ${sessionActive} decrements`);
+    sessionActive--;
+  }
+
+}, seconds * 1000);
+
+setInterval(async () => {
+  console.log("                     ", new Date());
+  console.log("                     ", sessionActive, "sessions active");
+  if(!sessionActive) {
+    console.log(`Process completed in ${difference.humanize()}`)
+    process.exit(0);
+  }
+}, 10000)
+
+async function processLine(site) {
 
   if(_.startsWith(site, '#')) {
     console.log(`Skipping commented line ${site}`);
-    continue;
+    return null;
   }
   if(site.length < 2)
-    continue;
+    return null;
 
   if(!_.startsWith(site, 'http'))
     site = `http://${site}`;
@@ -56,7 +95,7 @@ for (let site of list.split('\n')) {
     }
   } catch(error) {
     console.log(`${error.code} in ${site}: ${error.message}`);
-    continue;
+    return null;
   }
 
   try {
@@ -64,7 +103,7 @@ for (let site of list.split('\n')) {
     const ogf = path.join(metaidir, `${hostname}.json`);
     if(fs.existsSync(ogf)) {
       console.log(`File ${ogf} exists, skipping`);
-      continue;
+      return null;
     }
 
     const ogpe = await fogp(site);

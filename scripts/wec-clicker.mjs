@@ -43,11 +43,13 @@ const WindowSize = {
           )) {
             for (let searchText of language) {
               let text = tags[i].textContent || tags[i].innerText;
-              text = text.trim().toLowerCase();
 
-              if(text.length > 40)
-              // spare resources, we know we don't have to match everything
+              // spare resources: cut texts too short
+              if(text.length > 30) {
                 continue;
+              }
+
+              text = text.trim().toLowerCase();
 
               if (text.match(searchText)) {
                 console.log(`matched string, proceeding clicking`);
