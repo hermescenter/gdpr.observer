@@ -10,35 +10,3 @@ draft: false
 * `TODO visualization of the small default`
 * Engage with translator
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Dicks

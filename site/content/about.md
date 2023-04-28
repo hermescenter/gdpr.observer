@@ -3,7 +3,9 @@ title: 'About us'
 date: 2018-02-22T17:01:34+07:00
 ---
 
-### GDPR observer is a project from the [Hermes Center for Transparency and Digital Human Rights](https://hermescenter.org). It is inspired by the success of [Monitora PA](https://monitora-pa.it) an italian experiment, and now wants to scale up european wide. 
+### GDPR observer is a project started and maintained by the [Hermes Center for Transparency and Digital Human Rights](https://hermescenter.org). It depends heavily on partnership to exists, and our goal is to host contributions from other developers and team.
+
+### It is originally inspired by the success of [Monitora PA](https://monitora-pa.it) an italian experiment that in 6 months caused a drastic reduction of US-based third party trackers in all the public agencies websites, and now we want to make it scale up european wide. 
 
 ---
 

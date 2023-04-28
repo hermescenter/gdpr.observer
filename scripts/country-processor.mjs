@@ -54,7 +54,7 @@ setInterval(async () => {
   console.log("                     ", new Date());
   console.log("                     ", `${sessionActive}/${sessions}`, "sessions active");
   if(!sessionActive) {
-    console.log(`Process completed in ${difference.humanize()}`)
+    console.log(`Process completed`)
     process.exit(0);
   }
 }, 10000)
