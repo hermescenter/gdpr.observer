@@ -3,7 +3,11 @@
 import _ from 'lodash';
 import { argv, fs, $, path } from 'zx';
 import dns from 'dns';
-import geoip from 'fast-geoip'
+import geoip from 'fast-geoip';
+
+import logger from 'debug';
+const debug = logger('country-processor:domain');
+const debugio = logger('country-processor:io');
 
 import { fetch as fogp } from 'fetch-opengraph';
 
@@ -30,7 +34,7 @@ const sessions = argv?.sessions || 35;
 const seconds = _.parseInt(argv?.seconds) || 0.1;
 const entries = list.split('\n');
 const chunksN = _.round(entries.length / sessions);
-console.log(`Dividing ${entries.length} in ${chunksN} because of ${sessions} parallel sessions. new on ${seconds} seconds`);
+debugio(`Dividing ${entries.length} in ${chunksN} because of ${sessions} parallel sessions. new on ${seconds} seconds`);
 const chunks = _.chunk(entries, chunksN);
 let sessionActive = 0;
 
@@ -39,20 +43,20 @@ setInterval(async () => {
   if(chunks.length) {
     const batch = chunks.pop();
     sessionActive++;
-    console.log(`[+] Session ${sessionActive}/${chunks.length} picked a batch of ${batch.length} sites, still to get ${chunks.length} chunks`);
+    debugio(`[+] Session ${sessionActive}/${chunks.length} picked a batch of ${batch.length} sites, still to get ${chunks.length} chunks`);
     for (const site of batch) {
-      console.log(`  ++ site ${site}`);
+      debugio(`  ++ site ${site}`);
       const rv = await processLine(site);
     }
-    console.log(`Session completed ${sessionActive} decrements`);
+    debugio(`Session completed ${sessionActive} decrements`);
     sessionActive--;
   }
 
 }, seconds * 1000);
 
 setInterval(async () => {
-  console.log("                     ", new Date());
-  console.log("                     ", `${sessionActive}/${sessions}`, "sessions active");
+  debugio("                     ", new Date());
+  debugio("                     ", `${sessionActive}/${sessions}`, "sessions active");
   if(!sessionActive) {
     console.log(`Process completed`)
     process.exit(0);
@@ -113,14 +117,14 @@ async function processLine(site) {
     await dns.lookup(hostname,
       async function onLookup(err, address, family) {
         ogpe['ipv4'] = address;
-        console.log(`  IP resolved for ${hostname}: ${address}`)
+        debug(`  IP resolved for ${hostname}: ${address}`)
         let location = null;
 
 	      try {
 	      	location = await geoip.lookup(address);
 	      }
 	      catch(error) {
-		      console.log(`Error: ${error.message} in ${site}`);
+                 console.log(`Error: ${error.message} in ${site}`);
 	      }
 
         if(location && location.country) {
@@ -136,7 +140,7 @@ async function processLine(site) {
 
           await fs.ensureDir(metaidir);
           await fs.writeFile(ogf, JSON.stringify(ogpe, undefined, 2), 'utf-8');
-          console.log(`  Produced ${JSON.stringify(ogpe).length} OGP bytes (${site}) in ${JSON.stringify(_.pick(ogpe, ['country', 'region', 'city', 'timezone']))}`);
+          debug(`  Produced ${JSON.stringify(ogpe).length} OGP bytes (${site}) in ${JSON.stringify(_.pick(ogpe, ['country', 'region', 'city', 'timezone']))}`);
         });  
       }
     );
