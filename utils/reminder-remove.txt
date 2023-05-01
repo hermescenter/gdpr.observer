@@ -1,0 +1,2 @@
+
+mongosh gdpro --eval 'db.campaigns.deleteMany({"campaign":"PTu"})'

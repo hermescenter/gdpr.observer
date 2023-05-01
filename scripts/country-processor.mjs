@@ -13,6 +13,7 @@ import { fetch as fogp } from 'fetch-opengraph';
 
 if (!argv.source) {
   console.log("Missing --source, normally a .txt of URLs from rawlists/");
+  console.log("Other options --name (necessary) --sessions and --seconds");
   process.exit(1);
 }
 
@@ -27,11 +28,11 @@ const list = await fs.readFile(argv.source, 'utf-8');
 
 /* here parallelization starts */
 if (!argv.sessions) {
-  console.log("--session 35 by default is assumed!");
+  console.log("--sessions 35 by default is assumed!");
 }
-const sessions = argv?.sessions || 35;
+const sessions = argv.sessions ? _.parseInt(argv.sessions) : 35;
 
-const seconds = _.parseInt(argv?.seconds) || 0.1;
+const seconds = _.parseInt(argv.seconds) || 0.1;
 const entries = list.split('\n');
 const chunksN = _.round(entries.length / sessions);
 debugio(`Dividing ${entries.length} in ${chunksN} because of ${sessions} parallel sessions. new on ${seconds} seconds`);
@@ -45,7 +46,7 @@ setInterval(async () => {
     sessionActive++;
     debugio(`[+] Session ${sessionActive}/${chunks.length} picked a batch of ${batch.length} sites, still to get ${chunks.length} chunks`);
     for (const site of batch) {
-      debugio(`  ++ site ${site}`);
+      debugio(`  ++ site ${site}, the ${batch.indexOf(site)} of ${batch.length}`);
       const rv = await processLine(site);
     }
     debugio(`Session completed ${sessionActive} decrements`);
