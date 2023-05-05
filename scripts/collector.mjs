@@ -10,7 +10,7 @@ import hash from '../lib/id.mjs';
 
 if (!argv.source && !argv.name) {
   console.log("Missing --name or --source");
-  console.log("--name is the field 'campaign' in (db.etpir.campaings)");
+  console.log("--name is the field 'campaign' in (db.gdpro.campaings)");
   console.log("--source is a YAML file in input/; check README.md");
   console.log("p.s. --sessions <number>");
   process.exit(1);
