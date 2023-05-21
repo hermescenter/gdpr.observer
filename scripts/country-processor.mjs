@@ -10,6 +10,7 @@ const debug = logger('country-processor:domain');
 const debugio = logger('country-processor:io');
 
 import { fetch as fogp } from 'fetch-opengraph';
+import { executeWithTimeout } from '../lib/timeouter.mjs';
 
 if (!argv.source) {
   console.log("Missing --source, normally a .txt of URLs from rawlists/");
@@ -32,6 +33,7 @@ if (!argv.sessions) {
 }
 const sessions = argv.sessions ? _.parseInt(argv.sessions) : 35;
 
+const day = new Date().toISOString().substring(0, 10);
 const seconds = _.parseInt(argv.seconds) || 0.1;
 const entries = list.split('\n');
 const chunksN = _.round(entries.length / sessions);
@@ -39,6 +41,7 @@ debugio(`Dividing ${entries.length} in ${chunksN} because of ${sessions} paralle
 const chunks = _.chunk(entries, chunksN);
 let sessionActive = 0;
 
+/* this is a non blocking function that loops until all the batch are full */
 setInterval(async () => {
 
   if(chunks.length) {
@@ -55,11 +58,12 @@ setInterval(async () => {
 
 }, seconds * 1000);
 
+/* this is the final end loop that check completition of the batches */
 setInterval(async () => {
   debugio("                     ", new Date());
   debugio("                     ", `${sessionActive}/${sessions}`, "sessions active");
   if(!sessionActive) {
-    console.log(`Process completed`)
+    console.log(`Process complete, results in ${latestSymlink} now please use scripts/importer.mjs`);
     process.exit(0);
   }
 }, 10000)
@@ -76,12 +80,11 @@ async function processLine(site) {
   if(!_.startsWith(site, 'http'))
     site = `http://${site}`;
 
-  let metaidir, hostname = null;
+  let metaidir, hostname, website = null;
   try {
     const urlo = new URL(site);
     hostname = urlo.hostname;
-
-    const day = new Date().toISOString().substring(0, 10);
+    website = `${urlo.protocol}//${urlo.hostname}`;
     metaidir = path.join('output', 'metai', campaignName, day);
 
     if(!fs.existsSync(metaidir))
@@ -98,7 +101,7 @@ async function processLine(site) {
       }
     }
   } catch(error) {
-    console.log(`${error.code} in ${site}: ${error.message}`);
+    console.log(`${error.code} in ${website}: ${error.message}`);
     return null;
   }
 
@@ -106,49 +109,72 @@ async function processLine(site) {
 
     const ogf = path.join(metaidir, `${hostname}.json`);
     if(fs.existsSync(ogf)) {
-      console.log(`File ${ogf} exists, skipping`);
+      debug(`File ${ogf} exists, skipping`);
       return null;
     }
 
-    const ogpe = await fogp(site);
+    const ogpe = await executeWithTimeout(fogp, website, 5000, 'openGraph');
+    const resolve = await executeWithTimeout(resolvef, hostname, 2000, 'resolver');
+    const location = await executeWithTimeout(locationf, resolve.ipv4, 1000, 'geoip');
+    const reverse = await executeWithTimeout(reversef, resolve.ipv4, 4000, 'reverse');
+
     if(JSON.stringify(ogpe).length < 3)
-      throw new Error(`Not actually produced OGP data?`);
+      throw new Error(`Missing website (OGP) data`);
 
-    // Call to reverse function along with lookup function.
-    await dns.lookup(hostname,
-      async function onLookup(err, address, family) {
-        ogpe['ipv4'] = address;
-        debug(`  IP resolved for ${hostname}: ${address}`)
-        let location = null;
-
-	      try {
-	      	location = await geoip.lookup(address);
-	      }
-	      catch(error) {
-                 console.log(`Error: ${error.message} in ${site}`);
-	      }
-
-        if(location && location.country) {
-          ogpe.country = location.country;
-          ogpe.region = location.region;
-          ogpe.city = location.city;
-          ogpe.timezone = location.timezone;
-        }
-        await dns.reverse(address, async function (err, hostnames) {
-
-          if(hostnames && hostnames.length)
-            ogpe['reverses'] = hostnames.join(',');
-
-          await fs.ensureDir(metaidir);
-          await fs.writeFile(ogf, JSON.stringify(ogpe, undefined, 2), 'utf-8');
-          debug(`  Produced ${JSON.stringify(ogpe).length} OGP bytes (${site}) in ${JSON.stringify(_.pick(ogpe, ['country', 'region', 'city', 'timezone']))}`);
-        });  
-      }
-    );
+    await fs.ensureDir(metaidir);
+    await fs.writeFile(ogf, JSON.stringify({
+      ...ogpe,
+      ...resolve,
+      ...location,
+      ...reverse
+    }, undefined, 2), 'utf-8');
+    debug(`  Produced ${JSON.stringify(ogpe).length} OGP bytes (${site}) in ${JSON.stringify(location)}`);
 
   } catch(error) {
-    console.log(`${error.message} in ${site}`);
+    console.log(`processLine: ${error.message} in ${site}`);
   }
 }
 
-console.log(`Resolves complete, results in ${latestSymlink} now please use scripts/importer.mjs`);
+async function resolvef(hostname) {
+  // Call to reverse function along with lookup function.
+  return new Promise((resolve, reject) => {
+    dns.lookup(hostname, (err, address, family) => {
+      if(err)
+        reject(err);
+
+      const retval = {};
+      retval['ipv4'] = address;
+
+      resolve(retval);
+    });
+  });
+}
+
+async function locationf(address) {
+	try {
+	  const info = await geoip.lookup(address);
+    if(info && info.country) {
+      return _.pick(info, ['country', 'region', 'city', 'timezone']);
+    }
+	}
+	catch(error) {
+    debug("Unable to resolve location of %s: %s", address, error.message);
+	}
+  return { location: false };
+}
+
+async function reversef(address) {
+  // Call to reverse function along with lookup function.
+  return new Promise((resolve, reject) => {
+    dns.reverse(address, (err, hostnames) => {
+      if(err)
+        reject(err);
+
+      const r = { reverses: "" };
+      if(hostnames && hostnames.length)
+        r.reverses = hostnames.join(',');
+
+      resolve(r);
+    });  
+  });
+}
